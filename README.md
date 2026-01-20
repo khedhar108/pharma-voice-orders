@@ -1,3 +1,13 @@
+---
+title: Pharma Voice Orders
+emoji: 🏥
+colorFrom: blue
+colorTo: green
+sdk: docker
+pinned: false
+app_port: 7860
+---
+
 # 🏥 Pharma Voice Orders
 
 > **Accent-Aware Speech-to-Text Engine for Distributor Order Processing**
