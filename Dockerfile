@@ -15,12 +15,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Install uv for fast Python package management
 RUN pip install uv
 
-# Copy project files
-COPY pyproject.toml uv.lock ./
+# Copy all project files
 COPY . .
 
-# Install Python dependencies using uv sync (respects uv.sources for git deps)
-RUN uv sync --frozen --no-dev
+# Install Python dependencies using uv sync
+RUN uv sync --no-dev
 
 # Expose HuggingFace Spaces default port
 EXPOSE 7860
