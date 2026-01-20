@@ -1,0 +1,33 @@
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Git
+.git/
+.gitignore
+
+# Cache
+__pycache__/
+*.pyc
+*.pyo
+.cache/
+
+# IDE
+.vscode/
+.idea/
+
+# UV files (not needed in Docker)
+uv.lock
+pyproject.toml
+
+# Docs (optional, reduce image size)
+docs/
+
+# Test files
+tests/
+*.test.py
+
+# OS files
+.DS_Store
+Thumbs.db

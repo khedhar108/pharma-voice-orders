@@ -1,0 +1,14 @@
+streamlit
+pandas
+openpyxl
+torch
+transformers
+librosa
+noisereduce
+soundfile
+rapidfuzz
+jiwer
+regex
+webrtcvad
+numpy<2.0.0
+huggingface_hub
