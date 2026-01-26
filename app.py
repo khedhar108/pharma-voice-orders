@@ -309,13 +309,29 @@ if 'download_approved' not in st.session_state:
 # Show download confirmation ONLY if Local mode AND model not cached AND not yet approved
 if not use_cloud and not model_status["is_cached"] and asr_model not in st.session_state.download_approved:
     with st.container():
+        # Create a placeholder for status updates
+        status_placeholder = st.empty()
+        
+        # Display current status in placeholder
+        if status_html:
+             status_placeholder.markdown(f'<div style="display: flex; justify-content: flex-end; margin-bottom: 20px;">{status_html}</div>', unsafe_allow_html=True)
+
         st.markdown("---")
         st.markdown(f"### ⬇️ Download Required")
+        
+        # Dynamic path display
+        import platform
+        user_home = Path.home()
+        if platform.system() == "Windows":
+            cache_path_str = f"C:\\Users\\{os.environ.get('USERNAME', 'User')}\\.cache\\huggingface\\hub\\"
+        else:
+            cache_path_str = f"/home/user/.cache/huggingface/hub/"
+            
         st.info(f"""**{asr_model}** is not cached locally.
         
 📦 Size: **{model_status['required_gb']}GB**
 💾 Free space: **{model_status['free_gb']}GB**
-📂 Cache location: `C:\\Users\\{os.environ.get('USERNAME', 'User')}\\.cache\\huggingface\\hub\\`
+📂 Cache location: `{cache_path_str}`
 
 💡 **Tip:** Switch to Cloud Mode to avoid downloading!
         """)
@@ -378,7 +394,7 @@ with col1:
             st.warning("Update Streamlit to use `st.audio_input`.")
     
     with tab2:
-        audio_val_up = st.file_uploader("Upload Audio", type=['wav', 'mp3'], label_visibility="collapsed")
+        audio_val_up = st.file_uploader("Upload Audio", type=['wav', 'mp3', 'm4a', 'ogg'], label_visibility="collapsed")
         if audio_val_up:
             audio_data = audio_val_up
     
@@ -387,16 +403,58 @@ with col1:
     # Process Audio
     if audio_data:
         st.success("✅ Audio captured!")
-        st.audio(audio_data)
+        
+        # Audio Conversion Logic
+        # If it's not a WAV file or if it needs processing, we handle conversion here
+        converted_audio = None
+        
+        try:
+             # Basic check: if it's already a wav and we trust it, we might skip, 
+             # but converting ensures standardized 16kHz for ASR
+             import io
+             from pydub import AudioSegment
+             
+             # Load audio from the uploaded file type
+             # pydub auto-detects format from file content usually, but we can hint if needed
+             audio_segment = AudioSegment.from_file(audio_data)
+             
+             # Export to simplified WAV (16kHz, mono) which is best for ASR
+             audio_segment = audio_segment.set_frame_rate(16000).set_channels(1)
+             
+             # Export to in-memory bytes
+             wav_buffer = io.BytesIO()
+             audio_segment.export(wav_buffer, format="wav")
+             wav_buffer.seek(0)
+             
+             converted_audio = wav_buffer
+             
+             # Show audio player (use converted for consistent playback, or original)
+             # st.audio(audio_data) # Play original
+             
+        except ImportError:
+             st.error("❌ `pydub` not installed. Please install it to support audio conversion.")
+             converted_audio = audio_data # Fallback
+        except Exception as e:
+             # Likely ffmpeg missing or bad file
+             if "ffmpeg" in str(e).lower():
+                  st.warning("⚠️ FFmpeg needed for non-WAV files. Attempting to process raw file...")
+             else:
+                  st.warning(f"⚠️ Audio conversion warning: {e}")
+             converted_audio = audio_data # Fallback
+
+        st.audio(audio_data) # Playback original file for user
         
         if st.button("🚀 Process Order", type="primary", use_container_width=True):
             transcription_text = ""
+            
+            # Use converted audio if available, else original
+            input_audio = converted_audio if converted_audio is not None else audio_data
             
             if use_cloud:
                 # CLOUD MODE - Use HuggingFace Inference API (no download)
                 with st.spinner("☁️ Transcribing via Cloud..."):
                     try:
-                        transcription_text = transcribe_cloud(audio_data, asr_model, hf_token)
+                        transcription_text = transcribe_cloud(input_audio, asr_model, hf_token)
                         st.toast("✅ Cloud Transcription Complete!")
                     except Exception as e:
                         st.error(f"❌ Cloud API failed: {e}")
@@ -413,7 +471,7 @@ with col1:
                         st.stop()
                 
                 with st.spinner("🎧 Transcribing Locally..."):
-                    processed_audio = preprocessor.process(audio_data)
+                    processed_audio = preprocessor.process(input_audio)
                     result = asr(processed_audio)
                     transcription_text = result["text"].replace("</s>", "").strip()
                     st.toast("✅ Local Transcription Complete!")
