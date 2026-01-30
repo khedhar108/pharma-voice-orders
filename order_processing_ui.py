@@ -365,28 +365,7 @@ def render_order_processing_interface(
                 # Clear status
                 status_container.empty()
                 st.toast(f"✅ Processed in {latency:.2f}s", icon="⚡")
-                        mfr_info = db.get_manufacturer_by_medicine(entity.get('medicine', ''))
-                        if mfr_info:
-                            entity['manufacturer'] = mfr_info.get('name', 'Unknown')
-                            entity['medicine_standardized'] = mfr_info.get('medicine_match', entity['medicine'])
-                        else:
-                            entity['manufacturer'] = 'Unknown'
-                            entity['medicine_standardized'] = entity.get('medicine', '')
-                        
-                        # Add metadata
-                        entity['status'] = '✓'
-                        entity['priority'] = 'Normal'
-                        entity['timestamp'] = datetime.now().strftime('%H:%M')
-                    
-                    # Update Session State
-                    st.session_state.orders.extend(entities)
-                    st.toast(f"✅ Extracted {len(entities)} items", icon="💊")
-                else:
-                    st.warning("No medicines detected in speech.")
-                
-                # Clear status
-                status_container.empty()
-                st.toast(f"✅ Processed in {latency:.2f}s", icon="⚡")
+
                 
             except Exception as e:
                 status_container.error(f"Error: {e}")
