@@ -184,7 +184,10 @@ def load_asr_engine(model_name: str, token: str = None):
         model=model,
         tokenizer=processor.tokenizer,
         feature_extractor=processor.feature_extractor,
+        max_new_tokens=128,
+        chunk_length_s=30,
         batch_size=batch_size,
+        return_timestamps=True,
         dtype=dtype,
         device=device,
     )

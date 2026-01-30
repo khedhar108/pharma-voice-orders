@@ -153,7 +153,8 @@ R_001.m4a,2,AZILIDE-500MG,10 packs,500mg,tablet""", language="csv")
                 if use_cloud:
                     from huggingface_hub import InferenceClient
                     client = InferenceClient(token=hf_token)
-                    with open(str(audio_path), 'rb') as f:
+                    # Use preprocessed audio (silence-trimmed) for cloud inference
+                    with open(processed_audio, 'rb') as f:
                         result = client.automatic_speech_recognition(audio=f.read(), model=model_name)
                     transcription = result if isinstance(result, str) else result.get("text", "")
                 else:

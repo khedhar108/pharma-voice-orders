@@ -204,8 +204,12 @@ def render_order_processing_interface(
             try:
                 # Convert to temporary file for processing
                 temp_path = f"temp_rec_{int(time.time())}.wav"
+                original_bytes = audio_data.getvalue() if hasattr(audio_data, 'getvalue') else audio_data
                 with open(temp_path, "wb") as f:
-                    f.write(audio_data.getvalue() if hasattr(audio_data, 'getvalue') else audio_data)
+                    f.write(original_bytes)
+                
+                # Save original audio bytes for comparison
+                st.session_state.original_audio_bytes = original_bytes
                     
                 processed_path = preprocessor.preprocess_file(temp_path)
                 st.session_state.last_processed_audio = processed_path
@@ -275,9 +279,24 @@ def render_order_processing_interface(
                 extraction_status.empty() # Clear animation
                 
                 if entities:
-                    # Group by manufacturer (Routing Simulation)
-                    new_orders = extractor.process_orders(entities, distributor)
-                    st.session_state.orders.extend(new_orders)
+                    # Route each entity to its manufacturer
+                    from datetime import datetime
+                    for entity in entities:
+                        # Lookup manufacturer for this medicine
+                        mfr_info = db.get_manufacturer_by_medicine(entity.get('medicine', ''))
+                        if mfr_info:
+                            entity['manufacturer'] = mfr_info.get('name', 'Unknown')
+                            entity['medicine_standardized'] = mfr_info.get('medicine_match', entity['medicine'])
+                        else:
+                            entity['manufacturer'] = 'Unknown'
+                            entity['medicine_standardized'] = entity.get('medicine', '')
+                        
+                        # Add order metadata
+                        entity['status'] = '✓'
+                        entity['priority'] = 'Normal'
+                        entity['timestamp'] = datetime.now().strftime('%H:%M')
+                    
+                    st.session_state.orders.extend(entities)
                     st.toast(f"✅ Extracted {len(entities)} items", icon="💊")
                 else:
                     st.warning("No medicines detected in speech.")
@@ -307,6 +326,44 @@ def render_order_processing_interface(
                     },
                     height=200
                 )
+        
+        # --- Audio Comparison Feature ---
+        if st.session_state.get('original_audio_bytes') and st.session_state.get('last_processed_audio'):
+            with st.expander("🔊 Compare Audio: Original vs Processed", expanded=False):
+                st.markdown("""
+                    <style>
+                    .audio-compare-label {
+                        font-size: 0.85rem;
+                        font-weight: 600;
+                        margin-bottom: 5px;
+                        color: #8b95a5;
+                    }
+                    .audio-compare-box {
+                        background: rgba(0,0,0,0.2);
+                        border-radius: 8px;
+                        padding: 10px;
+                        margin-bottom: 10px;
+                    }
+                    </style>
+                """, unsafe_allow_html=True)
+                
+                col_orig, col_clean = st.columns(2)
+                
+                with col_orig:
+                    st.markdown('<div class="audio-compare-label">🎤 Original Recording</div>', unsafe_allow_html=True)
+                    st.markdown('<div class="audio-compare-box">', unsafe_allow_html=True)
+                    st.audio(st.session_state.original_audio_bytes, format="audio/wav")
+                    st.caption("Raw audio with background noise & silence")
+                    st.markdown('</div>', unsafe_allow_html=True)
+                
+                with col_clean:
+                    st.markdown('<div class="audio-compare-label">✨ Processed (Cleaned)</div>', unsafe_allow_html=True)
+                    st.markdown('<div class="audio-compare-box">', unsafe_allow_html=True)
+                    st.audio(st.session_state.last_processed_audio, format="audio/wav")
+                    st.caption("Silence removed + noise reduced")
+                    st.markdown('</div>', unsafe_allow_html=True)
+                
+                st.info("💡 The processed audio removes silence and background noise for faster, more accurate transcription.")
 
     # --- Manufacturer Routing Grid (Moved from app.py) ---
     with col2:
