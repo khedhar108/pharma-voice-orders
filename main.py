@@ -1,5 +1,6 @@
-import sys
 import subprocess
+import sys
+
 
 def main():
     """Entry point for the application script."""

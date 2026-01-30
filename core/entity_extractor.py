@@ -1,8 +1,10 @@
-import re
 import json
-from typing import List, Dict
+import re
 from pathlib import Path
+from typing import Dict, List
+
 from simulation.manufacturer_db import ManufacturerDB
+
 
 class EntityExtractor:
     def __init__(self, db: ManufacturerDB):
@@ -127,7 +129,7 @@ class EntityExtractor:
                 continue
             
             # Try to find a medicine match in this segment
-            from rapidfuzz import process, fuzz
+            from rapidfuzz import fuzz, process
             
             # First, check if any word is a known alias
             words = segment.split()

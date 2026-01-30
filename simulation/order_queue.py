@@ -1,6 +1,9 @@
-from typing import List, Dict
+from typing import Dict, List
+
 import streamlit as st
+
 from .manufacturer_db import ManufacturerDB
+
 
 class OrderQueue:
     def __init__(self):

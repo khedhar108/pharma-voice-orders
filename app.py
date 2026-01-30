@@ -3,11 +3,10 @@ Pharma Voice Orders - Main Application
 Streamlit UI for simulating Distributor -> Manufacturer Voice Ordering System
 """
 
-import streamlit as st
-import pandas as pd
-import time
 import os
-from pathlib import Path
+
+import streamlit as st
+from huggingface_hub import InferenceClient
 
 # Page Config
 st.set_page_config(
@@ -114,8 +113,7 @@ with st.sidebar:
 # --- Cloud Inference (HuggingFace Inference API) ---
 def transcribe_cloud(audio_data, model_name: str, token: str):
     """Transcribe audio using HuggingFace Inference API (no local download)."""
-    from huggingface_hub import InferenceClient
-    import io
+
     
     client = InferenceClient(token=token)
     
@@ -144,6 +142,7 @@ def load_asr_engine(model_name: str, token: str = None):
     """Load ASR engine locally with proper status handling."""
     import torch
     from transformers import AutoModelForSpeechSeq2Seq, AutoProcessor, pipeline
+
     from core.runtime_resources import configure_runtime
     
     # Configure runtime resources (thread limiting for CPU)
@@ -211,7 +210,6 @@ def get_extractor(_db):
 # --- Model Cache Checker ---
 def check_model_status(model_name: str) -> dict:
     """Check if model is cached locally and get disk space info."""
-    import os
     import shutil
     from pathlib import Path
     
@@ -237,7 +235,7 @@ def check_model_status(model_name: str) -> dict:
     try:
         disk_usage = shutil.disk_usage(cache_dir if cache_dir.exists() else Path.home())
         free_gb = disk_usage.free / (1024 ** 3)
-    except:
+    except Exception:
         free_gb = -1
     
     # Model sizes (approximate)

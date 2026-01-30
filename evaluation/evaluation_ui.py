@@ -5,12 +5,12 @@ Displays metrics dashboard with confusion matrix, precision/recall/F1,
 and comparison table for entity extraction evaluation.
 """
 
-import streamlit as st
-import pandas as pd
-from pathlib import Path
-from typing import List, Dict
 import json
 import time
+from pathlib import Path
+
+import pandas as pd
+import streamlit as st
 
 
 def render_evaluation_tab(
@@ -34,7 +34,7 @@ def render_evaluation_tab(
         model_name: Selected ASR model
         hf_token: HuggingFace token
     """
-    from evaluation.entity_evaluator import EntityEvaluator, EvaluationReport
+    from evaluation.entity_evaluator import EntityEvaluator
     
     st.markdown("## 📊 Evaluation Dashboard")
     st.markdown("Test your model's entity extraction accuracy against ground truth data.")
@@ -55,7 +55,7 @@ def render_evaluation_tab(
         try:
             gt_df = pd.read_csv(gt_path, comment='#')
             gt_has_data = len(gt_df) > 0 and 'medicine_name' in gt_df.columns
-        except:
+        except Exception:
             gt_has_data = False
     
     # Setup Section
@@ -125,7 +125,7 @@ R_001.m4a,2,AZILIDE-500MG,10 packs,500mg,tablet""", language="csv")
         
         # Custom Progress
         progress_placeholder = st.empty()
-        status_text = st.empty()
+
         
         # Process each audio file
         total_files = len(selected_files)
@@ -176,7 +176,7 @@ R_001.m4a,2,AZILIDE-500MG,10 packs,500mg,tablet""", language="csv")
             # progress_bar.progress((i + 1) / len(selected_files)) # Removed standard bar
         
         # Final 100% state
-        progress_placeholder.markdown(f'''
+        progress_placeholder.markdown('''
             <div class="neon-progress-container">
                 <div class="neon-progress-fill" style="width: 100%;"></div>
             </div>

@@ -1,6 +1,6 @@
-import time
 import jiwer
 from rapidfuzz import fuzz
+
 
 class MetricsEvaluator:
     @staticmethod

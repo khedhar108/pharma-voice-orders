@@ -1,7 +1,9 @@
+import streamlit as st
 import torch
 from transformers import AutoModelForSpeechSeq2Seq, AutoProcessor, pipeline
-import streamlit as st
+
 from core.runtime_resources import configure_runtime
+
 
 class ASREngine:
     def __init__(self, model_id: str = "openai/whisper-medium"):

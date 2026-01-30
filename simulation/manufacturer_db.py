@@ -1,7 +1,9 @@
-import pandas as pd
 import json
 from pathlib import Path
-from rapidfuzz import process, fuzz
+
+import pandas as pd
+from rapidfuzz import fuzz
+
 
 class ManufacturerDB:
     def __init__(self, data_dir: str = "data"):

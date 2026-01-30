@@ -5,11 +5,12 @@ Computes precision, recall, F1 score, and confusion matrix
 for entity extraction by comparing against ground truth.
 """
 
-import pandas as pd
-from pathlib import Path
-from typing import List, Dict, Tuple
-from rapidfuzz import fuzz
 from dataclasses import dataclass, field
+from pathlib import Path
+from typing import Dict, List, Tuple
+
+import pandas as pd
+from rapidfuzz import fuzz
 
 
 @dataclass
@@ -265,7 +266,7 @@ class EntityEvaluator:
                 ext_quantity = str(best_match.get('quantity', ''))
                 ext_dosage = str(best_match.get('dosage', ''))
                 
-                medicine_ok = True  # Already matched
+                # medicine_ok = True  # Already matched
                 quantity_ok = self.match_quantity(exp_quantity, ext_quantity)
                 dosage_ok = self.match_dosage(exp_dosage, ext_dosage)
                 

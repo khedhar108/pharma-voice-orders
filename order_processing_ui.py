@@ -9,12 +9,11 @@ Handles the main order processing interface including:
 - Processing Button Logic
 """
 
-import streamlit as st
-import pandas as pd
-import time
 import os
-from pathlib import Path
-from core.runtime_resources import configure_runtime
+import time
+
+import pandas as pd
+import streamlit as st
 
 
 def render_order_processing_interface(
@@ -91,16 +90,16 @@ def render_order_processing_interface(
                  status_placeholder.markdown(f'<div style="display: flex; justify-content: flex-end; margin-bottom: 20px;">{status_html}</div>', unsafe_allow_html=True)
 
             st.markdown("---")
-            st.markdown(f"### ⬇️ Download Required")
+            st.markdown("### ⬇️ Download Required")
             
             # Dynamic path display
             import platform
-            user_home = Path.home()
+
             if platform.system() == "Windows":
                  # Use os.environ for Windows user
                 cache_path_str = f"C:\\Users\\{os.environ.get('USERNAME', 'User')}\\.cache\\huggingface\\hub\\"
             else:
-                cache_path_str = f"/home/user/.cache/huggingface/hub/"
+                cache_path_str = "/home/user/.cache/huggingface/hub/"
                 
             st.info(f"""**{asr_model}** is not cached locally.
             
@@ -214,11 +213,11 @@ def render_order_processing_interface(
                 # Cleanup temp
                 try:
                     os.remove(temp_path)
-                except:
+                except Exception:
                     pass
                 
                 # 2. Transcription Animation
-                status_container.markdown(f'''
+                status_container.markdown('''
                     <div class="processing-overlay">
                          <div class="wave-container">
                             <div class="wave-bar" style="animation-duration: 0.8s"></div>
@@ -326,10 +325,14 @@ def render_order_processing_interface(
         
         # 6 Manufacturers -> 3 Rows of 2
         for idx, mfr in enumerate(all_manufacturers):
-            if idx < 2: col = row1_cols[idx]
-            elif idx < 4: col = row2_cols[idx - 2]
-            elif idx < 6: col = row3_cols[idx - 4]
-            else: continue
+            if idx < 2:
+                col = row1_cols[idx]
+            elif idx < 4:
+                col = row2_cols[idx - 2]
+            elif idx < 6:
+                col = row3_cols[idx - 4]
+            else:
+                continue
                 
             with col:
                 mfr_name = mfr['name']
@@ -353,8 +356,10 @@ def render_order_processing_interface(
                     for order in orders:
                         conf = order.get('confidence', 0)
                         conf_class = "conf-low"
-                        if conf >= 90: conf_class = "conf-high"
-                        elif conf >= 75: conf_class = "conf-med"
+                        if conf >= 90:
+                            conf_class = "conf-high"
+                        elif conf >= 75:
+                            conf_class = "conf-med"
                         
                         med_name = order.get('medicine_standardized', order['medicine'])
                         dosage = order.get('dosage', '-')
