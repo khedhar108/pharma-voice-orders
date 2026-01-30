@@ -1,12 +1,20 @@
 import torch
 from transformers import AutoModelForSpeechSeq2Seq, AutoProcessor, pipeline
 import streamlit as st
+from core.runtime_resources import configure_runtime
 
 class ASREngine:
     def __init__(self, model_id: str = "openai/whisper-tiny"):
+        # Configure runtime resources (thread limiting for CPU)
+        self.runtime_config = configure_runtime(model_id)
+        
         self.device = "cuda" if torch.cuda.is_available() else "cpu"
         self.torch_dtype = torch.float16 if torch.cuda.is_available() else torch.float32
         self.model_id = model_id
+        
+        # Dynamic batch size: 1 for CPU (prevent OOM), 16 for GPU
+        self.batch_size = 16 if self.device == "cuda" else 1
+        
         self.pipe = self._load_model()
         
     @st.cache_resource(show_spinner=False)
@@ -30,7 +38,7 @@ class ASREngine:
             feature_extractor=processor.feature_extractor,
             max_new_tokens=128,
             chunk_length_s=30,
-            batch_size=16,
+            batch_size=_self.batch_size,
             return_timestamps=True,
             torch_dtype=_self.torch_dtype,
             device=_self.device,

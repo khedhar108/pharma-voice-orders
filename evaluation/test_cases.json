@@ -1,0 +1,104 @@
+[
+    {
+        "text": "Send me 50 strips of Paracetamol",
+        "expected": [
+            {
+                "medicine": "Paracetamol",
+                "quantity": "50 strips"
+            }
+        ]
+    },
+    {
+        "text": "I need 20 bottles of Ascoril syrup and 10 tubes of Betnovate",
+        "expected": [
+            {
+                "medicine": "Ascoril",
+                "quantity": "20 bottles"
+            },
+            {
+                "medicine": "Betnovate",
+                "quantity": "10 tubes"
+            }
+        ]
+    },
+    {
+        "text": "Add five hundred mg of Amoxicillin... make it 30 packs",
+        "expected": [
+            {
+                "medicine": "Amoxicillin",
+                "quantity": "30 packs"
+            }
+        ]
+    },
+    {
+        "text": "Give me Volini spray 15 pieces and Combiflam",
+        "expected": [
+            {
+                "medicine": "Volini",
+                "quantity": "15 pieces"
+            },
+            {
+                "medicine": "Combiflam",
+                "quantity": "1 units"
+            }
+        ]
+    },
+    {
+        "text": "Order zinetac... uh... one hundred fifty mg... 20 strips",
+        "expected": [
+            {
+                "medicine": "Zinetac",
+                "quantity": "20 strips"
+            }
+        ]
+    },
+    {
+        "text": "We need Azithromycin 500mg 5 boxes and Pantop 40mg 10 strips",
+        "expected": [
+            {
+                "medicine": "Azithromycin",
+                "quantity": "5 boxes"
+            },
+            {
+                "medicine": "Pantop",
+                "quantity": "10 strips"
+            }
+        ]
+    },
+    {
+        "text": "Send 10 vials of insulin and 5 packs of needles",
+        "expected": [
+            {
+                "medicine": "Insulin",
+                "quantity": "10 vials"
+            }
+        ]
+    },
+    {
+        "text": "Shelcal 500 ten bottles",
+        "expected": [
+            {
+                "medicine": "Shelcal",
+                "quantity": "10 bottles"
+            }
+        ]
+    },
+    {
+        "text": "Dolo 650... send 100 strips",
+        "expected": [
+            {
+                "medicine": "Dolo",
+                "quantity": "100 strips"
+            }
+        ]
+    },
+    {
+        "text": "One box of Vicks Vaporub",
+        "expected": [
+            {
+                "medicine": "Vicks Vaporub",
+                "quantity": "1 box"
+            }
+        ]
+    }
+]

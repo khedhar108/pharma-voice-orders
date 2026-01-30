@@ -49,17 +49,13 @@ with st.sidebar:
     asr_model = st.selectbox(
         "ASR Model",
         [
-            "google/medasr",
-            "openai/whisper-tiny",
-            "openai/whisper-small", 
             "openai/whisper-medium",
-            "openai/whisper-large-v3",
-        ]
+            "openai/whisper-large-v3-turbo", # Turbo (Efficient)
+            "openai/whisper-large",      # Large V1 (Original)
+            "openai/whisper-large-v3",   # Large V3 (Latest)
+        ],
+        help="Medium: 1.5GB | Turbo: 2GB | Large V1: 3GB | Large V3: 3.1GB"
     )
-    
-    # Note about MedASR - now enabled!
-    if "medasr" in asr_model:
-        st.success("✅ MedASR enabled (transformers from GitHub installed)")
     
     st.markdown("---")
     
@@ -138,52 +134,50 @@ def load_asr_engine(model_name: str, token: str = None):
     """Load ASR engine locally with proper status handling."""
     import torch
     from transformers import AutoModelForSpeechSeq2Seq, AutoProcessor, pipeline
+    from core.runtime_resources import configure_runtime
+    
+    # Configure runtime resources (thread limiting for CPU)
+    configure_runtime(model_name)
     
     device = "cuda" if torch.cuda.is_available() else "cpu"
     torch_dtype = torch.float16 if torch.cuda.is_available() else torch.float32
+    
+    # Dynamic batch size: 1 for CPU (prevent OOM), 16 for GPU
+    batch_size = 16 if device == "cuda" else 1
     
     # Login if token provided
     if token:
         from huggingface_hub import login
         login(token=token)
     
-    # Determine model class based on model name
-    if "medasr" in model_name:
-        from transformers import AutoModelForCTC
-        model_class = AutoModelForCTC
-    else:
-        model_class = AutoModelForSpeechSeq2Seq
-
-    # Load Model with support for custom code (trust_remote_code=True)
+    # Load Model
     try:
-        model = model_class.from_pretrained(
+        model = AutoModelForSpeechSeq2Seq.from_pretrained(
             model_name,
-            dtype=torch_dtype,
+            torch_dtype=torch_dtype,
             low_cpu_mem_usage=True,
-            use_safetensors=True,
-            trust_remote_code=True
+            use_safetensors=True
         )
     except OSError:
-        # Fallback for models that might not support safetensors or other issues
-        model = model_class.from_pretrained(
+        # Fallback for models that might not support safetensors
+        model = AutoModelForSpeechSeq2Seq.from_pretrained(
             model_name,
-            dtype=torch_dtype,
-            low_cpu_mem_usage=True,
-            trust_remote_code=True
+            torch_dtype=torch_dtype,
+            low_cpu_mem_usage=True
         )
             
     model.to(device)
     
-    processor = AutoProcessor.from_pretrained(model_name, trust_remote_code=True)
+    processor = AutoProcessor.from_pretrained(model_name)
     
     pipe = pipeline(
         "automatic-speech-recognition",
         model=model,
         tokenizer=processor.tokenizer,
         feature_extractor=processor.feature_extractor,
-        dtype=torch_dtype,
+        batch_size=batch_size,
+        torch_dtype=torch_dtype,
         device=device,
-        trust_remote_code=True
     )
     
     return pipe
@@ -238,11 +232,10 @@ def check_model_status(model_name: str) -> dict:
     
     # Model sizes (approximate)
     model_sizes = {
-        "openai/whisper-tiny": 0.15,
-        "openai/whisper-small": 0.5,
         "openai/whisper-medium": 1.5,
+        "openai/whisper-large-v3-turbo": 2.0, # ~2GB VRAM
+        "openai/whisper-large": 3.0,     # Large V1
         "openai/whisper-large-v3": 3.1,
-        "google/medasr": 0.3,  # ~300MB
     }
     required_gb = model_sizes.get(model_name, 2.0)
     
