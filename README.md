@@ -96,6 +96,23 @@ pharma-voice-orders/
 
 ---
 
+## ✅ Quality Assurance (Syntax & Linting)
+
+To ensure the application is free of syntax errors and follows Python best practices, run these commands before deployment. This is equivalent to `tsc --emit` in TypeScript.
+
+```bash
+# 1. Quick syntax check (built-in)
+python -m py_compile app.py
+
+# 2. Full project syntax check (custom script)
+uv run python scripts/check_syntax.py
+
+# 3. Ruff linting (syntax + style)
+uv run ruff check .
+```
+
+---
+
 ## 🛠️ Tech Stack
 
 - **Frontend**: Streamlit

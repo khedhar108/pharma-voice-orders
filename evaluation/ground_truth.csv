@@ -1,0 +1,4 @@
+# Ground Truth Dataset for Entity Extraction Evaluation
+# Instructions: Listen to each audio file and add rows for each medicine order spoken
+# Use exact medicine names from Medicine_Names_Packges.csv
+audio_file,order_index,medicine_name,quantity,dosage,form

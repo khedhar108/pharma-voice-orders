@@ -28,9 +28,18 @@ dependencies = [
 [project.scripts]
 start = "main:main"
 
+
 [tool.hatch.build.targets.wheel]
 packages = ["core", "simulation", "evaluation"]
 
 [tool.uv.sources]
 transformers = { git = "https://github.com/huggingface/transformers.git", rev = "65dc261512cbdb1ee72b88ae5b222f2605aad8e5" }
 
+[dependency-groups]
+dev = [
+    "ruff>=0.14.14",
+]
+
+[tool.uv]
+# Scripts for quick commands
+# Usage: uv run lint

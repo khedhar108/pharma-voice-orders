@@ -1,0 +1,29 @@
+# Ruff Configuration for pharma-voice-orders
+# Docs: https://docs.astral.sh/ruff/
+
+[lint]
+# Enable syntax errors, undefined names, and unused imports
+select = [
+    "E",   # pycodestyle errors
+    "F",   # Pyflakes (syntax, undefined names)
+    "I",   # isort (import sorting)
+]
+
+# Ignore some rules that are too strict for this project
+ignore = [
+    "E501",  # Line too long (handled by formatter)
+    "E402",  # Module level import not at top of file
+]
+
+# Exclude directories
+exclude = [
+    ".git",
+    "__pycache__",
+    ".venv",
+    "notebooks",
+]
+
+[format]
+# Use double quotes for strings
+quote-style = "double"
+indent-style = "space"

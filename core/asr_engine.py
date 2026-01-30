@@ -9,7 +9,7 @@ class ASREngine:
         self.runtime_config = configure_runtime(model_id)
         
         self.device = "cuda" if torch.cuda.is_available() else "cpu"
-        self.torch_dtype = torch.float16 if torch.cuda.is_available() else torch.float32
+        self.dtype = torch.float16 if torch.cuda.is_available() else torch.float32
         self.model_id = model_id
         
         # Dynamic batch size: 1 for CPU (prevent OOM), 16 for GPU
@@ -23,7 +23,7 @@ class ASREngine:
         
         model = AutoModelForSpeechSeq2Seq.from_pretrained(
             _self.model_id, 
-            torch_dtype=_self.torch_dtype, 
+            dtype=_self.dtype, 
             low_cpu_mem_usage=True, 
             use_safetensors=True
         )
@@ -40,7 +40,7 @@ class ASREngine:
             chunk_length_s=30,
             batch_size=_self.batch_size,
             return_timestamps=True,
-            torch_dtype=_self.torch_dtype,
+            dtype=_self.dtype,
             device=_self.device,
         )
         return pipe

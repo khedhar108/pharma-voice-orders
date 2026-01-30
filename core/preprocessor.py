@@ -33,3 +33,17 @@ class AudioPreprocessor:
         audio = librosa.util.normalize(audio)
         
         return audio
+
+    def preprocess_file(self, audio_path: str) -> str:
+        """
+        Process audio and save to a file.
+        Returns path to processed file.
+        """
+        audio = self.process(audio_path)
+        
+        # Create output path
+        output_path = str(audio_path).rsplit(".", 1)[0] + "_clean.wav"
+        
+        # Save
+        sf.write(output_path, audio, self.target_sr)
+        return output_path
