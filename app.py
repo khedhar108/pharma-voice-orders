@@ -30,6 +30,10 @@ if 'orders' not in st.session_state:
     st.session_state.orders = []
 if 'last_transcription' not in st.session_state:
     st.session_state.last_transcription = ""
+if 'eval_results' not in st.session_state:
+    st.session_state.eval_results = None
+if 'eval_report' not in st.session_state:
+    st.session_state.eval_report = None
 
 # --- Sidebar ---
 with st.sidebar:

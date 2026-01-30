@@ -14,6 +14,7 @@ import time
 
 import pandas as pd
 import streamlit as st
+from core.transcript_verifier import TranscriptVerifier
 
 
 def render_order_processing_interface(
@@ -69,6 +70,19 @@ def render_order_processing_interface(
             </div>
         '''
         st.warning(f"Need {model_status['required_gb']}GB, only {model_status['free_gb']}GB free. Choose a smaller model or free disk space.")
+
+    # --- 1.5 AI Verification Toggle ---
+    with st.sidebar:
+        st.markdown("---")
+        st.markdown("### ✨ AI Enhancement")
+        enable_ai = st.toggle(
+            "Enable AI Verification",
+            value=True if use_cloud else False,
+            help="Use LLM to clean transcript and perfectly separate Medicine, Dosage, and Quantity."
+        )
+        if enable_ai and not hf_token:
+            st.warning("⚠️ HF Token required for AI")
+            enable_ai = False
 
     # Render Status aligned to right
     if status_html:
@@ -149,7 +163,7 @@ def render_order_processing_interface(
         # For now, keeping the example prompt simple as in extracted code but preserving structure
         
         # Example Prompt
-        example_prompt = "Send me 50 strips of Paracetamol, 20 bottles of Ascoril syrup, and also 10 tubes of Betnovate cream."
+        example_prompt = "Send me 10 strips of Augmentin 625, 50 strips of Dolo 650, and 20 strips of Pan D."
         st.markdown(f'''
             <div style="background: rgba(79, 172, 254, 0.1); border: 1px dashed rgba(79, 172, 254, 0.4); border-radius: 8px; padding: 12px; margin-bottom: 16px;">
                 <span style="color: #4facfe; font-weight: 600; font-size: 0.75rem;">💡 TRY SAYING:</span>
@@ -243,6 +257,55 @@ def render_order_processing_interface(
                     
                 latency = time.time() - start_time
                 st.session_state.last_transcription = text
+                
+                # --- AI VERIFICATION STEP ---
+                entities = []
+                final_transcription = text
+                
+                if enable_ai:
+                    status_container.markdown('''
+                        <div class="processing-overlay">
+                             <div class="wave-container">
+                                <div class="wave-bar" style="background:#a78bfa; animation-duration: 0.6s"></div>
+                                <div class="wave-bar" style="background:#a78bfa; animation-duration: 0.9s"></div>
+                                <div class="wave-bar" style="background:#a78bfa; animation-duration: 0.7s"></div>
+                            </div>
+                            <div class="proc-text" style="color:#a78bfa">🧠 AI VERIFYING...</div>
+                        </div>
+                    ''', unsafe_allow_html=True)
+                    
+                    # Initialize Verifier
+                    verifier = TranscriptVerifier(hf_token)
+                    
+                    # Get context candidates from DB
+                    # We need valid medicine names for context. 
+                    # Assuming db.medicines has a 'medicine_name' column
+                    possible_meds = db.medicines['medicine_name'].tolist() if hasattr(db, 'medicines') else []
+                    
+                    ai_result = verifier.verify_and_extract(text, possible_meds)
+                    
+                    if "error" not in ai_result:
+                        final_transcription = ai_result.get("cleaned_text", text)
+                        ai_entities = ai_result.get("entities", [])
+                        
+                        # Use AI entities directly (Perfect Separation)
+                        entities = ai_entities
+                        
+                        # Show Diff
+                        st.markdown("### 🔍 Transcript Verification")
+                        col_orig, col_new = st.columns(2)
+                        col_orig.markdown(f"**Original:**\n> {text}")
+                        col_new.markdown(f"**✨ AI Verified:**\n> {final_transcription}")
+                        
+                        if text != final_transcription:
+                            st.success(f"Fixed spelling and formatting!")
+                    else:
+                        st.error(f"AI Verification Failed: {ai_result['error']}")
+                        # Fallback
+                        entities = extractor.extract(text)
+                else:
+                    # Standard Extraction
+                    entities = extractor.extract(text)
                 
                 # Clear status
                 status_container.empty()
