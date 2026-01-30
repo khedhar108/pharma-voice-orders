@@ -59,27 +59,97 @@ def render_evaluation_tab(
             gt_has_data = False
     
     # Setup Section
+    # Setup Section
     with st.expander("⚙️ Setup Ground Truth", expanded=not gt_has_data):
         st.markdown("""
         **To evaluate your model, you need ground truth data.**
         
         1. Listen to each audio file in `audioData/`
-        2. Add rows to `evaluation/ground_truth.csv` with expected medicines
-        3. Run evaluation to compare extracted vs expected
+        2. Add rows to the table below with expected medicines
+        3. Click **Save Ground Truth**
         """)
         
-        # Show template
-        st.code("""# Ground Truth CSV Format
-audio_file,order_index,medicine_name,quantity,dosage,form
-R_001.m4a,1,DOLO-650,50 strips,650mg,tablet
-R_001.m4a,2,AZILIDE-500MG,10 packs,500mg,tablet""", language="csv")
+        # Default Template Data
+        default_data = {
+            "audio_file": ["R_001.m4a", "R_001.m4a"],
+            "order_index": [1, 2],
+            "medicine_name": ["DOLO-650", "AZILIDE-500MG"],
+            "quantity": ["50 strips", "10 packs"],
+            "dosage": ["650mg", "500mg"],
+            "form": ["tablet", "tablet"]
+        }
         
-        # Ground truth editor
+        # Load editor data
         if gt_has_data:
-            st.success(f"✅ Ground truth loaded: {len(gt_df)} entries")
-            st.dataframe(gt_df, use_container_width=True, height=200)
+            editor_df = gt_df.copy()
         else:
-            st.warning("⚠️ No ground truth data. Add entries to `evaluation/ground_truth.csv`")
+            # If no data, start with empty structure or default if requested
+            editor_df = pd.DataFrame(columns=["audio_file", "order_index", "medicine_name", "quantity", "dosage", "form"])
+            
+        # Action Buttons Row
+        col_act1, col_act2, col_act3 = st.columns([1, 1, 2])
+        
+        with col_act1:
+            if st.button("📝 Load Template"):
+                editor_df = pd.DataFrame(default_data)
+                # We need to rerun to show this in editor, or we rely on session state?
+                # st.data_editor keys off value, but doesn't update if value changes externally easily without key change.
+                # Let's just save it to a temp state or rewrite file for "Load Template".
+                # Actually, simplest is just to write default CSV and rerun?
+                pd.DataFrame(default_data).to_csv(gt_path, index=False)
+                st.rerun()
+
+        # The Data Editor
+        edited_df = st.data_editor(
+            editor_df,
+            num_rows="dynamic",
+            use_container_width=True,
+            key="gt_editor",
+            column_config={
+                "audio_file": st.column_config.SelectboxColumn(
+                    "Audio File",
+                    options=sorted([f.name for f in audio_dir.iterdir() if f.suffix in ['.m4a', '.wav', '.mp3']]) if audio_dir.exists() else [],
+                    required=True
+                ),
+                "order_index": st.column_config.NumberColumn("Index", min_value=1, step=1, default=1),
+                "medicine_name": st.column_config.TextColumn("Medicine", required=True),
+                "quantity": "Quantity",
+                "dosage": "Dosage",
+                "form": st.column_config.SelectboxColumn(
+                    "Form",
+                    options=["tablet", "syrup", "cream", "injection", "spray", "drops"],
+                    default="tablet"
+                )
+            }
+        )
+        
+        with col_act2:
+            if st.button("💾 Save Ground Truth", type="primary"):
+                # Save to CSV
+                try:
+                    # Create directory if likely executing locally and it's missing (though evaluation folder exists)
+                    gt_path.parent.mkdir(exist_ok=True, parents=True)
+                    edited_df.to_csv(gt_path, index=False)
+                    st.success("Saved!")
+                    time.sleep(1)
+                    st.rerun()
+                except Exception as e:
+                    st.error(f"Save failed: {e}")
+
+        with col_act3:
+             # Download Button
+            csv_csv = edited_df.to_csv(index=False)
+            st.download_button(
+                label="📥 Download CSV (for backup)",
+                data=csv_csv,
+                file_name="ground_truth.csv",
+                mime="text/csv"
+            )
+
+        if not gt_has_data:
+             st.warning("⚠️ No ground truth data saved yet. Load Template or add rows above.")
+        else:
+             st.success(f"✅ {len(gt_df)} rows loaded from disk.")
     
     # Audio files section
     st.markdown("---")

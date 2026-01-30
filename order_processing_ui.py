@@ -251,61 +251,138 @@ def render_order_processing_interface(
                 start_time = time.time()
                 
                 if use_cloud:
-                    text = transcribe_cloud_fn(open(processed_path, "rb"), asr_model, hf_token)
-                else:
-                    text = transcribe_local(processed_path, asr_model, hf_token)
+                    # Cloud Logic
+                    # If AI Verification is enabled (toggle from sidebar), use TranscriptVerifier
+                    # Note: We need to access the sidebar toggle state. 
+                    # Ideally, pass 'enable_ai' as argument to this function, but it's defined in sidebar.
+                    # We can access it via session state if key was set, or simpler: just check if verify_fn is available if we passed it?
+                    # The prompt implies we should just fix the flow.
+                    # Let's verify usage of TranscriptVerifier if available.
                     
+                    # For now, we'll do standard transcription then verify if enable_ai is Checked in Sidebar
+                    # (We need to capture that value passed into this function or from state)
+                     
+                    raw_text = transcribe_cloud_fn(open(processed_path, "rb"), asr_model, hf_token)
+                    text = raw_text
+                else:
+                    # Local Logic
+                    text = transcribe_local(processed_path, asr_model, hf_token)
+
                 latency = time.time() - start_time
-                st.session_state.last_transcription = text
                 
-                # --- AI VERIFICATION STEP ---
-                entities = []
+                # --- AI VERIFICATION & EXTRACTION ---
+                # Default values
                 final_transcription = text
+                entities = []
                 
-                if enable_ai:
+                # Check sidebar toggle (we need to access the widget value indirectly or move the toggle outside function)
+                # But since render_order_processing_interface defines it, we can grab it if we returned it?
+                # Actually, the variable `enable_ai` is local to render_order_processing_interface.
+                # We can just access it here since we are INSIDE render_order_processing_interface.
+                
+                if enable_ai and hf_token:
+                    # 2.5 Verification Animation
                     status_container.markdown('''
                         <div class="processing-overlay">
-                             <div class="wave-container">
-                                <div class="wave-bar" style="background:#a78bfa; animation-duration: 0.6s"></div>
-                                <div class="wave-bar" style="background:#a78bfa; animation-duration: 0.9s"></div>
-                                <div class="wave-bar" style="background:#a78bfa; animation-duration: 0.7s"></div>
+                            <div class="wave-container">
+                                <div class="wave-bar" style="background:#a78bfa"></div>
+                                <div class="wave-bar" style="background:#a78bfa"></div>
+                                <div class="wave-bar" style="background:#a78bfa"></div>
                             </div>
-                            <div class="proc-text" style="color:#a78bfa">🧠 AI VERIFYING...</div>
+                            <div class="proc-text" style="color:#a78bfa">✨ AI VERIFYING...</div>
                         </div>
                     ''', unsafe_allow_html=True)
                     
-                    # Initialize Verifier
-                    verifier = TranscriptVerifier(hf_token)
-                    
-                    # Get context candidates from DB
-                    # We need valid medicine names for context. 
-                    # Assuming db.medicines has a 'medicine_name' column
-                    possible_meds = db.medicines['medicine_name'].tolist() if hasattr(db, 'medicines') else []
-                    
-                    ai_result = verifier.verify_and_extract(text, possible_meds)
-                    
-                    if "error" not in ai_result:
-                        final_transcription = ai_result.get("cleaned_text", text)
-                        ai_entities = ai_result.get("entities", [])
+                    try:
+                        verifier = TranscriptVerifier(hf_token)
+                        # Get known medicines for context
+                        possible_meds = db.medicines['medicine_name'].tolist()
                         
-                        # Use AI entities directly (Perfect Separation)
-                        entities = ai_entities
+                        verification_result = verifier.verify_and_extract(text, possible_meds)
                         
-                        # Show Diff
-                        st.markdown("### 🔍 Transcript Verification")
-                        col_orig, col_new = st.columns(2)
-                        col_orig.markdown(f"**Original:**\n> {text}")
-                        col_new.markdown(f"**✨ AI Verified:**\n> {final_transcription}")
-                        
-                        if text != final_transcription:
-                            st.success(f"Fixed spelling and formatting!")
-                    else:
-                        st.error(f"AI Verification Failed: {ai_result['error']}")
-                        # Fallback
+                        if verification_result and 'cleaned_text' in verification_result:
+                            final_transcription = verification_result['cleaned_text']
+                            # The Verifier returns 'entities' in the dict
+                            # We need to ensure they align with what we expect
+                            entities = verification_result.get('entities', [])
+                        else:
+                            # Fallback if AI fails
+                            st.warning("AI Verification returned empty result, using raw transcript.")
+                            entities = extractor.extract(text)
+                            
+                    except Exception as e:
+                        st.error(f"AI Verification Failed: {e}")
                         entities = extractor.extract(text)
                 else:
                     # Standard Extraction
                     entities = extractor.extract(text)
+                
+                # Save Verified Text
+                st.session_state.last_transcription = final_transcription
+                
+                # --- ORDER QUEUE LOGIC ---
+                with col2:
+                     # Extraction Animation
+                    extraction_status = st.empty()
+                    extraction_status.markdown('''
+                        <div style="text-align: center; margin: 20px 0; color: #a855f7;">
+                            <span style="display: inline-block; animation: pulse 1s infinite;">💊</span>
+                            <span style="margin-left: 8px; font-weight: 500;">Extracting Medicines...</span>
+                        </div>
+                    ''', unsafe_allow_html=True)
+                    time.sleep(0.5)
+                    extraction_status.empty()
+
+                if entities:
+                    # Route each entity
+                    from datetime import datetime
+                    for entity in entities:
+                        # Lookup manufacturer
+                        # Only lookup if manufacturer not already provided by AI (though verifier currently doesn't provide it)
+                        mfr_info = db.get_manufacturer_by_medicine(entity.get('medicine', ''))
+                        if mfr_info:
+                            entity['manufacturer'] = mfr_info.get('name', 'Unknown')
+                            entity['medicine_standardized'] = mfr_info.get('medicine_match', entity['medicine'])
+                        else:
+                            entity['manufacturer'] = 'Unknown'
+                            entity['medicine_standardized'] = entity.get('medicine', '')
+                        
+                        # Ensure Quantity is formatted
+                        if 'quantity' not in entity:
+                            entity['quantity'] = '1 units'
+                            
+                        # Add metadata
+                        entity['status'] = '✓'
+                        entity['priority'] = 'Normal'
+                        entity['timestamp'] = datetime.now().strftime('%H:%M')
+                    
+                    # Update Session State
+                    st.session_state.orders.extend(entities)
+                    st.toast(f"✅ Extracted {len(entities)} items", icon="💊")
+                else:
+                    st.warning("No medicines detected in speech.")
+                
+                # Clear status
+                status_container.empty()
+                st.toast(f"✅ Processed in {latency:.2f}s", icon="⚡")
+                        mfr_info = db.get_manufacturer_by_medicine(entity.get('medicine', ''))
+                        if mfr_info:
+                            entity['manufacturer'] = mfr_info.get('name', 'Unknown')
+                            entity['medicine_standardized'] = mfr_info.get('medicine_match', entity['medicine'])
+                        else:
+                            entity['manufacturer'] = 'Unknown'
+                            entity['medicine_standardized'] = entity.get('medicine', '')
+                        
+                        # Add metadata
+                        entity['status'] = '✓'
+                        entity['priority'] = 'Normal'
+                        entity['timestamp'] = datetime.now().strftime('%H:%M')
+                    
+                    # Update Session State
+                    st.session_state.orders.extend(entities)
+                    st.toast(f"✅ Extracted {len(entities)} items", icon="💊")
+                else:
+                    st.warning("No medicines detected in speech.")
                 
                 # Clear status
                 status_container.empty()
@@ -315,7 +392,7 @@ def render_order_processing_interface(
                 status_container.error(f"Error: {e}")
                 st.stop()
     
-    # Display Output (Right Column) - Outside the processing block to persist state
+    # Display Output (Right Column) - Pure Rendering
     with col2:
         if st.session_state.last_transcription:
             # Transcription Box
@@ -324,45 +401,7 @@ def render_order_processing_interface(
             st.markdown(f'<p style="font-size: 1.1rem; color: #e2e8f0;">{st.session_state.last_transcription}</p>', unsafe_allow_html=True)
             st.markdown('</div>', unsafe_allow_html=True)
             
-            # 3. Entity Extraction & Order Generation
-            # 3. Entity Extraction & Order Generation
-            if process_btn: # Only re-run extraction on button press
-                # Custom Extraction Animation
-                extraction_status = st.empty()
-                extraction_status.markdown('''
-                    <div style="text-align: center; margin: 20px 0; color: #a855f7;">
-                        <span style="display: inline-block; animation: pulse 1s infinite;">💊</span>
-                        <span style="margin-left: 8px; font-weight: 500;">Extracting Medicines...</span>
-                    </div>
-                ''', unsafe_allow_html=True)
-                
-                # Simulate tiny delay for visual feedback if needed, but here we just process
-                entities = extractor.extract(st.session_state.last_transcription)
-                
-                extraction_status.empty() # Clear animation
-                
-                if entities:
-                    # Route each entity to its manufacturer
-                    from datetime import datetime
-                    for entity in entities:
-                        # Lookup manufacturer for this medicine
-                        mfr_info = db.get_manufacturer_by_medicine(entity.get('medicine', ''))
-                        if mfr_info:
-                            entity['manufacturer'] = mfr_info.get('name', 'Unknown')
-                            entity['medicine_standardized'] = mfr_info.get('medicine_match', entity['medicine'])
-                        else:
-                            entity['manufacturer'] = 'Unknown'
-                            entity['medicine_standardized'] = entity.get('medicine', '')
-                        
-                        # Add order metadata
-                        entity['status'] = '✓'
-                        entity['priority'] = 'Normal'
-                        entity['timestamp'] = datetime.now().strftime('%H:%M')
-                    
-                    st.session_state.orders.extend(entities)
-                    st.toast(f"✅ Extracted {len(entities)} items", icon="💊")
-                else:
-                    st.warning("No medicines detected in speech.")
+            # (Extraction logic moved up)
             
             # Orders Table
             if st.session_state.orders:
