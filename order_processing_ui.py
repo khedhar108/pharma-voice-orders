@@ -367,7 +367,7 @@ def render_order_processing_interface(
                         html_parts.append(f'<span class="chip-qty">{order["quantity"]}</span>')
                         html_parts.append('</div>')
                 else:
-                    html_parts.append('<div style="color: rgba(255,255,255,0.2); font-style: italic; font-size: 0.85rem; text-align: center; padding: 10px;">Waiting for data...</div>')
+                    html_parts.append('<div class="text-muted">Waiting for data...</div>')
                     
                 html_parts.append('</div></div>')
                 st.markdown("".join(html_parts), unsafe_allow_html=True)

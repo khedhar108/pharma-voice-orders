@@ -160,3 +160,43 @@ class EntityExtractor:
                 })
         
         return found_orders
+    
+    def process_orders(self, entities: List[Dict], distributor) -> List[Dict]:
+        """
+        Process extracted entities into orders with manufacturer routing.
+        
+        Args:
+            entities: List of extracted medicine entities from extract()
+            distributor: ManufacturerDB instance for looking up manufacturers
+            
+        Returns:
+            List of order dicts with manufacturer, medicine, quantity, status, priority, timestamp
+        """
+        from datetime import datetime
+        
+        orders = []
+        for entity in entities:
+            # Look up manufacturer from DB
+            med_name = entity.get("medicine", "")
+            manufacturer = "Unknown"
+            priority = "normal"
+            
+            # Find manufacturer in DB
+            med_row = distributor.medicines[distributor.medicines['medicine_name'] == med_name]
+            if not med_row.empty:
+                manufacturer = med_row.iloc[0].get('manufacturer', 'Unknown')
+                priority = med_row.iloc[0].get('priority', 'normal')
+            
+            orders.append({
+                "manufacturer": manufacturer,
+                "medicine": med_name,
+                "quantity": entity.get("quantity", "1 units"),
+                "dosage": entity.get("dosage", "-"),
+                "form": entity.get("form", "tablet"),
+                "status": "✅ Queued",
+                "priority": priority,
+                "confidence": entity.get("confidence", 0),
+                "timestamp": datetime.now().strftime("%H:%M:%S")
+            })
+        
+        return orders

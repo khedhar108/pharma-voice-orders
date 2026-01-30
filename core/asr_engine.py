@@ -4,7 +4,7 @@ import streamlit as st
 from core.runtime_resources import configure_runtime
 
 class ASREngine:
-    def __init__(self, model_id: str = "openai/whisper-tiny"):
+    def __init__(self, model_id: str = "openai/whisper-medium"):
         # Configure runtime resources (thread limiting for CPU)
         self.runtime_config = configure_runtime(model_id)
         

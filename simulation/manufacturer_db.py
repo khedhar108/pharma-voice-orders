@@ -53,11 +53,36 @@ class ManufacturerDB:
         # Get list of known medicines
         known_meds = self.medicines['medicine_name'].tolist()
         
-        # Fuzzy match to find closest medicine name
-        match = process.extractOne(resolved_name, known_meds, scorer=fuzz.WRatio)
+        # Composite Weighted Scorer (ULTRATHINK Strategy)
+        # Prioritize structure (token_set) over pure substring (partial)
+        # Weight: 60% Token Set (handles reordering "Dolo 650" == "650 Dolo")
+        #         40% Partial Ratio (handles substrings "Dolo" in "Dolo 650")
         
-        if not match or match[1] < 75:  # Raised confidence threshold
+        matches = []
+        for candidate in known_meds:
+            token_score = fuzz.token_set_ratio(resolved_name, candidate)
+            partial_score = fuzz.partial_ratio(resolved_name, candidate)
+            
+            # Weighted Composite Score
+            final_score = (0.60 * token_score) + (0.40 * partial_score)
+            
+            # Optimization: Only keep good matches to reduce sort time
+            if final_score >= 70:  # Pre-filter
+                matches.append((candidate, final_score))
+        
+        if not matches:
             return None
+            
+        # Get best match
+        best_match = max(matches, key=lambda x: x[1])
+        dataset_med_name, confidence = best_match
+        
+        # "Trust Cliff" - Safety Threshold
+        # Using 75 as strict safety gate
+        if confidence < 75:
+            return None
+            
+        match = (dataset_med_name, confidence) # Compatible format
             
         dataset_med_name = match[0]
         

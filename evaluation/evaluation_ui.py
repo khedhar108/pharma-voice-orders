@@ -122,8 +122,6 @@ R_001.m4a,2,AZILIDE-500MG,10 packs,500mg,tablet""", language="csv")
     
     if run_eval:
         all_extracted = []
-    if run_eval:
-        all_extracted = []
         
         # Custom Progress
         progress_placeholder = st.empty()
