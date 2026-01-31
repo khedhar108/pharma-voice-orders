@@ -1,4 +1,1254 @@
 # Ground Truth Dataset for Entity Extraction Evaluation
-# Instructions: Listen to each audio file and add rows for each medicine order spoken
-# Use exact medicine names from Medicine_Names_Packges.csv
-audio_file,order_index,medicine_name,quantity,dosage,form
+# Generated from Medicine_Names_Packges.csv
+# Instructions: This is auto-generated ground truth for evaluation
+# Columns: audio_file, order_index, medicine_name, quantity, dosage, form, manufacturer
+audio_file,order_index,medicine_name,quantity,dosage,form,manufacturer
+R_001.m4a,1,ACETAMIDE-250,20 packs,-,tablet,Micro Labs Limited
+R_002.m4a,2,ACTAVIR-400MG,100 strips,400mg,tablet,Micro Labs Limited
+R_003.m4a,3,ALCAFT EYE DROPS,10 boxes,-,syrup,Micro Labs Limited
+R_004.m4a,4,ALLERCET,10 boxes,-,tablet,Micro Labs Limited
+R_005.m4a,5,ALLERCET COLD,10 strips,-,tablet,Micro Labs Limited
+R_006.m4a,6,ALLERCET COLD SYP,50 packs,-,tablet,Micro Labs Limited
+R_007.m4a,7,ALLERCET SYP,50 strips,-,syrup,Micro Labs Limited
+R_008.m4a,8,ALLERCET-AX SYP,10 packs,-,tablet,Micro Labs Limited
+R_009.m4a,9,ALLERCET-AX TAB,20 strips,-,tablet,Micro Labs Limited
+R_010.m4a,10,ALLERCET-COLD DROPS 15 ML,10 vials,15ml,tablet,Micro Labs Limited
+R_011.m4a,11,ALLERCET-DC,10 boxes,-,tablet,Micro Labs Limited
+R_012.m4a,12,ALLERCET-FX TAB,20 strips,-,tablet,Micro Labs Limited
+R_013.m4a,13,ALLERCET-KID TAB,20 bottles,-,tablet,Micro Labs Limited
+R_014.m4a,14,ALLERCET-L,20 vials,-,tablet,Micro Labs Limited
+R_015.m4a,15,ALLERCET-L SYP 30ML,50 packs,30ml,syrup,Micro Labs Limited
+R_016.m4a,16,ALLERCET-L SYP 60 ML,5 boxes,60ml,tablet,Micro Labs Limited
+R_017.m4a,17,ALLERCET-M KID TAB,20 strips,-,tablet,Micro Labs Limited
+R_018.m4a,18,ALLERCET-M SYP,20 vials,-,tablet,Micro Labs Limited
+R_019.m4a,19,ALLERCET-M TAB,10 packs,-,tablet,Micro Labs Limited
+R_020.m4a,20,AMIODAR-100MG,10 strips,100mg,tablet,Micro Labs Limited
+R_001.m4a,21,AMIODAR-200MG,20 packs,200mg,tablet,Micro Labs Limited
+R_002.m4a,22,AMLONG-10,10 strips,-,tablet,Micro Labs Limited
+R_003.m4a,23,AMLONG-2.5,20 vials,-,tablet,Micro Labs Limited
+R_004.m4a,24,AMLONG-5,50 packs,-,tablet,Micro Labs Limited
+R_005.m4a,25,AMLONG-A,20 strips,-,tablet,Micro Labs Limited
+R_006.m4a,26,AMLONG-A-25,10 strips,-,tablet,Micro Labs Limited
+R_007.m4a,27,AMLONG-CT,100 strips,-,tablet,Micro Labs Limited
+R_008.m4a,28,AMLONG-H,20 strips,-,tablet,Micro Labs Limited
+R_009.m4a,29,AMLONG-MT-25,5 bottles,-,tablet,Micro Labs Limited
+R_010.m4a,30,AMLONG-MT-50,20 strips,-,tablet,Micro Labs Limited
+R_011.m4a,31,AMLONG-TL-40,10 bottles,-,tablet,Micro Labs Limited
+R_012.m4a,32,AMLONG-TRIO,10 strips,-,tablet,Micro Labs Limited
+R_013.m4a,33,AMLOZAAR,20 bottles,-,tablet,Micro Labs Limited
+R_014.m4a,34,AMLOZAAR-H,10 boxes,-,tablet,Micro Labs Limited
+R_015.m4a,35,ANGIFREE-20MG,100 strips,20mg,tablet,Micro Labs Limited
+R_016.m4a,36,ANGIFREE-SR-30MG,100 strips,30mg,tablet,Micro Labs Limited
+R_017.m4a,37,ANGIPLAT-2.5,5 bottles,-,tablet,Micro Labs Limited
+R_018.m4a,38,ANGIPLAT-6.5,10 vials,-,tablet,Micro Labs Limited
+R_019.m4a,39,ANGIZAAR-25,10 strips,-,tablet,Micro Labs Limited
+R_020.m4a,40,ANGIZAAR-50MG,5 bottles,50mg,tablet,Micro Labs Limited
+R_001.m4a,41,ANGIZAAR-AT,50 strips,-,tablet,Micro Labs Limited
+R_002.m4a,42,ANGIZAAR-H,20 bottles,-,tablet,Micro Labs Limited
+R_003.m4a,43,ANORELIF,10 strips,-,tablet,Micro Labs Limited
+R_004.m4a,44,ANXIT .25,10 packs,-,tablet,Micro Labs Limited
+R_005.m4a,45,ANXIT .5,10 vials,-,tablet,Micro Labs Limited
+R_006.m4a,46,ANXIT FORTE,20 vials,-,tablet,Micro Labs Limited
+R_007.m4a,47,ANXIT PLUS,10 boxes,-,tablet,Micro Labs Limited
+R_008.m4a,48,ANXIT-0.5SR,5 boxes,-,tablet,Micro Labs Limited
+R_009.m4a,49,ANXIT-1MG,5 boxes,1mg,tablet,Micro Labs Limited
+R_010.m4a,50,ANXIT-1SR,20 strips,-,tablet,Micro Labs Limited
+R_011.m4a,51,APIVAS-2.5MG,10 boxes,5mg,tablet,Micro Labs Limited
+R_012.m4a,52,APIVAS-5MG,20 vials,5mg,tablet,Micro Labs Limited
+R_013.m4a,53,AQUAPRED D/DROP,5 bottles,-,syrup,Micro Labs Limited
+R_014.m4a,54,AQUAPRED-O DROPS,20 strips,-,syrup,Micro Labs Limited
+R_015.m4a,55,ARBITEL-20,10 strips,-,tablet,Micro Labs Limited
+R_016.m4a,56,ARBITEL-40,10 boxes,-,tablet,Micro Labs Limited
+R_017.m4a,57,ARBITEL-80,100 strips,-,tablet,Micro Labs Limited
+R_018.m4a,58,ARBITEL-80-AM,100 strips,-,tablet,Micro Labs Limited
+R_019.m4a,59,ARBITEL-80-H,5 bottles,-,tablet,Micro Labs Limited
+R_020.m4a,60,ARBITEL-AM,10 strips,-,tablet,Micro Labs Limited
+R_001.m4a,61,ARBITEL-AMH,10 boxes,-,tablet,Micro Labs Limited
+R_002.m4a,62,ARBITEL-AV,50 strips,-,tablet,Micro Labs Limited
+R_003.m4a,63,ARBITEL-CT 40/6.25 TAB,10 packs,-,tablet,Micro Labs Limited
+R_004.m4a,64,ARBITEL-CT-40,5 boxes,-,tablet,Micro Labs Limited
+R_005.m4a,65,ARBITEL-CT-80,10 packs,-,tablet,Micro Labs Limited
+R_006.m4a,66,ARBITEL-H,100 strips,-,tablet,Micro Labs Limited
+R_007.m4a,67,ARBITEL-H-MT-25,10 packs,-,tablet,Micro Labs Limited
+R_008.m4a,68,ARBITEL-H-MT-50MG,10 vials,50mg,tablet,Micro Labs Limited
+R_009.m4a,69,ARBITEL-MT-25MG,5 bottles,25mg,tablet,Micro Labs Limited
+R_010.m4a,70,ARBITEL-MT-50MG,10 packs,50mg,tablet,Micro Labs Limited
+R_011.m4a,71,ARBITEL-TRIO-25,20 vials,-,tablet,Micro Labs Limited
+R_012.m4a,72,ARBITEL-TRIO-50,10 packs,-,tablet,Micro Labs Limited
+R_013.m4a,73,ARETS TAB,20 packs,-,tablet,Micro Labs Limited
+R_014.m4a,74,ARNIV-100 TAB,10 packs,-,tablet,Micro Labs Limited
+R_015.m4a,75,ARNIV-50 TAB,50 packs,-,tablet,Micro Labs Limited
+R_016.m4a,76,ASPIVAS,10 boxes,-,tablet,Micro Labs Limited
+R_017.m4a,77,ASTIN-10,10 packs,-,tablet,Micro Labs Limited
+R_018.m4a,78,ASTIN-20,10 vials,-,tablet,Micro Labs Limited
+R_019.m4a,79,ASTIN-40MG,5 boxes,40mg,tablet,Micro Labs Limited
+R_020.m4a,80,ASTIN-CV-10,10 strips,-,tablet,Micro Labs Limited
+R_001.m4a,81,ASTIN-CV-20,20 vials,-,tablet,Micro Labs Limited
+R_002.m4a,82,AVAS AM,10 strips,-,tablet,Micro Labs Limited
+R_003.m4a,83,AVAS-10,50 strips,-,tablet,Micro Labs Limited
+R_004.m4a,84,AVAS-10-ASP,10 vials,-,tablet,Micro Labs Limited
+R_005.m4a,85,AVAS-20,50 packs,-,tablet,Micro Labs Limited
+R_006.m4a,86,AVAS-20-EZ,50 packs,-,tablet,Micro Labs Limited
+R_007.m4a,87,AVAS-40,10 boxes,-,tablet,Micro Labs Limited
+R_008.m4a,88,AVAS-5,20 vials,-,tablet,Micro Labs Limited
+R_009.m4a,89,AVAS-80,5 boxes,-,tablet,Micro Labs Limited
+R_010.m4a,90,AVAS-ASP-10,20 packs,-,tablet,Micro Labs Limited
+R_011.m4a,91,AVAS-ASP-20,20 packs,-,tablet,Micro Labs Limited
+R_012.m4a,92,AVAS-CV-10MG,100 strips,10mg,tablet,Micro Labs Limited
+R_013.m4a,93,AVAS-CV-20MG,20 packs,20mg,tablet,Micro Labs Limited
+R_014.m4a,94,AVAS-D-10MG,20 strips,10mg,tablet,Micro Labs Limited
+R_015.m4a,95,AVAS-D-20MG,10 vials,20mg,tablet,Micro Labs Limited
+R_016.m4a,96,AVAS-EZ,5 bottles,-,tablet,Micro Labs Limited
+R_017.m4a,97,AVAS-F TAB,10 boxes,-,tablet,Micro Labs Limited
+R_018.m4a,98,AVAS-GOLD-10,50 packs,-,tablet,Micro Labs Limited
+R_019.m4a,99,AVAS-GOLD-20,20 bottles,-,tablet,Micro Labs Limited
+R_020.m4a,100,AVAS-PLUS,20 strips,-,tablet,Micro Labs Limited
+R_001.m4a,101,AVOMIRA-25MG,50 packs,25mg,tablet,Micro Labs Limited
+R_002.m4a,102,AVOMIRA-50MG,10 packs,50mg,tablet,Micro Labs Limited
+R_003.m4a,103,AVOPROST TAB,10 vials,-,tablet,Micro Labs Limited
+R_004.m4a,104,AVOPROST-D,20 strips,-,tablet,Micro Labs Limited
+R_005.m4a,105,AZIDERM-10% CREAM,5 boxes,-,tablet,Micro Labs Limited
+R_006.m4a,106,AZIDERM-10% GEL,20 packs,-,tablet,Micro Labs Limited
+R_007.m4a,107,AZIDERM-20 GEL,20 packs,-,tablet,Micro Labs Limited
+R_008.m4a,108,AZIDERM-20% CREAM,20 strips,-,tablet,Micro Labs Limited
+R_009.m4a,109,AZILIDE-100 SYP,10 boxes,-,syrup,Micro Labs Limited
+R_010.m4a,110,AZILIDE-100DT,10 strips,-,tablet,Micro Labs Limited
+R_011.m4a,111,AZILIDE-200 SYP,20 packs,-,syrup,Micro Labs Limited
+R_012.m4a,112,AZILIDE-250MG,20 packs,250mg,tablet,Micro Labs Limited
+R_013.m4a,113,AZILIDE-500MG,5 boxes,500mg,tablet,Micro Labs Limited
+R_014.m4a,114,AZILIDE-AX TAB,10 packs,-,tablet,Micro Labs Limited
+R_015.m4a,115,AZILIDE-DT,10 boxes,-,tablet,Micro Labs Limited
+R_016.m4a,116,AZILIDE-XL-100ML REDIUSE,10 boxes,100ml,syrup,Micro Labs Limited
+R_017.m4a,117,AZILIDE-XL-200 REDIUSE,10 packs,-,syrup,Micro Labs Limited
+R_018.m4a,118,BACTOCLAV DROPS,10 bottles,-,syrup,Micro Labs Limited
+R_019.m4a,119,BACTOCLAV INJ 1.2G,100 strips,-,tablet,Micro Labs Limited
+R_020.m4a,120,BACTOCLAV SYP,20 strips,-,syrup,Micro Labs Limited
+R_001.m4a,121,BACTOCLAV-1000,20 bottles,-,tablet,Micro Labs Limited
+R_002.m4a,122,BACTOCLAV-150MG INJ,10 strips,150mg,injection,Micro Labs Limited
+R_003.m4a,123,BACTOCLAV-300MG INJ,5 bottles,300mg,injection,Micro Labs Limited
+R_004.m4a,124,BACTOCLAV-375,50 packs,-,tablet,Micro Labs Limited
+R_005.m4a,125,BACTOCLAV-600MG INJ,10 bottles,600mg,injection,Micro Labs Limited
+R_006.m4a,126,BACTOCLAV-625,10 strips,-,tablet,Micro Labs Limited
+R_007.m4a,127,BACTOCLAV-DDS 30ML SYP,20 packs,30ml,syrup,Micro Labs Limited
+R_008.m4a,128,BACTOCLAV-DS 457 COMP PACK 60ML,50 packs,60ml,tablet,Micro Labs Limited
+R_009.m4a,129,BACTOCLAV-DT,10 strips,-,tablet,Micro Labs Limited
+R_010.m4a,130,BACTOCLAV-ES DRY SPY 60 ML,10 strips,60ml,tablet,Micro Labs Limited
+R_011.m4a,131,BAMBRAL-10,10 strips,-,tablet,Micro Labs Limited
+R_012.m4a,132,BC-300,10 boxes,-,tablet,Micro Labs Limited
+R_013.m4a,133,BENLONG-4MG,10 packs,4mg,tablet,Micro Labs Limited
+R_014.m4a,134,BENLONG-8MG,50 packs,8mg,tablet,Micro Labs Limited
+R_015.m4a,135,BEROCIN-C TAB,10 packs,-,tablet,Micro Labs Limited
+R_016.m4a,136,BEROCIN-CZ 100ML SYP,50 packs,100ml,syrup,Micro Labs Limited
+R_017.m4a,137,BEROCIN-CZ 200ML SYP,20 vials,200ml,syrup,Micro Labs Limited
+R_018.m4a,138,BEROCIN-CZ CAP,10 bottles,-,tablet,Micro Labs Limited
+R_019.m4a,139,BEROCIN-DZ TAB,100 strips,-,tablet,Micro Labs Limited
+R_020.m4a,140,BESIBACT EYE DROPS,10 boxes,-,syrup,Micro Labs Limited
+R_001.m4a,141,BETA ANXIT-20,10 vials,-,tablet,Micro Labs Limited
+R_002.m4a,142,BETABRIM E/DROPS,10 bottles,-,syrup,Micro Labs Limited
+R_003.m4a,143,BETAFREE EYE DROPS,50 strips,-,syrup,Micro Labs Limited
+R_004.m4a,144,BETAGEL,20 packs,-,tablet,Micro Labs Limited
+R_005.m4a,145,BETAGEL-G,20 strips,-,tablet,Micro Labs Limited
+R_006.m4a,146,BETAGEL-S,20 packs,-,tablet,Micro Labs Limited
+R_007.m4a,147,BFN E/DROPS,10 boxes,-,syrup,Micro Labs Limited
+R_008.m4a,148,BICEF-125 DT,20 bottles,-,tablet,Micro Labs Limited
+R_009.m4a,149,BICEF-125 MG SYP,5 boxes,125mg,syrup,Micro Labs Limited
+R_010.m4a,150,BICEF-250 DT,50 packs,-,tablet,Micro Labs Limited
+R_011.m4a,151,BICEF-250 MG SYP,5 boxes,250mg,syrup,Micro Labs Limited
+R_012.m4a,152,BICEF-500 DT,50 strips,-,tablet,Micro Labs Limited
+R_013.m4a,153,BICEF-CV-250MG,5 boxes,250mg,tablet,Micro Labs Limited
+R_014.m4a,154,BICEF-CV-500MG,5 bottles,500mg,tablet,Micro Labs Limited
+R_015.m4a,155,BILAST,10 vials,-,tablet,Micro Labs Limited
+R_016.m4a,156,BILAST-40 TAB,20 packs,-,tablet,Micro Labs Limited
+R_017.m4a,157,BILAST-M,50 strips,-,tablet,Micro Labs Limited
+R_018.m4a,158,BILAST-M SYP 60 ML,20 bottles,60ml,tablet,Micro Labs Limited
+R_019.m4a,159,BIMADAY E/DROPS,100 strips,-,syrup,Micro Labs Limited
+R_020.m4a,160,BIOFER,5 bottles,-,tablet,Micro Labs Limited
+R_001.m4a,161,BIOFER-XT DROPS,50 packs,-,tablet,Micro Labs Limited
+R_002.m4a,162,BIOFER-XT SYP,20 vials,-,syrup,Micro Labs Limited
+R_003.m4a,163,BIOFER-XT TAB,10 packs,-,tablet,Micro Labs Limited
+R_004.m4a,164,BIOSTAR,5 bottles,-,tablet,Micro Labs Limited
+R_005.m4a,165,BIOSTAR GOLD,10 strips,-,tablet,Micro Labs Limited
+R_006.m4a,166,BIOVITAL,20 packs,-,tablet,Micro Labs Limited
+R_007.m4a,167,BIOVITAL GOLD CAP,20 packs,-,tablet,Micro Labs Limited
+R_008.m4a,168,BIPACEF-1500MG INJ,20 strips,1500mg,tablet,Micro Labs Limited
+R_009.m4a,169,BIPACEF-250MG,20 vials,250mg,tablet,Micro Labs Limited
+R_010.m4a,170,BIPACEF-500MG,20 vials,500mg,tablet,Micro Labs Limited
+R_011.m4a,171,BIPACEF-750MG INJ,5 boxes,750mg,injection,Micro Labs Limited
+R_012.m4a,172,BISOLONG-2.5 MG TAB,100 strips,5mg,tablet,Micro Labs Limited
+R_013.m4a,173,BISOLONG-5 MG TAB,5 bottles,5mg,tablet,Micro Labs Limited
+R_014.m4a,174,BISOT-2.5 TAB,10 vials,-,tablet,Micro Labs Limited
+R_015.m4a,175,BISOT-5 TAB,10 vials,-,tablet,Micro Labs Limited
+R_016.m4a,176,BONMIN CAP,20 strips,-,tablet,Micro Labs Limited
+R_017.m4a,177,BONMIN-K2,50 strips,-,tablet,Micro Labs Limited
+R_018.m4a,178,BRIGREL TAB,10 bottles,-,tablet,Micro Labs Limited
+R_019.m4a,179,BRIVAPRIDE-100MG,50 strips,100mg,tablet,Micro Labs Limited
+R_020.m4a,180,BRIVAPRIDE-50MG,10 strips,50mg,tablet,Micro Labs Limited
+R_001.m4a,181,BRIVAPRIDE-75MG,10 packs,75mg,tablet,Micro Labs Limited
+R_002.m4a,182,BRUCET,20 vials,-,tablet,Micro Labs Limited
+R_003.m4a,183,BUCAY OINT,100 strips,-,tablet,Micro Labs Limited
+R_004.m4a,184,CALNIFIT TAB,20 bottles,-,tablet,Micro Labs Limited
+R_005.m4a,185,CALOSOFT LOTION 100ML,20 packs,100ml,syrup,Micro Labs Limited
+R_006.m4a,186,CALOSOFT LOTION 50ML,50 packs,50ml,syrup,Micro Labs Limited
+R_007.m4a,187,CALOSOFT PLUS,10 bottles,-,tablet,Micro Labs Limited
+R_008.m4a,188,CALOSOFT-AF 100ML,5 bottles,100ml,syrup,Micro Labs Limited
+R_009.m4a,189,CALOSOFT-AF 50ML,20 vials,50ml,syrup,Micro Labs Limited
+R_010.m4a,190,CANDELONG-16,5 boxes,-,tablet,Micro Labs Limited
+R_011.m4a,191,CANDELONG-4,20 vials,-,tablet,Micro Labs Limited
+R_012.m4a,192,CANDELONG-8,10 packs,-,tablet,Micro Labs Limited
+R_013.m4a,193,CARBOX-150MG,10 boxes,150mg,tablet,Micro Labs Limited
+R_014.m4a,194,CARBOX-300,20 bottles,-,tablet,Micro Labs Limited
+R_015.m4a,195,CARIPIL SYP,20 vials,-,syrup,Micro Labs Limited
+R_016.m4a,196,CARIPILL TAB,20 packs,-,tablet,Micro Labs Limited
+R_017.m4a,197,CARTINEX TAB,20 bottles,-,tablet,Micro Labs Limited
+R_018.m4a,198,CARVIDON-20,5 boxes,-,tablet,Micro Labs Limited
+R_019.m4a,199,CARVIDON-MR,10 strips,-,tablet,Micro Labs Limited
+R_020.m4a,200,CARVIDON-MT,20 strips,-,tablet,Micro Labs Limited
+R_001.m4a,201,CARVIDON-OD CAP,50 packs,-,tablet,Micro Labs Limited
+R_002.m4a,202,CARVIPRESS-12.5,10 boxes,-,tablet,Micro Labs Limited
+R_003.m4a,203,CARVIPRESS-25,20 bottles,-,tablet,Micro Labs Limited
+R_004.m4a,204,CARVIPRESS-3.125,50 packs,-,tablet,Micro Labs Limited
+R_005.m4a,205,CARVIPRESS-6.25,20 strips,-,tablet,Micro Labs Limited
+R_006.m4a,206,CEFGLOBE-100MG,10 bottles,100mg,tablet,Micro Labs Limited
+R_007.m4a,207,CEFGLOBE-200,50 strips,-,tablet,Micro Labs Limited
+R_008.m4a,208,CEFGLOBE-OZ TAB,5 boxes,-,tablet,Micro Labs Limited
+R_009.m4a,209,CEFGLOBE-S 1GM INJ,50 packs,1gm,injection,Micro Labs Limited
+R_010.m4a,210,CEFGLOBE-S-FORTE 1.5GM INJ,5 boxes,5gm,injection,Micro Labs Limited
+R_011.m4a,211,CEFGLOBE-S-FORTE 2GM INJ,20 strips,2gm,injection,Micro Labs Limited
+R_012.m4a,212,CEFGLOB-S-FORTE-3GM,20 vials,3gm,injection,Micro Labs Limited
+R_013.m4a,213,CELEPRA-10MG,20 bottles,10mg,tablet,Micro Labs Limited
+R_014.m4a,214,CELEPRA-20MG,10 vials,20mg,tablet,Micro Labs Limited
+R_015.m4a,215,CELEPRA-40,10 vials,-,tablet,Micro Labs Limited
+R_016.m4a,216,CHANNEL-30,5 bottles,-,tablet,Micro Labs Limited
+R_017.m4a,217,CHANNEL-60,10 strips,-,tablet,Micro Labs Limited
+R_018.m4a,218,CHANNEL-SR 90,50 strips,-,tablet,Micro Labs Limited
+R_019.m4a,219,CHANNEL-SR-120,50 strips,-,tablet,Micro Labs Limited
+R_020.m4a,220,CHOOZ CREAM 10GM,10 bottles,10gm,tablet,Micro Labs Limited
+R_001.m4a,221,CHOOZ- CREAM 5 GM,10 vials,5gm,tablet,Micro Labs Limited
+R_002.m4a,222,CITALIFT SYP,10 vials,-,tablet,Micro Labs Limited
+R_003.m4a,223,CLARIWIN DRY SYP 125MG,10 strips,125mg,tablet,Micro Labs Limited
+R_004.m4a,224,CLARIWIN-250,10 packs,-,tablet,Micro Labs Limited
+R_005.m4a,225,CLARIWIN-500MG,20 packs,500mg,tablet,Micro Labs Limited
+R_006.m4a,226,CLARIWIN-DT,10 boxes,-,tablet,Micro Labs Limited
+R_007.m4a,227,CLYNOX CAP,50 packs,-,tablet,Micro Labs Limited
+R_008.m4a,228,CORNIGEL OINT,20 strips,-,tablet,Micro Labs Limited
+R_009.m4a,229,CORTIL,10 bottles,-,tablet,Micro Labs Limited
+R_010.m4a,230,CORTILATE,5 boxes,-,tablet,Micro Labs Limited
+R_011.m4a,231,CORTILATE-N,50 packs,-,tablet,Micro Labs Limited
+R_012.m4a,232,CORTILATE-S,50 strips,-,tablet,Micro Labs Limited
+R_013.m4a,233,COVERIT 10%,10 bottles,-,tablet,Micro Labs Limited
+R_014.m4a,234,COVERIT PLUS,10 packs,-,tablet,Micro Labs Limited
+R_015.m4a,235,COVERIT-2%,10 boxes,-,syrup,Micro Labs Limited
+R_016.m4a,236,COVERIT-5%,50 packs,-,syrup,Micro Labs Limited
+R_017.m4a,237,COXIB-200,10 vials,-,tablet,Micro Labs Limited
+R_018.m4a,238,CURCUPRIDE,50 strips,-,tablet,Micro Labs Limited
+R_019.m4a,239,CUTIWASH,10 vials,-,syrup,Micro Labs Limited
+R_020.m4a,240,CUTIWASH SOFT,100 strips,-,syrup,Micro Labs Limited
+R_001.m4a,241,D,20 vials,-,tablet,Micro Labs Limited
+R_002.m4a,242,DABILONG-110,20 bottles,-,tablet,Micro Labs Limited
+R_003.m4a,243,DABILONG-150,10 packs,-,tablet,Micro Labs Limited
+R_004.m4a,244,DABILONG-75MG,10 boxes,75mg,tablet,Micro Labs Limited
+R_005.m4a,245,DAJIO-10MG,5 bottles,10mg,tablet,Micro Labs Limited
+R_006.m4a,246,DAJIO-5 TAB,20 vials,-,tablet,Micro Labs Limited
+R_007.m4a,247,DAJIO-GM 1 TAB,10 vials,-,tablet,Micro Labs Limited
+R_008.m4a,248,DAJIO-GM 2 TAB,20 packs,-,tablet,Micro Labs Limited
+R_009.m4a,249,DAJIO-GM FORTE 2 TAB,20 bottles,-,tablet,Micro Labs Limited
+R_010.m4a,250,DAJIO-L 5 TAB,5 bottles,-,tablet,Micro Labs Limited
+R_011.m4a,251,DAJIO-M-1000,100 strips,-,tablet,Micro Labs Limited
+R_012.m4a,252,DAJIO-M-500,5 boxes,-,tablet,Micro Labs Limited
+R_013.m4a,253,DAPOLAST-30,5 bottles,-,tablet,Micro Labs Limited
+R_014.m4a,254,DARBOSIS-25,10 bottles,-,tablet,Micro Labs Limited
+R_015.m4a,255,DARBOSIS-40,20 strips,-,tablet,Micro Labs Limited
+R_016.m4a,256,DAWNEX,5 boxes,-,tablet,Micro Labs Limited
+R_017.m4a,257,DENSUEX,5 boxes,-,syrup,Micro Labs Limited
+R_018.m4a,258,DIABOSE-25,10 strips,-,tablet,Micro Labs Limited
+R_019.m4a,259,DIABOSE-50,20 bottles,-,tablet,Micro Labs Limited
+R_020.m4a,260,DIACOMB-D3,10 bottles,-,tablet,Micro Labs Limited
+R_001.m4a,261,DIAMIG-25,10 vials,-,tablet,Micro Labs Limited
+R_002.m4a,262,DIAMIG-50,50 packs,-,tablet,Micro Labs Limited
+R_003.m4a,263,DIANORM,50 packs,-,tablet,Micro Labs Limited
+R_004.m4a,264,DIANORM FORTE,20 strips,-,tablet,Micro Labs Limited
+R_005.m4a,265,DIANORM TOTAL-30MG,5 bottles,30mg,tablet,Micro Labs Limited
+R_006.m4a,266,DIANORM TOTAL-60MG,10 boxes,60mg,tablet,Micro Labs Limited
+R_007.m4a,267,DIANORM-40,20 packs,-,tablet,Micro Labs Limited
+R_008.m4a,268,DIANORM-M,10 strips,-,tablet,Micro Labs Limited
+R_009.m4a,269,DIANORM-M-OD,100 strips,-,tablet,Micro Labs Limited
+R_010.m4a,270,DIANORM-M-OD-1000MG,10 boxes,1000mg,tablet,Micro Labs Limited
+R_011.m4a,271,DIANORM-OD,20 packs,-,tablet,Micro Labs Limited
+R_012.m4a,272,DIANORM-OD 30MG,20 vials,30mg,tablet,Micro Labs Limited
+R_013.m4a,273,DIANORM-OD-60,5 bottles,-,tablet,Micro Labs Limited
+R_014.m4a,274,DIAPRIDE FORTE,50 packs,-,tablet,Micro Labs Limited
+R_015.m4a,275,DIAPRIDE FORTE 1G,10 packs,-,tablet,Micro Labs Limited
+R_016.m4a,276,DIAPRIDE PLUS,20 strips,-,tablet,Micro Labs Limited
+R_017.m4a,277,DIAPRIDE PLUS 1G,100 strips,-,tablet,Micro Labs Limited
+R_018.m4a,278,DIAPRIDE-1,20 vials,-,tablet,Micro Labs Limited
+R_019.m4a,279,DIAPRIDE-2,20 strips,-,tablet,Micro Labs Limited
+R_020.m4a,280,DIAPRIDE-4,5 boxes,-,tablet,Micro Labs Limited
+R_001.m4a,281,DIAPRIDE-DM 1 FORTE TAB,10 packs,-,tablet,Micro Labs Limited
+R_002.m4a,282,DIAPRIDE-DM 1 TAB,5 bottles,-,tablet,Micro Labs Limited
+R_003.m4a,283,DIAPRIDE-DM 2 FORTE,10 strips,-,tablet,Micro Labs Limited
+R_004.m4a,284,DIAPRIDE-DM 2 TAB,5 bottles,-,tablet,Micro Labs Limited
+R_005.m4a,285,DIAPRIDE-M-.5,10 strips,-,tablet,Micro Labs Limited
+R_006.m4a,286,DIAPRIDE-M-1,20 packs,-,tablet,Micro Labs Limited
+R_007.m4a,287,DIAPRIDE-M1 FORTE,10 strips,-,tablet,Micro Labs Limited
+R_008.m4a,288,DIAPRIDE-M1-HV,50 packs,-,tablet,Micro Labs Limited
+R_009.m4a,289,DIAPRIDE-M1-LV,50 strips,-,tablet,Micro Labs Limited
+R_010.m4a,290,DIAPRIDE-M-2,10 vials,-,tablet,Micro Labs Limited
+R_011.m4a,291,DIAPRIDE-M2 FORTE,10 packs,-,tablet,Micro Labs Limited
+R_012.m4a,292,DIAPRIDE-M2-HV,20 vials,-,tablet,Micro Labs Limited
+R_013.m4a,293,DIAPRIDE-M2-LV,10 strips,-,tablet,Micro Labs Limited
+R_014.m4a,294,DIAPRIDE-M3,100 strips,-,tablet,Micro Labs Limited
+R_015.m4a,295,DIAPRIDE-M3 FORTE,100 strips,-,tablet,Micro Labs Limited
+R_016.m4a,296,DIAPRIDE-M4 FORTE,10 boxes,-,tablet,Micro Labs Limited
+R_017.m4a,297,DIAPRIDE-M4 TAB,20 vials,-,tablet,Micro Labs Limited
+R_018.m4a,298,DIAPRIDE-MS2 FORTE,10 strips,-,tablet,Micro Labs Limited
+R_019.m4a,299,DIARICH POWDER,50 packs,-,tablet,Micro Labs Limited
+R_020.m4a,300,DIARICH POWDER 100GM,100 strips,100gm,tablet,Micro Labs Limited
+R_001.m4a,301,DIASURE-SR POWDER,20 vials,-,tablet,Micro Labs Limited
+R_002.m4a,302,DIAVAS-1MG,50 strips,1mg,tablet,Micro Labs Limited
+R_003.m4a,303,DIAVAS-2MG,5 bottles,2mg,tablet,Micro Labs Limited
+R_004.m4a,304,DIBIZIDE,10 strips,-,tablet,Micro Labs Limited
+R_005.m4a,305,DIBIZIDE-M,20 strips,-,tablet,Micro Labs Limited
+R_006.m4a,306,DIBIZIDE-OD,10 strips,-,tablet,Micro Labs Limited
+R_007.m4a,307,DIBIZIDE-OD-10MG,5 bottles,10mg,tablet,Micro Labs Limited
+R_008.m4a,308,DIFLORATE CREAM,5 bottles,-,tablet,Micro Labs Limited
+R_009.m4a,309,DILATE E/DROP,5 bottles,-,syrup,Micro Labs Limited
+R_010.m4a,310,DIVALPRID-OD 1000,50 strips,-,tablet,Micro Labs Limited
+R_011.m4a,311,DIVALPRID-OD 500,20 packs,-,tablet,Micro Labs Limited
+R_012.m4a,312,DIVALPRID-OD-250MG,10 strips,250mg,tablet,Micro Labs Limited
+R_013.m4a,313,DIVALPRID-OD-750,20 strips,-,tablet,Micro Labs Limited
+R_014.m4a,314,DIVON GEL,100 strips,-,tablet,Micro Labs Limited
+R_015.m4a,315,DIVON-INJ,100 strips,-,tablet,Micro Labs Limited
+R_016.m4a,316,DIVON-MR TAB,5 bottles,-,tablet,Micro Labs Limited
+R_017.m4a,317,DIVON-PLUS,5 boxes,-,tablet,Micro Labs Limited
+R_018.m4a,318,DIVON-RB,10 packs,-,tablet,Micro Labs Limited
+R_019.m4a,319,DIVON-S TAB,5 boxes,-,tablet,Micro Labs Limited
+R_020.m4a,320,DIVON-SR,20 vials,-,tablet,Micro Labs Limited
+R_001.m4a,321,D-LORINOL,20 bottles,-,tablet,Micro Labs Limited
+R_002.m4a,322,DO,20 vials,-,tablet,Micro Labs Limited
+R_003.m4a,323,DOLO DROPS,20 strips,-,syrup,Micro Labs Limited
+R_004.m4a,324,DOLO I.V.,20 strips,-,tablet,Micro Labs Limited
+R_005.m4a,325,DOLO INJ,20 vials,-,injection,Micro Labs Limited
+R_006.m4a,326,DOLO SYP,10 vials,-,syrup,Micro Labs Limited
+R_007.m4a,327,DOLO-1000MG,20 strips,1000mg,tablet,Micro Labs Limited
+R_008.m4a,328,DOLO-120 SYP,10 bottles,-,syrup,Micro Labs Limited
+R_009.m4a,329,DOLO-250 SYP,10 bottles,-,syrup,Micro Labs Limited
+R_010.m4a,330,DOLO-500,10 strips,-,tablet,Micro Labs Limited
+R_011.m4a,331,DOLO-650,10 packs,-,tablet,Micro Labs Limited
+R_012.m4a,332,DOLOBAK TAB,20 vials,-,tablet,Micro Labs Limited
+R_013.m4a,333,DOLOCET,100 strips,-,tablet,Micro Labs Limited
+R_014.m4a,334,DOLO-COLD SYP,10 packs,-,syrup,Micro Labs Limited
+R_015.m4a,335,DOLO-COLD TAB,10 packs,-,tablet,Micro Labs Limited
+R_016.m4a,336,DOLOKOFF 100ML SYP,50 strips,100ml,syrup,Micro Labs Limited
+R_017.m4a,337,DOLOKOFF SYP,10 packs,-,syrup,Micro Labs Limited
+R_018.m4a,338,DOLOKOFF-DX,20 strips,-,syrup,Micro Labs Limited
+R_019.m4a,339,DOLO-MF JUNIOR SYP,20 vials,-,tablet,Micro Labs Limited
+R_020.m4a,340,DOLO-MF SYP,5 bottles,-,syrup,Micro Labs Limited
+R_001.m4a,341,DOLO-MF TAB,20 packs,-,tablet,Micro Labs Limited
+R_002.m4a,342,DOLOPAR DROPS,100 strips,-,syrup,Micro Labs Limited
+R_003.m4a,343,DOLOPAR GEL,100 strips,-,tablet,Micro Labs Limited
+R_004.m4a,344,DOLOPAR TAB,5 boxes,-,tablet,Micro Labs Limited
+R_005.m4a,345,DOLOPAR-120 SYP,20 bottles,-,syrup,Micro Labs Limited
+R_006.m4a,346,DOLOPAR-125MG SYP,50 strips,125mg,syrup,Micro Labs Limited
+R_007.m4a,347,DOLOPAR-250 SYP 100ML,50 packs,100ml,syrup,Micro Labs Limited
+R_008.m4a,348,DOLOPAR-250MG SYP,50 packs,250mg,syrup,Micro Labs Limited
+R_009.m4a,349,DOLOPAR-650,10 packs,-,tablet,Micro Labs Limited
+R_010.m4a,350,DOLOPAR-M SYP,10 boxes,-,syrup,Micro Labs Limited
+R_011.m4a,351,DOLOPAR-MDS,10 boxes,-,syrup,Micro Labs Limited
+R_012.m4a,352,DOLO-T,100 strips,-,tablet,Micro Labs Limited
+R_013.m4a,353,DOLO-TH-4MG,20 packs,4mg,tablet,Micro Labs Limited
+R_014.m4a,354,DOLOTUSS SYP 100ML,20 bottles,100ml,syrup,Micro Labs Limited
+R_015.m4a,355,DOLOTUSS-SF SYP,50 packs,-,syrup,Micro Labs Limited
+R_016.m4a,356,DOLOWIN,50 packs,-,tablet,Micro Labs Limited
+R_017.m4a,357,DOLOWIN FORTE,20 vials,-,tablet,Micro Labs Limited
+R_018.m4a,358,DOLOWIN GEL,20 strips,-,tablet,Micro Labs Limited
+R_019.m4a,359,DOLOWIN PLUS,5 bottles,-,tablet,Micro Labs Limited
+R_020.m4a,360,DOLOWIN-MR,100 strips,-,tablet,Micro Labs Limited
+R_001.m4a,361,DOLOWIN-SP TAB,10 vials,-,tablet,Micro Labs Limited
+R_002.m4a,362,DOLOWIN-SPAS,20 vials,-,tablet,Micro Labs Limited
+R_003.m4a,363,DOLOWIN-SR,20 packs,-,tablet,Micro Labs Limited
+R_004.m4a,364,DOLOWIN-TC-4MG,20 packs,4mg,tablet,Micro Labs Limited
+R_005.m4a,365,DOLOWIN-TC-8MG,10 bottles,8mg,tablet,Micro Labs Limited
+R_006.m4a,366,DOLOZOX (MICRO),5 boxes,-,tablet,Micro Labs Limited
+R_007.m4a,367,DOLPIRITIN TAB,10 strips,-,tablet,Micro Labs Limited
+R_008.m4a,368,DORMIN-10,10 strips,-,tablet,Micro Labs Limited
+R_009.m4a,369,DOTHIP-25MG,10 strips,25mg,tablet,Micro Labs Limited
+R_010.m4a,370,DOTHIP-50,50 strips,-,tablet,Micro Labs Limited
+R_011.m4a,371,DOTHIP-75MG,50 packs,75mg,tablet,Micro Labs Limited
+R_012.m4a,372,EBAST,20 packs,-,tablet,Micro Labs Limited
+R_013.m4a,373,EBAST SUSP,10 boxes,-,syrup,Micro Labs Limited
+R_014.m4a,374,EBAST-10-ODT,10 packs,-,tablet,Micro Labs Limited
+R_015.m4a,375,EBAST-20,20 vials,-,tablet,Micro Labs Limited
+R_016.m4a,376,EBAST-DC,100 strips,-,tablet,Micro Labs Limited
+R_017.m4a,377,EBAST-DT,20 packs,-,tablet,Micro Labs Limited
+R_018.m4a,378,EBAST-M,20 vials,-,tablet,Micro Labs Limited
+R_019.m4a,379,EBAST-M-KID,50 strips,-,tablet,Micro Labs Limited
+R_020.m4a,380,EBAST-O-DT,10 boxes,-,tablet,Micro Labs Limited
+R_001.m4a,381,EDAVIT 1.5MG INJ,20 vials,5mg,injection,Micro Labs Limited
+R_002.m4a,382,ELDOPER CAP,10 vials,-,tablet,Micro Labs Limited
+R_003.m4a,383,EMPAPRO-10 TAB,10 strips,-,tablet,Micro Labs Limited
+R_004.m4a,384,EMPAPRO-25 TAB,5 boxes,-,tablet,Micro Labs Limited
+R_005.m4a,385,EMPAPRO-L 10/5 TAB,20 packs,-,tablet,Micro Labs Limited
+R_006.m4a,386,EMPAPRO-L 25/5 TAB,50 packs,-,tablet,Micro Labs Limited
+R_007.m4a,387,EMPAPRO-M 12.5/1000 TAB,50 packs,-,tablet,Micro Labs Limited
+R_008.m4a,388,EMPAPRO-M 12.5/500 TAB,20 vials,-,tablet,Micro Labs Limited
+R_009.m4a,389,EMPAPRO-M-25/1000 ER,5 boxes,-,tablet,Micro Labs Limited
+R_010.m4a,390,ENCRIPT-2.5 MG,5 bottles,5mg,tablet,Micro Labs Limited
+R_011.m4a,391,EOX-CV-457,20 bottles,-,syrup,Micro Labs Limited
+R_012.m4a,392,EPAREL-50MG,20 packs,50mg,tablet,Micro Labs Limited
+R_013.m4a,393,EPITANE E/DROPS,5 boxes,-,syrup,Micro Labs Limited
+R_014.m4a,394,EPITOP-25MG,10 vials,25mg,tablet,Micro Labs Limited
+R_015.m4a,395,EPITOP-50MG,50 strips,50mg,tablet,Micro Labs Limited
+R_016.m4a,396,EPOSIS-10000,10 vials,-,tablet,Micro Labs Limited
+R_017.m4a,397,EPOSIS-2000,10 vials,-,tablet,Micro Labs Limited
+R_018.m4a,398,EPOSIS-4000,20 strips,-,tablet,Micro Labs Limited
+R_019.m4a,399,EROFICA-120,10 bottles,-,tablet,Micro Labs Limited
+R_020.m4a,400,EROFICA-60,10 packs,-,tablet,Micro Labs Limited
+R_001.m4a,401,EROFICA-90MG,5 bottles,90mg,tablet,Micro Labs Limited
+R_002.m4a,402,EROPHYLLINE CAP,20 vials,-,tablet,Micro Labs Limited
+R_003.m4a,403,EROPHYLLINE SYP,20 vials,-,syrup,Micro Labs Limited
+R_004.m4a,404,EROPHYLLINE-AC,5 bottles,-,tablet,Micro Labs Limited
+R_005.m4a,405,EROSTIMIN SYP,50 strips,-,syrup,Micro Labs Limited
+R_006.m4a,406,EROSTIN,20 packs,-,tablet,Micro Labs Limited
+R_007.m4a,407,EROSTIN-10MG TAB,20 packs,10mg,tablet,Micro Labs Limited
+R_008.m4a,408,EROSTIN-20MG TAB,10 vials,20mg,tablet,Micro Labs Limited
+R_009.m4a,409,EROSTIN-DC,50 packs,-,tablet,Micro Labs Limited
+R_010.m4a,410,EROX-250,50 strips,-,tablet,Micro Labs Limited
+R_011.m4a,411,EROX-500MG,5 boxes,500mg,tablet,Micro Labs Limited
+R_012.m4a,412,EROX-CV SYP,5 bottles,-,syrup,Micro Labs Limited
+R_013.m4a,413,EROX-CV-228.5MG TAB,5 bottles,5mg,tablet,Micro Labs Limited
+R_014.m4a,414,EROX-CV-375MG,10 bottles,375mg,tablet,Micro Labs Limited
+R_015.m4a,415,EROX-CV-457 DRY SYP,10 packs,-,syrup,Micro Labs Limited
+R_016.m4a,416,EROX-CV-625MG,5 boxes,625mg,tablet,Micro Labs Limited
+R_017.m4a,417,ESOFAG,10 strips,-,tablet,Micro Labs Limited
+R_018.m4a,418,ESOFAG-D,5 boxes,-,tablet,Micro Labs Limited
+R_019.m4a,419,ESOFAG-L,50 packs,-,tablet,Micro Labs Limited
+R_020.m4a,420,ETIZEP-.25MG,10 strips,25mg,tablet,Micro Labs Limited
+R_001.m4a,421,ETIZEP-.5MG,10 boxes,5mg,tablet,Micro Labs Limited
+R_002.m4a,422,ETORICA-120MG,20 strips,120mg,tablet,Micro Labs Limited
+R_003.m4a,423,ETORICA-60MG,5 bottles,60mg,tablet,Micro Labs Limited
+R_004.m4a,424,ETORICA-90MG.,10 packs,90mg,tablet,Micro Labs Limited
+R_005.m4a,425,ETORICA-MR,10 vials,-,tablet,Micro Labs Limited
+R_006.m4a,426,ETORICA-P,10 boxes,-,tablet,Micro Labs Limited
+R_007.m4a,427,EXNA-K,20 packs,-,tablet,Micro Labs Limited
+R_008.m4a,428,EXTRAGAT EYE DROPS,20 strips,-,syrup,Micro Labs Limited
+R_009.m4a,429,EXTRALUBE E/DROPS,5 boxes,-,syrup,Micro Labs Limited
+R_010.m4a,430,EZEVAS-10,10 vials,-,tablet,Micro Labs Limited
+R_011.m4a,431,FARONAC DRY SYP 30ML,20 bottles,30ml,tablet,Micro Labs Limited
+R_012.m4a,432,FARONAC TAB,5 bottles,-,tablet,Micro Labs Limited
+R_013.m4a,433,FARONAC-ER-300MG,10 bottles,300mg,tablet,Micro Labs Limited
+R_014.m4a,434,FBN E/DROP,100 strips,-,syrup,Micro Labs Limited
+R_015.m4a,435,FENOVAS TAB,5 bottles,-,tablet,Micro Labs Limited
+R_016.m4a,436,FERISOME,10 packs,-,tablet,Micro Labs Limited
+R_017.m4a,437,FEROX CAP,50 strips,-,tablet,Micro Labs Limited
+R_018.m4a,438,FEROX SYP,50 packs,-,syrup,Micro Labs Limited
+R_019.m4a,439,FEROX-XT CAP,20 packs,-,tablet,Micro Labs Limited
+R_020.m4a,440,FEROX-XT DROPS,50 strips,-,syrup,Micro Labs Limited
+R_001.m4a,441,FEROX-XT SYP,50 packs,-,syrup,Micro Labs Limited
+R_002.m4a,442,FERTIPLUS,10 bottles,-,tablet,Micro Labs Limited
+R_003.m4a,443,FERTIPLUS-M,10 strips,-,tablet,Micro Labs Limited
+R_004.m4a,444,FEXOFAST-120,20 strips,-,tablet,Micro Labs Limited
+R_005.m4a,445,FEXOFAST-180,10 strips,-,tablet,Micro Labs Limited
+R_006.m4a,446,FIBRAL,5 boxes,-,tablet,Micro Labs Limited
+R_007.m4a,447,FIBROVAS,20 strips,-,tablet,Micro Labs Limited
+R_008.m4a,448,FIBROVAS-EZ,20 vials,-,tablet,Micro Labs Limited
+R_009.m4a,449,FINCOVER TAB,50 packs,-,tablet,Micro Labs Limited
+R_010.m4a,450,FINTRIX OINTMENT,50 strips,-,tablet,Micro Labs Limited
+R_011.m4a,451,FINTRIX TAB,20 strips,-,tablet,Micro Labs Limited
+R_012.m4a,452,FINTRIX-500,20 bottles,-,tablet,Micro Labs Limited
+R_013.m4a,453,FLUDAWN,20 packs,-,tablet,Micro Labs Limited
+R_014.m4a,454,FLUMAC E/DROPS,5 boxes,-,syrup,Micro Labs Limited
+R_015.m4a,455,FLUMACE,50 strips,-,syrup,Micro Labs Limited
+R_016.m4a,456,FLURAZ CAP,10 packs,-,tablet,Micro Labs Limited
+R_017.m4a,457,FLURISONE E/DROPS,10 vials,-,syrup,Micro Labs Limited
+R_018.m4a,458,FLURISONE E/OINT,50 packs,-,tablet,Micro Labs Limited
+R_019.m4a,459,FLURISONE-T E/DROPS,20 packs,-,syrup,Micro Labs Limited
+R_020.m4a,460,FOLFIT TAB,5 boxes,-,tablet,Micro Labs Limited
+R_001.m4a,461,FORSEMER-400MG,10 bottles,400mg,tablet,Micro Labs Limited
+R_002.m4a,462,FORSEMER-800MG,20 bottles,800mg,tablet,Micro Labs Limited
+R_003.m4a,463,FULGEST-100,10 vials,-,tablet,Micro Labs Limited
+R_004.m4a,464,FULGEST-200MG,20 vials,200mg,tablet,Micro Labs Limited
+R_005.m4a,465,FULGEST-SR-200MG,10 bottles,200mg,tablet,Micro Labs Limited
+R_006.m4a,466,FULGEST-SR-300MG,20 strips,300mg,tablet,Micro Labs Limited
+R_007.m4a,467,FULTERM,10 bottles,-,tablet,Micro Labs Limited
+R_008.m4a,468,FUNGI TOP GEL,20 packs,-,tablet,Micro Labs Limited
+R_009.m4a,469,FUNGICON-150MG,10 packs,150mg,tablet,Micro Labs Limited
+R_010.m4a,470,FUNGINA-150 CAP,10 vials,-,tablet,Micro Labs Limited
+R_011.m4a,471,FUNGITOP-F,10 packs,-,tablet,Micro Labs Limited
+R_012.m4a,472,GABALEPT-300MG,10 strips,300mg,tablet,Micro Labs Limited
+R_013.m4a,473,GABALEPT-NT-100MG,20 packs,100mg,tablet,Micro Labs Limited
+R_014.m4a,474,GABALEPT-NT-400MG,50 strips,400mg,tablet,Micro Labs Limited
+R_015.m4a,475,GANSECURE EYE GEL,10 vials,-,tablet,Micro Labs Limited
+R_016.m4a,476,GASTRIDE CAP,20 bottles,-,tablet,Micro Labs Limited
+R_017.m4a,477,GATIGRAM-400,10 boxes,-,tablet,Micro Labs Limited
+R_018.m4a,478,GATIGRAM-OZ,20 packs,-,tablet,Micro Labs Limited
+R_019.m4a,479,GCS TAB,20 strips,-,tablet,Micro Labs Limited
+R_020.m4a,480,GEMITAB,20 strips,-,tablet,Micro Labs Limited
+R_001.m4a,481,GENSECURE OINT,5 bottles,-,tablet,Micro Labs Limited
+R_002.m4a,482,GINKOBA,20 vials,-,tablet,Micro Labs Limited
+R_003.m4a,483,GINKOBA-M CAP,5 bottles,-,tablet,Micro Labs Limited
+R_004.m4a,484,GLUTOWIN FORTE,50 strips,-,tablet,Micro Labs Limited
+R_005.m4a,485,GLYCO-12,20 packs,-,tablet,Micro Labs Limited
+R_006.m4a,486,GLYCO-6 CREAM,20 vials,-,tablet,Micro Labs Limited
+R_007.m4a,487,GLYCO-A CREAM,20 strips,-,tablet,Micro Labs Limited
+R_008.m4a,488,GOLDPRIM CAP,10 strips,-,tablet,Micro Labs Limited
+R_009.m4a,489,GRAMOCEF-250MG INJ,5 bottles,250mg,tablet,Micro Labs Limited
+R_010.m4a,490,GRAMOCEF-2GM INJ,100 strips,2gm,tablet,Micro Labs Limited
+R_011.m4a,491,GRAMOCEF-50 SYP,10 boxes,-,syrup,Micro Labs Limited
+R_012.m4a,492,GRAMOCEF-500INJ,10 boxes,-,tablet,Micro Labs Limited
+R_013.m4a,493,GRAMOCEF-CV,100 strips,-,tablet,Micro Labs Limited
+R_014.m4a,494,GRAMOCEF-CV DRY SYP,10 bottles,-,syrup,Micro Labs Limited
+R_015.m4a,495,GRAMOCEF-CV-100,10 bottles,-,tablet,Micro Labs Limited
+R_016.m4a,496,GRAMOCEFF-1000MG,20 packs,1000mg,tablet,Micro Labs Limited
+R_017.m4a,497,GRAMOCEF-L,10 strips,-,tablet,Micro Labs Limited
+R_018.m4a,498,GRAMOCEF-L,20 bottles,-,tablet,Micro Labs Limited
+R_019.m4a,499,GRAMOCEF-O- 50DT,20 packs,-,tablet,Micro Labs Limited
+R_020.m4a,500,GRAMOCEF-O-100 DRY/SYP,10 packs,-,syrup,Micro Labs Limited
+R_001.m4a,501,GRAMOCEF-O-100MG TAB,100 strips,100mg,tablet,Micro Labs Limited
+R_002.m4a,502,GRAMOCEF-O-200MG TAB,100 strips,200mg,tablet,Micro Labs Limited
+R_003.m4a,503,GRAMOCEF-O-400 TAB,10 boxes,-,tablet,Micro Labs Limited
+R_004.m4a,504,GRAMOCEF-OF TAB,10 packs,-,tablet,Micro Labs Limited
+R_005.m4a,505,GRAMOCEF-O-PLUS,100 strips,-,tablet,Micro Labs Limited
+R_006.m4a,506,GRAMOCEF-S-1.5GM,50 strips,5gm,tablet,Micro Labs Limited
+R_007.m4a,507,GYNACEA,20 packs,-,tablet,Micro Labs Limited
+R_008.m4a,508,HALODER LOTION,50 packs,-,syrup,Micro Labs Limited
+R_009.m4a,509,HALODERM CREAM,10 vials,-,tablet,Micro Labs Limited
+R_010.m4a,510,HALODERM-A CREAM 30GM,10 bottles,30gm,tablet,Micro Labs Limited
+R_011.m4a,511,HALODERM-S OINTMENT,50 packs,-,tablet,Micro Labs Limited
+R_012.m4a,512,HARVEST CAP,20 vials,-,tablet,Micro Labs Limited
+R_013.m4a,513,HELIRAB-20,50 strips,-,tablet,Micro Labs Limited
+R_014.m4a,514,HELIRAB-D,10 vials,-,tablet,Micro Labs Limited
+R_015.m4a,515,HELIRAB-I.V.,10 bottles,-,injection,Micro Labs Limited
+R_016.m4a,516,HELIRAB-IT,50 packs,-,tablet,Micro Labs Limited
+R_017.m4a,517,HELODERM,20 strips,-,tablet,Micro Labs Limited
+R_018.m4a,518,HERPERAX E/OINT,20 packs,-,tablet,Micro Labs Limited
+R_019.m4a,519,HERPERAX EYE/OINT,10 vials,-,tablet,Micro Labs Limited
+R_020.m4a,520,HERPERAX OINT,50 packs,-,tablet,Micro Labs Limited
+R_001.m4a,521,HERPERAX-200 MG,20 bottles,200mg,tablet,Micro Labs Limited
+R_002.m4a,522,HERPERAX-400MG,50 packs,400mg,tablet,Micro Labs Limited
+R_003.m4a,523,HERPEREX-800MG,50 strips,800mg,tablet,Micro Labs Limited
+R_004.m4a,524,HICET,20 vials,-,tablet,Micro Labs Limited
+R_005.m4a,525,HICET SYP,20 bottles,-,syrup,Micro Labs Limited
+R_006.m4a,526,HICET-AX SYP,5 bottles,-,syrup,Micro Labs Limited
+R_007.m4a,527,HICET-DC,20 strips,-,tablet,Micro Labs Limited
+R_008.m4a,528,HICET-L,10 vials,-,tablet,Micro Labs Limited
+R_009.m4a,529,HICET-L SYP,20 strips,-,syrup,Micro Labs Limited
+R_010.m4a,530,HIPRIL-10,10 vials,-,tablet,Micro Labs Limited
+R_011.m4a,531,HIPRIL-2.5,20 packs,-,tablet,Micro Labs Limited
+R_012.m4a,532,HIPRIL-5,50 strips,-,tablet,Micro Labs Limited
+R_013.m4a,533,HIPRIL-A,20 strips,-,tablet,Micro Labs Limited
+R_014.m4a,534,HOPACE-1.25,50 packs,-,tablet,Micro Labs Limited
+R_015.m4a,535,HOPACE-10,10 bottles,-,tablet,Micro Labs Limited
+R_016.m4a,536,HOPACE-2.5,100 strips,-,tablet,Micro Labs Limited
+R_017.m4a,537,HOPACE-5,20 strips,-,tablet,Micro Labs Limited
+R_018.m4a,538,HOPACE-AM-5,5 bottles,-,tablet,Micro Labs Limited
+R_019.m4a,539,HOPACE-H,10 strips,-,tablet,Micro Labs Limited
+R_020.m4a,540,HOPACE-H-10MG,20 packs,10mg,tablet,Micro Labs Limited
+R_001.m4a,541,HOPACE-H-2.5MG,20 bottles,5mg,tablet,Micro Labs Limited
+R_002.m4a,542,HOPACE-H-5MG,100 strips,5mg,tablet,Micro Labs Limited
+R_003.m4a,543,HOPACE-MT-25,10 packs,-,tablet,Micro Labs Limited
+R_004.m4a,544,HOPACE-MT-50MG,5 boxes,50mg,tablet,Micro Labs Limited
+R_005.m4a,545,HOPSTIN,50 strips,-,tablet,Micro Labs Limited
+R_006.m4a,546,HORAC TAB,5 boxes,-,tablet,Micro Labs Limited
+R_007.m4a,547,HYDRIDE-12.5MG,10 boxes,5mg,tablet,Micro Labs Limited
+R_008.m4a,548,HYDRIDE-25MG,100 strips,25mg,tablet,Micro Labs Limited
+R_009.m4a,549,HYPOTAB TABLETS,100 strips,-,tablet,Micro Labs Limited
+R_010.m4a,550,ICUFOS INJ,5 boxes,-,tablet,Micro Labs Limited
+R_011.m4a,551,I-PHYTORAL-100MG,50 packs,100mg,tablet,Micro Labs Limited
+R_012.m4a,552,I-PHYTORAL-200MG,100 strips,200mg,tablet,Micro Labs Limited
+R_013.m4a,553,I-PHYTORAL-SB 130 TAB,10 bottles,-,tablet,Micro Labs Limited
+R_014.m4a,554,IREX SYP,20 vials,-,syrup,Micro Labs Limited
+R_015.m4a,555,IREX TAB,50 strips,-,tablet,Micro Labs Limited
+R_016.m4a,556,IREX-TR,5 bottles,-,tablet,Micro Labs Limited
+R_017.m4a,557,ISOTANE-10,20 vials,-,tablet,Micro Labs Limited
+R_018.m4a,558,ISOTANE-20,10 boxes,-,tablet,Micro Labs Limited
+R_019.m4a,559,KETOX E/DROPS,10 packs,-,syrup,Micro Labs Limited
+R_020.m4a,560,KOJIVIT CREAM,5 bottles,-,tablet,Micro Labs Limited
+R_001.m4a,561,KOJIVIT PLUS,5 boxes,-,tablet,Micro Labs Limited
+R_002.m4a,562,KOJIVIT ULTRA,50 packs,-,tablet,Micro Labs Limited
+R_003.m4a,563,LACRISOL E/DROPS,20 packs,-,syrup,Micro Labs Limited
+R_004.m4a,564,LANCID-30,10 boxes,-,tablet,Micro Labs Limited
+R_005.m4a,565,LANTHONATE-500MG,50 strips,500mg,tablet,Micro Labs Limited
+R_006.m4a,566,LAPROST E/DROP,20 bottles,-,syrup,Micro Labs Limited
+R_007.m4a,567,LAPROST PLUS,20 packs,-,syrup,Micro Labs Limited
+R_008.m4a,568,LEVACETAM INJ,20 bottles,-,syrup,Micro Labs Limited
+R_009.m4a,569,LEVACETAM-1000,10 vials,-,tablet,Micro Labs Limited
+R_010.m4a,570,LEVACETAM-250MG,50 packs,250mg,tablet,Micro Labs Limited
+R_011.m4a,571,LEVACETAM-500MG,5 bottles,500mg,tablet,Micro Labs Limited
+R_012.m4a,572,LEVACETAM-750MG,10 vials,750mg,tablet,Micro Labs Limited
+R_013.m4a,573,LEVALON- 300MG,50 strips,300mg,tablet,Micro Labs Limited
+R_014.m4a,574,LEVALON-300MG,20 strips,300mg,tablet,Micro Labs Limited
+R_015.m4a,575,LEVOBACT 0.5% E/DROP,10 packs,-,syrup,Micro Labs Limited
+R_016.m4a,576,LEVOBACT-250MG,20 packs,250mg,tablet,Micro Labs Limited
+R_017.m4a,577,LEVOBACT-500,5 bottles,-,tablet,Micro Labs Limited
+R_018.m4a,578,LEVOBACT-750MG,5 bottles,750mg,tablet,Micro Labs Limited
+R_019.m4a,579,LEVOBACT-I.V,5 bottles,-,syrup,Micro Labs Limited
+R_020.m4a,580,LEVOCETAM-250,20 bottles,-,tablet,Micro Labs Limited
+R_001.m4a,581,LEVOCETAM-500MG,20 packs,500mg,tablet,Micro Labs Limited
+R_002.m4a,582,LEVOCETAM-750MG,20 bottles,750mg,tablet,Micro Labs Limited
+R_003.m4a,583,LG HYAL 2000 INJ,20 packs,-,injection,Micro Labs Limited
+R_004.m4a,584,LICOTAR-100MG,50 packs,100mg,tablet,Micro Labs Limited
+R_005.m4a,585,LICOTAR-50MG,100 strips,50mg,tablet,Micro Labs Limited
+R_006.m4a,586,LIMBIVAL,5 boxes,-,tablet,Micro Labs Limited
+R_007.m4a,587,LIMBIVAL FORTE,10 vials,-,tablet,Micro Labs Limited
+R_008.m4a,588,LINAPRIDE-5 TAB,50 packs,-,tablet,Micro Labs Limited
+R_009.m4a,589,LINAPRIDE-D TAB,100 strips,-,tablet,Micro Labs Limited
+R_010.m4a,590,LINAPRIDE-DM 1000 TAB,20 vials,-,tablet,Micro Labs Limited
+R_011.m4a,591,LINAPRIDE-DM 500 TAB,5 bottles,-,tablet,Micro Labs Limited
+R_012.m4a,592,LINAPRIDE-E-5/10,20 bottles,-,tablet,Micro Labs Limited
+R_013.m4a,593,LINAPRIDE-E-5/25,20 strips,-,tablet,Micro Labs Limited
+R_014.m4a,594,LINAPRIDE-M 1000 TAB,20 vials,-,tablet,Micro Labs Limited
+R_015.m4a,595,LINAPRIDE-M 500 TAB,20 packs,-,tablet,Micro Labs Limited
+R_016.m4a,596,LINOSEPT I.V.,5 boxes,-,tablet,Micro Labs Limited
+R_017.m4a,597,LINOSEPT-600MG TAB,20 vials,600mg,tablet,Micro Labs Limited
+R_018.m4a,598,LOPRES 0.5%,20 strips,-,syrup,Micro Labs Limited
+R_019.m4a,599,LORINOL E/DROPS,5 bottles,-,tablet,Micro Labs Limited
+R_020.m4a,600,LORINOL-10MG,50 strips,10mg,tablet,Micro Labs Limited
+R_001.m4a,601,LORNICA-4MG,20 bottles,4mg,tablet,Micro Labs Limited
+R_002.m4a,602,LORNICA-8MG,50 packs,8mg,tablet,Micro Labs Limited
+R_003.m4a,603,LOXONE-T,20 strips,-,tablet,Micro Labs Limited
+R_004.m4a,604,L-TRIX CREAM,20 bottles,-,tablet,Micro Labs Limited
+R_005.m4a,605,L-TRIX LOTION,10 bottles,-,tablet,Micro Labs Limited
+R_006.m4a,606,LUBREX E/DROP,10 vials,-,syrup,Micro Labs Limited
+R_007.m4a,607,LUBREX-DS E/DROPS,10 packs,-,syrup,Micro Labs Limited
+R_008.m4a,608,LUBREX-PM E/OINT,5 bottles,-,tablet,Micro Labs Limited
+R_009.m4a,609,LUBREX-UNO E/DROPS,10 boxes,-,tablet,Micro Labs Limited
+R_010.m4a,610,LUTIVIT,20 bottles,-,tablet,Micro Labs Limited
+R_011.m4a,611,LUTIVIT-NF,10 packs,-,tablet,Micro Labs Limited
+R_012.m4a,612,MAXPRIDE-100MG,20 bottles,100mg,tablet,Micro Labs Limited
+R_013.m4a,613,MAXPRIDE-200MG,10 boxes,200mg,tablet,Micro Labs Limited
+R_014.m4a,614,MECONERV,10 strips,-,tablet,Micro Labs Limited
+R_015.m4a,615,MECONERV FORTE,100 strips,-,tablet,Micro Labs Limited
+R_016.m4a,616,MECONERV FORTE INJ,50 packs,-,syrup,Micro Labs Limited
+R_017.m4a,617,MECONERV INJ,10 boxes,-,syrup,Micro Labs Limited
+R_018.m4a,618,MECONERV PLUS,10 vials,-,tablet,Micro Labs Limited
+R_019.m4a,619,MECONERV SYP,10 packs,-,syrup,Micro Labs Limited
+R_020.m4a,620,MECONERV-1500MG,10 strips,1500mg,tablet,Micro Labs Limited
+R_001.m4a,621,MECONERV-NP TAB,20 vials,-,tablet,Micro Labs Limited
+R_002.m4a,622,MECONERV-PFS INJ,50 packs,-,tablet,Micro Labs Limited
+R_003.m4a,623,MECONERV-PLUS OD CAP,10 bottles,-,tablet,Micro Labs Limited
+R_004.m4a,624,MECONERV-P-SR,10 boxes,-,tablet,Micro Labs Limited
+R_005.m4a,625,MECONERV-Z SYP,10 strips,-,syrup,Micro Labs Limited
+R_006.m4a,626,MECONERV-Z TAB,10 strips,-,syrup,Micro Labs Limited
+R_007.m4a,627,MELCOVIT,10 boxes,-,tablet,Micro Labs Limited
+R_008.m4a,628,MELMET-1000SR,5 bottles,-,tablet,Micro Labs Limited
+R_009.m4a,629,MELMET-500MG,10 packs,500mg,tablet,Micro Labs Limited
+R_010.m4a,630,MELMET-500SR,20 vials,-,tablet,Micro Labs Limited
+R_011.m4a,631,MELMET-850MG,10 boxes,850mg,tablet,Micro Labs Limited
+R_012.m4a,632,MEROJECT-1GM,20 strips,1gm,tablet,Micro Labs Limited
+R_013.m4a,633,METADOXIL,20 strips,-,tablet,Micro Labs Limited
+R_014.m4a,634,METADURE-2.5,50 packs,-,tablet,Micro Labs Limited
+R_015.m4a,635,METADURE-5,10 strips,-,tablet,Micro Labs Limited
+R_016.m4a,636,METAPRO-25MG,10 vials,25mg,tablet,Micro Labs Limited
+R_017.m4a,637,METAPRO-3D-25,20 vials,-,tablet,Micro Labs Limited
+R_018.m4a,638,METAPRO-3D-50,10 packs,-,tablet,Micro Labs Limited
+R_019.m4a,639,METAPRO-50MG,10 bottles,50mg,tablet,Micro Labs Limited
+R_020.m4a,640,METAPRO-CL-50,5 bottles,-,tablet,Micro Labs Limited
+R_001.m4a,641,METAPRO-XL-25,5 boxes,-,tablet,Micro Labs Limited
+R_002.m4a,642,METAPRO-XL-50,20 vials,-,tablet,Micro Labs Limited
+R_003.m4a,643,MICRDOX-AX,20 packs,-,tablet,Micro Labs Limited
+R_004.m4a,644,MICROBACT-250MG,100 strips,250mg,tablet,Micro Labs Limited
+R_005.m4a,645,MICROBACT-500MG,10 strips,500mg,tablet,Micro Labs Limited
+R_006.m4a,646,MICROBACT-XL-100MG SYP,10 bottles,100mg,tablet,Micro Labs Limited
+R_007.m4a,647,MICROBACT-XL-200MG SYP,10 boxes,200mg,syrup,Micro Labs Limited
+R_008.m4a,648,MICROBION CAP,5 boxes,-,tablet,Micro Labs Limited
+R_009.m4a,649,MICROCAL-500MG,10 bottles,500mg,tablet,Micro Labs Limited
+R_010.m4a,650,MICROCAL-M,10 vials,-,tablet,Micro Labs Limited
+R_011.m4a,651,MICROCEF-100 SYP,5 bottles,-,syrup,Micro Labs Limited
+R_012.m4a,652,MICROCEF-50 SYP,10 strips,-,syrup,Micro Labs Limited
+R_013.m4a,653,MICROCEF-50DT,10 packs,-,tablet,Micro Labs Limited
+R_014.m4a,654,MICROCEF-CV DRY SYP,20 strips,-,tablet,Micro Labs Limited
+R_015.m4a,655,MICROCEF-CV-100MG,10 bottles,100mg,tablet,Micro Labs Limited
+R_016.m4a,656,MICROCEF-CV-200MG,50 strips,200mg,tablet,Micro Labs Limited
+R_017.m4a,657,MICROCEFF-100MG,20 strips,100mg,tablet,Micro Labs Limited
+R_018.m4a,658,MICROCEFF-200MG,5 bottles,200mg,tablet,Micro Labs Limited
+R_019.m4a,659,MICROCEF-O,50 strips,-,tablet,Micro Labs Limited
+R_020.m4a,660,MICROCID CAP,5 boxes,-,tablet,Micro Labs Limited
+R_001.m4a,661,MICROCID-SR,20 strips,-,tablet,Micro Labs Limited
+R_002.m4a,662,MICROCORT-24,5 boxes,-,tablet,Micro Labs Limited
+R_003.m4a,663,MICROCORT-30MG,5 boxes,30mg,tablet,Micro Labs Limited
+R_004.m4a,664,MICROCORT-6,5 bottles,-,tablet,Micro Labs Limited
+R_005.m4a,665,MICRO-D3 DROPS,5 bottles,-,syrup,Micro Labs Limited
+R_006.m4a,666,MICRO-D3 TAB,20 bottles,-,tablet,Micro Labs Limited
+R_007.m4a,667,MICRODERM,100 strips,-,tablet,Micro Labs Limited
+R_008.m4a,668,MICRODOL FORTE,10 bottles,-,tablet,Micro Labs Limited
+R_009.m4a,669,MICRODOX,50 packs,-,tablet,Micro Labs Limited
+R_010.m4a,670,MICRODOX-AX,100 strips,-,tablet,Micro Labs Limited
+R_011.m4a,671,MICRODOX-DR,5 bottles,-,tablet,Micro Labs Limited
+R_012.m4a,672,MICRODOX-DT,50 strips,-,tablet,Micro Labs Limited
+R_013.m4a,673,MICRODOX-LBX,10 boxes,-,tablet,Micro Labs Limited
+R_014.m4a,674,MICROFER,5 bottles,-,tablet,Micro Labs Limited
+R_015.m4a,675,MICROFER INJ,20 bottles,-,injection,Micro Labs Limited
+R_016.m4a,676,MICROFLOX E/DROPS,5 boxes,-,syrup,Micro Labs Limited
+R_017.m4a,677,MICROFLOX-250,5 bottles,-,tablet,Micro Labs Limited
+R_018.m4a,678,MICROFLOX-500,5 boxes,-,tablet,Micro Labs Limited
+R_019.m4a,679,MICROFLOX-CT,20 packs,-,tablet,Micro Labs Limited
+R_020.m4a,680,MICROFLOX-DX SOL E/D,5 boxes,-,syrup,Micro Labs Limited
+R_001.m4a,681,MICROGAT E/DROPS,50 strips,-,syrup,Micro Labs Limited
+R_002.m4a,682,MICROGAT OINT,5 bottles,-,tablet,Micro Labs Limited
+R_003.m4a,683,MICROGAT-400MG,20 strips,400mg,tablet,Micro Labs Limited
+R_004.m4a,684,MICROGAT-DX,10 bottles,-,syrup,Micro Labs Limited
+R_005.m4a,685,MICROJET-1GM,20 vials,1gm,injection,Micro Labs Limited
+R_006.m4a,686,MICROLIV,50 strips,-,tablet,Micro Labs Limited
+R_007.m4a,687,MICROLIV FORTE,20 strips,-,tablet,Micro Labs Limited
+R_008.m4a,688,MICROMAX INJ,100 strips,-,injection,Micro Labs Limited
+R_009.m4a,689,MICROMOM CHOCKLET POWDER,100 strips,-,tablet,Micro Labs Limited
+R_010.m4a,690,MICROMOM VANILA POWDER,100 strips,-,tablet,Micro Labs Limited
+R_011.m4a,691,MICRONAC,10 packs,-,tablet,Micro Labs Limited
+R_012.m4a,692,MICRONAC E/DROPS,5 bottles,-,syrup,Micro Labs Limited
+R_013.m4a,693,MICRONAC-MR,20 vials,-,tablet,Micro Labs Limited
+R_014.m4a,694,MICRONAC-PF E/DROPS,50 strips,-,syrup,Micro Labs Limited
+R_015.m4a,695,MICRONAC-PLUS,20 strips,-,tablet,Micro Labs Limited
+R_016.m4a,696,MICRONAC-SR,5 bottles,-,tablet,Micro Labs Limited
+R_017.m4a,697,MICRONAC-TC-4MG,10 strips,4mg,tablet,Micro Labs Limited
+R_018.m4a,698,MICRONAC-TC-8MG,10 strips,8mg,tablet,Micro Labs Limited
+R_019.m4a,699,MICROPANAM 1GM INJ,20 strips,1gm,tablet,Micro Labs Limited
+R_020.m4a,700,MICROPENAM-1GM,20 bottles,1gm,tablet,Micro Labs Limited
+R_001.m4a,701,MICROPHYLLINE TAB,10 packs,-,tablet,Micro Labs Limited
+R_002.m4a,702,MICROPIME-1GM,50 strips,1gm,tablet,Micro Labs Limited
+R_003.m4a,703,MICROPIME-250MG,20 bottles,250mg,tablet,Micro Labs Limited
+R_004.m4a,704,MICROPIME-500MG,50 strips,500mg,injection,Micro Labs Limited
+R_005.m4a,705,MICROPIME-T INJ,10 packs,-,injection,Micro Labs Limited
+R_006.m4a,706,MICROPRIDE-25MG,20 bottles,25mg,tablet,Micro Labs Limited
+R_007.m4a,707,MICROSOL E/DROP,10 packs,-,syrup,Micro Labs Limited
+R_008.m4a,708,MICROTAZ 2.25 INJ,20 vials,-,tablet,Micro Labs Limited
+R_009.m4a,709,MICROTAZ 4.5G INJ,10 boxes,-,injection,Micro Labs Limited
+R_010.m4a,710,MICROTOL INJ,20 strips,-,syrup,Micro Labs Limited
+R_011.m4a,711,MICROVIR-250MG,10 bottles,250mg,tablet,Micro Labs Limited
+R_012.m4a,712,MICROVIR-500MG,10 bottles,500mg,tablet,Micro Labs Limited
+R_013.m4a,713,MICRTAZ INJ 2.25GM,20 vials,25gm,injection,Micro Labs Limited
+R_014.m4a,714,MINIMET-1000SR,100 strips,-,tablet,Micro Labs Limited
+R_015.m4a,715,MINIMET-500,10 bottles,-,tablet,Micro Labs Limited
+R_016.m4a,716,MINIMET-500 SR,50 packs,-,tablet,Micro Labs Limited
+R_017.m4a,717,MINOLOX-100MG,20 bottles,100mg,tablet,Micro Labs Limited
+R_018.m4a,718,MINOLOX-50MG,10 bottles,50mg,tablet,Micro Labs Limited
+R_019.m4a,719,MIRAZEP-15MG,10 vials,15mg,tablet,Micro Labs Limited
+R_020.m4a,720,MIRAZEP-30,5 bottles,-,tablet,Micro Labs Limited
+R_001.m4a,721,MISALIC,20 strips,-,tablet,Micro Labs Limited
+R_002.m4a,722,MISOPT E/DROP,20 bottles,-,syrup,Micro Labs Limited
+R_003.m4a,723,MOISTANE EYE DROPS,10 packs,-,syrup,Micro Labs Limited
+R_004.m4a,724,MONOGUARD CREAM 10GM,20 bottles,10gm,tablet,Micro Labs Limited
+R_005.m4a,725,MONOGUARD CREAM 30GM,20 packs,30gm,tablet,Micro Labs Limited
+R_006.m4a,726,MONOGUARD SHAMPOO,10 vials,-,syrup,Micro Labs Limited
+R_007.m4a,727,MONOSOPT E/DROPS,5 bottles,-,syrup,Micro Labs Limited
+R_008.m4a,728,MONTEEZ-10,50 strips,-,tablet,Micro Labs Limited
+R_009.m4a,729,MONTRAL KID,20 vials,-,tablet,Micro Labs Limited
+R_010.m4a,730,MONTRAL SYP,10 boxes,-,syrup,Micro Labs Limited
+R_011.m4a,731,MONTRAL TAB,10 vials,-,tablet,Micro Labs Limited
+R_012.m4a,732,MONTRAL-AB,20 packs,-,tablet,Micro Labs Limited
+R_013.m4a,733,MOXIGRAM E/DROPS,50 strips,-,syrup,Micro Labs Limited
+R_014.m4a,734,MOXIGRAM E/OINT,5 bottles,-,tablet,Micro Labs Limited
+R_015.m4a,735,MOXIGRAM TAB,100 strips,-,tablet,Micro Labs Limited
+R_016.m4a,736,MOXIGRAM-D E/DROPS,50 packs,-,syrup,Micro Labs Limited
+R_017.m4a,737,MOXIGRAM-DM EYE DROPS,20 strips,-,syrup,Micro Labs Limited
+R_018.m4a,738,MOXIGRAM-I.V,100 strips,-,tablet,Micro Labs Limited
+R_019.m4a,739,MOXIGRAM-KT,50 packs,-,syrup,Micro Labs Limited
+R_020.m4a,740,MOXIGRAM-LX E/DROPS,5 boxes,-,tablet,Micro Labs Limited
+R_001.m4a,741,MOXIGRAM-P,10 strips,-,syrup,Micro Labs Limited
+R_002.m4a,742,MOXILONG-2,10 bottles,-,tablet,Micro Labs Limited
+R_003.m4a,743,MOXILONG-3,50 packs,-,tablet,Micro Labs Limited
+R_004.m4a,744,MUPIRAX CREAM,20 strips,-,tablet,Micro Labs Limited
+R_005.m4a,745,MYCOPHEN-500MG,10 bottles,500mg,tablet,Micro Labs Limited
+R_006.m4a,746,NABUFLAM,5 bottles,-,tablet,Micro Labs Limited
+R_007.m4a,747,NEBILONG,50 strips,-,tablet,Micro Labs Limited
+R_008.m4a,748,NEBILONG-2.5MG,10 boxes,5mg,tablet,Micro Labs Limited
+R_009.m4a,749,NEBILONG-AM,5 boxes,-,tablet,Micro Labs Limited
+R_010.m4a,750,NEBILONG-H,5 bottles,-,tablet,Micro Labs Limited
+R_011.m4a,751,NEBILONG-TL TAB,20 bottles,-,tablet,Micro Labs Limited
+R_012.m4a,752,NEURICA,20 strips,-,tablet,Micro Labs Limited
+R_013.m4a,753,NEURICA-B TAB,10 strips,-,tablet,Micro Labs Limited
+R_014.m4a,754,NEURICA-BT,20 vials,-,tablet,Micro Labs Limited
+R_015.m4a,755,NEURICA-M 75,20 vials,-,tablet,Micro Labs Limited
+R_016.m4a,756,NEURICA-M-150MG,10 strips,150mg,tablet,Micro Labs Limited
+R_017.m4a,757,NEURICA-NT,5 boxes,-,tablet,Micro Labs Limited
+R_018.m4a,758,NEUROCETAM CAP,10 strips,-,tablet,Micro Labs Limited
+R_019.m4a,759,NEUROCETAM I.V.,50 packs,-,syrup,Micro Labs Limited
+R_020.m4a,760,NEUROCETAM INJ,5 bottles,-,syrup,Micro Labs Limited
+R_001.m4a,761,NEUROCETAM PLUS,50 packs,-,tablet,Micro Labs Limited
+R_002.m4a,762,NEUROCETAM SYP,5 boxes,-,syrup,Micro Labs Limited
+R_003.m4a,763,NEUROCETAM-1200,10 boxes,-,tablet,Micro Labs Limited
+R_004.m4a,764,NEUROCETAM-400 MG,10 bottles,400mg,tablet,Micro Labs Limited
+R_005.m4a,765,NEUROCETAM-800,50 packs,-,tablet,Micro Labs Limited
+R_006.m4a,766,NEUROVIN,50 strips,-,tablet,Micro Labs Limited
+R_007.m4a,767,NEUROVIN-10MG,10 strips,10mg,tablet,Micro Labs Limited
+R_008.m4a,768,NEXTANE E/DROPS,20 vials,-,syrup,Micro Labs Limited
+R_009.m4a,769,NICERBIUM,100 strips,-,tablet,Micro Labs Limited
+R_010.m4a,770,NICOVAS TAB,20 strips,-,tablet,Micro Labs Limited
+R_011.m4a,771,NICROTOL INJ,10 vials,-,syrup,Micro Labs Limited
+R_012.m4a,772,NILAC GEL,20 strips,-,tablet,Micro Labs Limited
+R_013.m4a,773,NILAC-A,50 strips,-,tablet,Micro Labs Limited
+R_014.m4a,774,NIMOCER,100 strips,-,tablet,Micro Labs Limited
+R_015.m4a,775,NITRA GEL 100GM,10 packs,100gm,tablet,Micro Labs Limited
+R_016.m4a,776,NITRA GEL 50GM,50 strips,50gm,tablet,Micro Labs Limited
+R_017.m4a,777,NITRA HEX,50 packs,-,syrup,Micro Labs Limited
+R_018.m4a,778,NITRADENT 20GM,10 strips,20gm,tablet,Micro Labs Limited
+R_019.m4a,779,NITRAMET-10GM OINT,5 bottles,10gm,tablet,Micro Labs Limited
+R_020.m4a,780,NITRAMET-20GM OINT,10 bottles,20gm,tablet,Micro Labs Limited
+R_001.m4a,781,NITRA-OR,10 vials,-,syrup,Micro Labs Limited
+R_002.m4a,782,NITROFIX-10,10 packs,-,tablet,Micro Labs Limited
+R_003.m4a,783,NITROFIX-20MG,20 vials,20mg,tablet,Micro Labs Limited
+R_004.m4a,784,NITROFIX-30 SR,10 packs,-,tablet,Micro Labs Limited
+R_005.m4a,785,NITROFIX-60 SR,10 bottles,-,tablet,Micro Labs Limited
+R_006.m4a,786,NITROFIX-AS,5 boxes,-,tablet,Micro Labs Limited
+R_007.m4a,787,NORDYS,10 strips,-,tablet,Micro Labs Limited
+R_008.m4a,788,NORDYS-200MG,10 boxes,200mg,tablet,Micro Labs Limited
+R_009.m4a,789,NORDYS-400MG,20 bottles,400mg,tablet,Micro Labs Limited
+R_010.m4a,790,NORDYS-550MG,20 strips,550mg,tablet,Micro Labs Limited
+R_011.m4a,791,NORGEST,100 strips,-,tablet,Micro Labs Limited
+R_012.m4a,792,NOSTIPAN SYP,50 packs,-,syrup,Micro Labs Limited
+R_013.m4a,793,NOVALID,50 packs,-,tablet,Micro Labs Limited
+R_014.m4a,794,NOVOLID,100 strips,-,tablet,Micro Labs Limited
+R_015.m4a,795,NOVOLID PLUS,10 packs,-,tablet,Micro Labs Limited
+R_016.m4a,796,NOVOLID-MR,10 strips,-,tablet,Micro Labs Limited
+R_017.m4a,797,NOVOLID-S TAB,10 packs,-,tablet,Micro Labs Limited
+R_018.m4a,798,NOZOA,10 packs,-,tablet,Micro Labs Limited
+R_019.m4a,799,NUGREL,20 strips,-,tablet,Micro Labs Limited
+R_020.m4a,800,NUGREL PLUS,20 packs,-,tablet,Micro Labs Limited
+R_001.m4a,801,NULONG-10MG,20 vials,10mg,tablet,Micro Labs Limited
+R_002.m4a,802,NULONG-20MG,5 bottles,20mg,tablet,Micro Labs Limited
+R_003.m4a,803,NULONG-5 MG,20 packs,5mg,tablet,Micro Labs Limited
+R_004.m4a,804,NULONG-MT-25MG,5 boxes,25mg,tablet,Micro Labs Limited
+R_005.m4a,805,NULONG-MT-50MG,10 packs,50mg,tablet,Micro Labs Limited
+R_006.m4a,806,NULONG-OL-20MG,20 packs,20mg,tablet,Micro Labs Limited
+R_007.m4a,807,NULONG-OL-40MG,50 strips,40mg,tablet,Micro Labs Limited
+R_008.m4a,808,NULONG-T TAB,5 boxes,-,tablet,Micro Labs Limited
+R_009.m4a,809,NULONG-TRIO,20 strips,-,tablet,Micro Labs Limited
+R_010.m4a,810,NULONG-TRIO-40MG,20 vials,40mg,tablet,Micro Labs Limited
+R_011.m4a,811,NUPROST,20 strips,-,syrup,Micro Labs Limited
+R_012.m4a,812,NURATOR,10 boxes,-,tablet,Micro Labs Limited
+R_013.m4a,813,NURATOR TAB,20 bottles,-,tablet,Micro Labs Limited
+R_014.m4a,814,NUROCOL TAB,10 packs,-,tablet,Micro Labs Limited
+R_015.m4a,815,NUROCOL-2ML INJ,5 boxes,2ml,syrup,Micro Labs Limited
+R_016.m4a,816,NUROCOL-4ML INJ,20 vials,4ml,injection,Micro Labs Limited
+R_017.m4a,817,NUROHIST-16MG,50 strips,16mg,tablet,Micro Labs Limited
+R_018.m4a,818,NUROHIST-8MG,20 packs,8mg,tablet,Micro Labs Limited
+R_019.m4a,819,NUSOFT SOAP,100 strips,-,tablet,Micro Labs Limited
+R_020.m4a,820,NUTRI CHAMP,20 vials,-,tablet,Micro Labs Limited
+R_001.m4a,821,NUTRICAP-H,10 vials,-,tablet,Micro Labs Limited
+R_002.m4a,822,NUTRICAP-S,10 strips,-,tablet,Micro Labs Limited
+R_003.m4a,823,OBIRAX-10,10 boxes,-,tablet,Micro Labs Limited
+R_004.m4a,824,OBIRAX-15,20 packs,-,tablet,Micro Labs Limited
+R_005.m4a,825,OBITROL-120MG,5 boxes,120mg,tablet,Micro Labs Limited
+R_006.m4a,826,OBITROL-60MG,50 packs,60mg,tablet,Micro Labs Limited
+R_007.m4a,827,OFLACIN E/DROPS,20 packs,-,syrup,Micro Labs Limited
+R_008.m4a,828,OFLACIN TAB,5 bottles,-,tablet,Micro Labs Limited
+R_009.m4a,829,OFLACIN-400MG,5 bottles,400mg,tablet,Micro Labs Limited
+R_010.m4a,830,OFLACIN-DX E/DROPS,10 bottles,-,syrup,Micro Labs Limited
+R_011.m4a,831,OFLACIN-P E/DROPS,10 packs,-,syrup,Micro Labs Limited
+R_012.m4a,832,OKT - 5ML E/DROPS,20 strips,5ml,syrup,Micro Labs Limited
+R_013.m4a,833,OLAMIN CREAM,100 strips,-,tablet,Micro Labs Limited
+R_014.m4a,834,OLAMIN SCALP LOTION,5 bottles,-,syrup,Micro Labs Limited
+R_015.m4a,835,OLAMIN-F,5 boxes,-,tablet,Micro Labs Limited
+R_016.m4a,836,OLAN-10 MG,20 strips,10mg,tablet,Micro Labs Limited
+R_017.m4a,837,OLAN-2.5,10 boxes,-,tablet,Micro Labs Limited
+R_018.m4a,838,OLAN-5 MG,10 bottles,5mg,tablet,Micro Labs Limited
+R_019.m4a,839,OLMAT TRIO,10 bottles,-,tablet,Micro Labs Limited
+R_020.m4a,840,OLMAT-20 AM,50 strips,-,tablet,Micro Labs Limited
+R_001.m4a,841,OLMAT-20 AMH,10 vials,-,tablet,Micro Labs Limited
+R_002.m4a,842,OLMAT-20-CT,10 bottles,-,tablet,Micro Labs Limited
+R_003.m4a,843,OLMAT-20MG,100 strips,20mg,tablet,Micro Labs Limited
+R_004.m4a,844,OLMAT-40,5 bottles,-,tablet,Micro Labs Limited
+R_005.m4a,845,OLMAT-40 AMH,50 packs,-,tablet,Micro Labs Limited
+R_006.m4a,846,OLMAT-40-AM,10 strips,-,tablet,Micro Labs Limited
+R_007.m4a,847,OLMAT-40-CT,10 boxes,-,tablet,Micro Labs Limited
+R_008.m4a,848,OLMAT-40-H,100 strips,-,tablet,Micro Labs Limited
+R_009.m4a,849,OLMAT-AM,20 strips,-,tablet,Micro Labs Limited
+R_010.m4a,850,OLMAT-AMH,5 bottles,-,tablet,Micro Labs Limited
+R_011.m4a,851,OLMAT-H,20 vials,-,tablet,Micro Labs Limited
+R_012.m4a,852,OLMAT-MT-25,100 strips,-,tablet,Micro Labs Limited
+R_013.m4a,853,OLMAT-MT-50,20 strips,-,tablet,Micro Labs Limited
+R_014.m4a,854,OMICAP,100 strips,-,tablet,Micro Labs Limited
+R_015.m4a,855,OMIFLUX,10 boxes,-,tablet,Micro Labs Limited
+R_016.m4a,856,ONETONE PLUS,20 strips,-,tablet,Micro Labs Limited
+R_017.m4a,857,ONETONE-0.3% CREAM,10 strips,-,tablet,Micro Labs Limited
+R_018.m4a,858,OPTIMIDE PLUS E/DROP,10 packs,-,syrup,Micro Labs Limited
+R_019.m4a,859,OPTOCIN E/DROPS,20 packs,-,syrup,Micro Labs Limited
+R_020.m4a,860,ORNILOX,10 boxes,-,tablet,Micro Labs Limited
+R_001.m4a,861,OSMITOL,20 packs,-,tablet,Micro Labs Limited
+R_002.m4a,862,OSMITOL FIBER BOTTLE,100 strips,-,tablet,Micro Labs Limited
+R_003.m4a,863,OSMITOL FIBER POUCH,20 vials,-,tablet,Micro Labs Limited
+R_004.m4a,864,OSMOGEL E/DROPS,100 strips,-,syrup,Micro Labs Limited
+R_005.m4a,865,OSMOGEL OINT,10 strips,-,tablet,Micro Labs Limited
+R_006.m4a,866,OSTOBON TAB,20 bottles,-,tablet,Micro Labs Limited
+R_007.m4a,867,OSTOGARD-50MG,50 strips,50mg,tablet,Micro Labs Limited
+R_008.m4a,868,OSTOGARD-GM TAB,100 strips,-,tablet,Micro Labs Limited
+R_009.m4a,869,OSTONEX,5 boxes,-,tablet,Micro Labs Limited
+R_010.m4a,870,OSTONEX-D3,10 vials,-,tablet,Micro Labs Limited
+R_011.m4a,871,OXIDON CAP,20 bottles,-,tablet,Micro Labs Limited
+R_012.m4a,872,OXIDON PLUS CAP,5 boxes,-,tablet,Micro Labs Limited
+R_013.m4a,873,OXPRIN-40MG,20 packs,40mg,tablet,Micro Labs Limited
+R_014.m4a,874,OXPRIN-60MG,10 strips,60mg,tablet,Micro Labs Limited
+R_015.m4a,875,PANEX,5 boxes,-,tablet,Micro Labs Limited
+R_016.m4a,876,PANEX-10MG,5 bottles,10mg,tablet,Micro Labs Limited
+R_017.m4a,877,PANEX-CR-12.5,20 strips,-,tablet,Micro Labs Limited
+R_018.m4a,878,PANEX-CR-25,5 bottles,-,tablet,Micro Labs Limited
+R_019.m4a,879,PANTOCAR INJ,20 bottles,-,injection,Micro Labs Limited
+R_020.m4a,880,PANTOCAR-40MG,100 strips,40mg,tablet,Micro Labs Limited
+R_001.m4a,881,PANTOCAR-D,100 strips,-,tablet,Micro Labs Limited
+R_002.m4a,882,PANTOCAR-L,5 boxes,-,tablet,Micro Labs Limited
+R_003.m4a,883,PANTOCAR-L TAB,20 strips,-,tablet,Micro Labs Limited
+R_004.m4a,884,PANTOFLUX CAP,20 bottles,-,tablet,Micro Labs Limited
+R_005.m4a,885,PANTOFLUX-SR,100 strips,-,tablet,Micro Labs Limited
+R_006.m4a,886,PANTOTAB,10 packs,-,tablet,Micro Labs Limited
+R_007.m4a,887,PANTOTAB-40 INJ,5 bottles,-,tablet,Micro Labs Limited
+R_008.m4a,888,PANTOTAB-DSR,10 strips,-,tablet,Micro Labs Limited
+R_009.m4a,889,PANTOTAB-L CAP,10 bottles,-,tablet,Micro Labs Limited
+R_010.m4a,890,PARANIM TAB,10 bottles,-,tablet,Micro Labs Limited
+R_011.m4a,891,PARKIN,100 strips,-,tablet,Micro Labs Limited
+R_012.m4a,892,PARKIN FORTE,10 bottles,-,tablet,Micro Labs Limited
+R_013.m4a,893,PARKIN PLUS,20 vials,-,tablet,Micro Labs Limited
+R_014.m4a,894,PENFLUX-SR,20 vials,-,tablet,Micro Labs Limited
+R_015.m4a,895,PERMARID 1% LOTION,10 vials,-,tablet,Micro Labs Limited
+R_016.m4a,896,PERMARID 5% CREAM,5 bottles,-,tablet,Micro Labs Limited
+R_017.m4a,897,PETRIL BETA-10MG,10 strips,10mg,tablet,Micro Labs Limited
+R_018.m4a,898,PETRIL BETA-20MG,10 strips,20mg,tablet,Micro Labs Limited
+R_019.m4a,899,PETRIL MD-0.25,5 boxes,-,tablet,Micro Labs Limited
+R_020.m4a,900,PETRIL MD-0.5,10 strips,-,tablet,Micro Labs Limited
+R_001.m4a,901,PETRIL PLUS,10 vials,-,tablet,Micro Labs Limited
+R_002.m4a,902,PETRIL PLUS-LS TAB,10 bottles,-,tablet,Micro Labs Limited
+R_003.m4a,903,PETRIL.5MG,50 strips,5mg,tablet,Micro Labs Limited
+R_004.m4a,904,PETRIL-1MG,10 boxes,1mg,tablet,Micro Labs Limited
+R_005.m4a,905,PETRIL-2MG,20 bottles,2mg,tablet,Micro Labs Limited
+R_006.m4a,906,PHOTABAN-50 AQUAGEL,100 strips,-,tablet,Micro Labs Limited
+R_007.m4a,907,PHOTOBAN-15 LOTION,20 vials,-,syrup,Micro Labs Limited
+R_008.m4a,908,PHOTOBAN-30,10 packs,-,syrup,Micro Labs Limited
+R_009.m4a,909,PHOTOBAN-30 AQUAGEL,20 packs,-,tablet,Micro Labs Limited
+R_010.m4a,910,PHOTOBAN-50 AQUAGEL,10 strips,-,tablet,Micro Labs Limited
+R_011.m4a,911,PHYTORAL BAR (SOAP),50 strips,-,tablet,Micro Labs Limited
+R_012.m4a,912,PHYTORAL LOTION,5 bottles,-,syrup,Micro Labs Limited
+R_013.m4a,913,PHYTORAL OINT 15GM,20 packs,15gm,tablet,Micro Labs Limited
+R_014.m4a,914,PHYTORAL OINT 30GM,10 vials,30gm,tablet,Micro Labs Limited
+R_015.m4a,915,PHYTORAL POWDER,5 boxes,-,tablet,Micro Labs Limited
+R_016.m4a,916,PHYTORAL TAB,50 strips,-,tablet,Micro Labs Limited
+R_017.m4a,917,PHYTORAL-B CREAM 15GM,10 strips,15gm,tablet,Micro Labs Limited
+R_018.m4a,918,PHYTORAL-SP,10 boxes,-,syrup,Micro Labs Limited
+R_019.m4a,919,PIONORM-15MG,5 boxes,15mg,tablet,Micro Labs Limited
+R_020.m4a,920,PIONORM-30 TAB,10 bottles,-,tablet,Micro Labs Limited
+R_001.m4a,921,PIONORM-7.5 MG,20 vials,5mg,tablet,Micro Labs Limited
+R_002.m4a,922,PIONORM-G,10 strips,-,tablet,Micro Labs Limited
+R_003.m4a,923,PIONORM-GM-1,20 bottles,-,tablet,Micro Labs Limited
+R_004.m4a,924,PIONORM-GM-2,10 boxes,-,tablet,Micro Labs Limited
+R_005.m4a,925,PIONORM-M-15,10 strips,-,tablet,Micro Labs Limited
+R_006.m4a,926,PIONORM-M-30,5 boxes,-,tablet,Micro Labs Limited
+R_007.m4a,927,PIONORM-M-7.5MG,10 vials,5mg,tablet,Micro Labs Limited
+R_008.m4a,928,PLAGERINE,50 packs,-,tablet,Micro Labs Limited
+R_009.m4a,929,PLAGERINE-A,20 vials,-,tablet,Micro Labs Limited
+R_010.m4a,930,PLAGERINE-A 150,20 bottles,-,tablet,Micro Labs Limited
+R_011.m4a,931,POSINORM-15MG,50 packs,15mg,tablet,Micro Labs Limited
+R_012.m4a,932,POSINORM-30MG,10 bottles,30mg,tablet,Micro Labs Limited
+R_013.m4a,933,POSINORM-7.5GM,5 bottles,5gm,tablet,Micro Labs Limited
+R_014.m4a,934,POSINORM-M-1000,10 strips,-,tablet,Micro Labs Limited
+R_015.m4a,935,POSINORM-M-500,5 bottles,-,tablet,Micro Labs Limited
+R_016.m4a,936,PRASULET-10,10 vials,-,tablet,Micro Labs Limited
+R_017.m4a,937,PRASULET-5,10 packs,-,tablet,Micro Labs Limited
+R_018.m4a,938,PREDACE -4MG,10 vials,4mg,tablet,Micro Labs Limited
+R_019.m4a,939,PREDACE E/DROP,5 boxes,-,syrup,Micro Labs Limited
+R_020.m4a,940,PREDACE-16,10 packs,-,tablet,Micro Labs Limited
+R_001.m4a,941,PREDACE-8MG,5 bottles,8mg,tablet,Micro Labs Limited
+R_002.m4a,942,PREDACE-LD,100 strips,-,syrup,Micro Labs Limited
+R_003.m4a,943,PREGATOR CAP,20 strips,-,tablet,Micro Labs Limited
+R_004.m4a,944,PREGATOR-SR TAB,100 strips,-,tablet,Micro Labs Limited
+R_005.m4a,945,PRIVENT E/DROPS,50 packs,-,syrup,Micro Labs Limited
+R_006.m4a,946,PROGIT TAB,5 bottles,-,tablet,Micro Labs Limited
+R_007.m4a,947,PRULIBACT TAB,5 bottles,-,tablet,Micro Labs Limited
+R_008.m4a,948,PULMOCEF INJ,10 strips,-,injection,Micro Labs Limited
+R_009.m4a,949,PULMOCEF-1.5GM INJ,5 boxes,5gm,tablet,Micro Labs Limited
+R_010.m4a,950,PULMOCEF-125,5 boxes,-,tablet,Micro Labs Limited
+R_011.m4a,951,PULMOCEF-1500 INJ,10 vials,-,tablet,Micro Labs Limited
+R_012.m4a,952,PULMOCEF-250,20 vials,-,tablet,Micro Labs Limited
+R_013.m4a,953,PULMOCEF-250 INJ,20 strips,-,tablet,Micro Labs Limited
+R_014.m4a,954,PULMOCEF-500,5 bottles,-,tablet,Micro Labs Limited
+R_015.m4a,955,PULMOCEF-750MG INJ,20 bottles,750mg,injection,Micro Labs Limited
+R_016.m4a,956,PULMOCEF-CV-250,20 strips,-,tablet,Micro Labs Limited
+R_017.m4a,957,PULMOCEF-CV-500MG,20 vials,500mg,tablet,Micro Labs Limited
+R_018.m4a,958,PULMOCEF-LZ,10 strips,-,tablet,Micro Labs Limited
+R_019.m4a,959,PULMOCLOX,10 bottles,-,tablet,Micro Labs Limited
+R_020.m4a,960,PULMOXYL KID TAB,50 strips,-,tablet,Micro Labs Limited
+R_001.m4a,961,PULMOXYL-250 CAP,20 strips,-,tablet,Micro Labs Limited
+R_002.m4a,962,PULMOXYL-250DT,20 bottles,-,tablet,Micro Labs Limited
+R_003.m4a,963,PULMOXYL-500 CAP,5 boxes,-,tablet,Micro Labs Limited
+R_004.m4a,964,PULMOXYL-KID,20 strips,-,tablet,Micro Labs Limited
+R_005.m4a,965,PULMUCUS-600 TAB,10 bottles,-,tablet,Micro Labs Limited
+R_006.m4a,966,PULMUCUS-AB TAB,20 bottles,-,tablet,Micro Labs Limited
+R_007.m4a,967,QUINOBID-200MG,20 packs,200mg,tablet,Micro Labs Limited
+R_008.m4a,968,QUINOBID-400MG,20 packs,400mg,tablet,Micro Labs Limited
+R_009.m4a,969,QUINOBID-OZ SYP,20 vials,-,syrup,Micro Labs Limited
+R_010.m4a,970,QUINOBID-TZ,100 strips,-,tablet,Micro Labs Limited
+R_011.m4a,971,RABIROS-20MG,50 packs,20mg,tablet,Micro Labs Limited
+R_012.m4a,972,RABIROS-D,20 packs,-,tablet,Micro Labs Limited
+R_013.m4a,973,RABIROS-IT,50 strips,-,tablet,Micro Labs Limited
+R_014.m4a,974,RABIROS-L,10 strips,-,tablet,Micro Labs Limited
+R_015.m4a,975,RAMIRIL-10,10 packs,-,tablet,Micro Labs Limited
+R_016.m4a,976,RAMRIL-1.25,10 vials,-,tablet,Micro Labs Limited
+R_017.m4a,977,RAMRIL-2.5,100 strips,-,tablet,Micro Labs Limited
+R_018.m4a,978,RAMRIL-5,50 strips,-,tablet,Micro Labs Limited
+R_019.m4a,979,RAMRIL-H,100 strips,-,tablet,Micro Labs Limited
+R_020.m4a,980,RAPIDON E/DROPS,20 bottles,-,syrup,Micro Labs Limited
+R_001.m4a,981,RAPIDON-OD E/DROPS,20 vials,-,syrup,Micro Labs Limited
+R_002.m4a,982,RESTORE,50 packs,-,tablet,Micro Labs Limited
+R_003.m4a,983,RGM,20 vials,-,tablet,Micro Labs Limited
+R_004.m4a,984,RIMONID E/DROP,100 strips,-,syrup,Micro Labs Limited
+R_005.m4a,985,RINOX-0.025%,10 packs,-,syrup,Micro Labs Limited
+R_006.m4a,986,RINOX-0.05%,20 packs,-,syrup,Micro Labs Limited
+R_007.m4a,987,RISPOND FORTE,10 bottles,-,tablet,Micro Labs Limited
+R_008.m4a,988,RISPOND PLUS,20 vials,-,tablet,Micro Labs Limited
+R_009.m4a,989,RISPOND-1MG,20 packs,1mg,tablet,Micro Labs Limited
+R_010.m4a,990,RISPOND-2MG,20 bottles,2mg,tablet,Micro Labs Limited
+R_011.m4a,991,RISPOND-3MG,20 vials,3mg,tablet,Micro Labs Limited
+R_012.m4a,992,RISPOND-4MG,20 bottles,4mg,tablet,Micro Labs Limited
+R_013.m4a,993,RITECEF-1GM INJ,50 strips,1gm,injection,Micro Labs Limited
+R_014.m4a,994,RITECEF-250MG INJ,10 bottles,250mg,injection,Micro Labs Limited
+R_015.m4a,995,RITECEF-T-1GM,10 strips,1gm,injection,Micro Labs Limited
+R_016.m4a,996,RITECEF-T-250MG INJ,10 packs,250mg,tablet,Micro Labs Limited
+R_017.m4a,997,RITE-O-CEF-100 DT,5 bottles,-,tablet,Micro Labs Limited
+R_018.m4a,998,RITE-O-CEF-100MG SYP,20 strips,100mg,tablet,Micro Labs Limited
+R_019.m4a,999,RITE-O-CEF-200DT,10 bottles,-,tablet,Micro Labs Limited
+R_020.m4a,1000,RITE-O-CEF-50DT,20 bottles,-,tablet,Micro Labs Limited
+R_001.m4a,1001,RITE-O-CEF-50MG SYP,10 boxes,50mg,syrup,Micro Labs Limited
+R_002.m4a,1002,RITE-O-CEF-CV DRY SYP,20 strips,-,syrup,Micro Labs Limited
+R_003.m4a,1003,RITE-O-CEF-CV-100MG,20 packs,100mg,tablet,Micro Labs Limited
+R_004.m4a,1004,RITE-O-CEF-CV-200MG,50 strips,200mg,tablet,Micro Labs Limited
+R_005.m4a,1005,RITE-O-CEF-OF TAB,5 boxes,-,tablet,Micro Labs Limited
+R_006.m4a,1006,RITOLIDE-250MG,100 strips,250mg,tablet,Micro Labs Limited
+R_007.m4a,1007,RITOLIDE-500MG,20 strips,500mg,tablet,Micro Labs Limited
+R_008.m4a,1008,RIVOLAS-10MG,10 vials,10mg,tablet,Micro Labs Limited
+R_009.m4a,1009,RIVOLAS-15MG,20 bottles,15mg,tablet,Micro Labs Limited
+R_010.m4a,1010,RIVOLAS-2.5MG,20 packs,5mg,tablet,Micro Labs Limited
+R_011.m4a,1011,RIVOLAS-20MG,20 strips,20mg,tablet,Micro Labs Limited
+R_012.m4a,1012,ROFICA 12.5MG,10 vials,5mg,tablet,Micro Labs Limited
+R_013.m4a,1013,ROFICA 25MG,10 strips,25mg,tablet,Micro Labs Limited
+R_014.m4a,1014,ROFICA GEL,5 boxes,-,tablet,Micro Labs Limited
+R_015.m4a,1015,ROFICA PLUS,100 strips,-,tablet,Micro Labs Limited
+R_016.m4a,1016,ROFICA-50,20 strips,-,tablet,Micro Labs Limited
+R_017.m4a,1017,ROSINORM- 2MG,10 strips,2mg,tablet,Micro Labs Limited
+R_018.m4a,1018,ROSINORM-4,10 packs,-,tablet,Micro Labs Limited
+R_019.m4a,1019,ROSINORM-G,10 packs,-,tablet,Micro Labs Limited
+R_020.m4a,1020,ROSINORM-GM,5 boxes,-,tablet,Micro Labs Limited
+R_001.m4a,1021,ROSINORM-M,20 packs,-,tablet,Micro Labs Limited
+R_002.m4a,1022,SACROLYTE PLUS,20 packs,-,tablet,Micro Labs Limited
+R_003.m4a,1023,SACROLYTE SACHETS,20 packs,-,tablet,Micro Labs Limited
+R_004.m4a,1024,SALBID PLUS 100ML SUSP,10 strips,100ml,syrup,Micro Labs Limited
+R_005.m4a,1025,SALBID PLUS 60ML SYP,10 bottles,60ml,syrup,Micro Labs Limited
+R_006.m4a,1026,SALBID-D SYP,20 strips,-,syrup,Micro Labs Limited
+R_007.m4a,1027,SALBID-LS SYP,100 strips,-,syrup,Micro Labs Limited
+R_008.m4a,1028,SALTRIX OINTMENT,20 vials,-,tablet,Micro Labs Limited
+R_009.m4a,1029,S-AMLONG-2.5MG,10 strips,5mg,tablet,Micro Labs Limited
+R_010.m4a,1030,S-AMLONG-5MG,10 packs,5mg,tablet,Micro Labs Limited
+R_011.m4a,1031,SARTACE-1.25,50 packs,-,tablet,Micro Labs Limited
+R_012.m4a,1032,SARTACE-2.5,50 strips,-,tablet,Micro Labs Limited
+R_013.m4a,1033,SARTACE-5,5 boxes,-,tablet,Micro Labs Limited
+R_014.m4a,1034,SARTACE-H,10 packs,-,tablet,Micro Labs Limited
+R_015.m4a,1035,S-CELEPRA-10,50 strips,-,tablet,Micro Labs Limited
+R_016.m4a,1036,S-CELEPRA-20 MG,20 vials,20mg,tablet,Micro Labs Limited
+R_017.m4a,1037,S-CELEPRA-5,10 packs,-,tablet,Micro Labs Limited
+R_018.m4a,1038,SCROYLTE SACHETS,10 bottles,-,tablet,Micro Labs Limited
+R_019.m4a,1039,SECALIA LOTION,20 bottles,-,syrup,Micro Labs Limited
+R_020.m4a,1040,SECALIA-100GM,10 packs,100gm,tablet,Micro Labs Limited
+R_001.m4a,1041,SECALIA-50GM,5 bottles,50gm,tablet,Micro Labs Limited
+R_002.m4a,1042,SILYBON 100ML SYP,50 packs,100ml,syrup,Micro Labs Limited
+R_003.m4a,1043,SILYBON 200ML SYP.,10 packs,200ml,syrup,Micro Labs Limited
+R_004.m4a,1044,SILYBON FORTE TAB,5 bottles,-,syrup,Micro Labs Limited
+R_005.m4a,1045,SILYBON-140,50 packs,-,tablet,Micro Labs Limited
+R_006.m4a,1046,SILYBON-70,5 boxes,-,tablet,Micro Labs Limited
+R_007.m4a,1047,SIMVAS-10,100 strips,-,tablet,Micro Labs Limited
+R_008.m4a,1048,SIMVAS-20,10 bottles,-,tablet,Micro Labs Limited
+R_009.m4a,1049,SIMVAS-5,20 vials,-,tablet,Micro Labs Limited
+R_010.m4a,1050,SIMVAS-EZ,5 bottles,-,tablet,Micro Labs Limited
+R_011.m4a,1051,SITANORM-100 TAB,20 bottles,-,tablet,Micro Labs Limited
+R_012.m4a,1052,SITANORM-50 TAB,10 packs,-,tablet,Micro Labs Limited
+R_013.m4a,1053,SITANORM-D-100/10 TAB,10 packs,-,tablet,Micro Labs Limited
+R_014.m4a,1054,SITANORM-D-50/10 TAB,20 packs,-,tablet,Micro Labs Limited
+R_015.m4a,1055,SITANORM-D-50/5 TAB,5 bottles,-,tablet,Micro Labs Limited
+R_016.m4a,1056,SITANORM-DM-1000 TAB,50 packs,-,tablet,Micro Labs Limited
+R_017.m4a,1057,SITANORM-DM-500 TAB,5 bottles,-,tablet,Micro Labs Limited
+R_018.m4a,1058,SITANORM-E-10,5 boxes,-,tablet,Micro Labs Limited
+R_019.m4a,1059,SITANORM-E-25,20 vials,-,tablet,Micro Labs Limited
+R_020.m4a,1060,SITANORM-GM-FORTE-2,100 strips,-,tablet,Micro Labs Limited
+R_001.m4a,1061,SITANORM-M-100/1000 TAB,50 packs,-,tablet,Micro Labs Limited
+R_002.m4a,1062,SITANORM-M-100/500 TAB,20 vials,-,tablet,Micro Labs Limited
+R_003.m4a,1063,SITANORM-M-50/1000 TAB,10 vials,-,tablet,Micro Labs Limited
+R_004.m4a,1064,SITANORM-M-50/500 TAB,20 vials,-,tablet,Micro Labs Limited
+R_005.m4a,1065,SITAPRIDE-50MG,5 bottles,50mg,tablet,Micro Labs Limited
+R_006.m4a,1066,SITAPRIDE-D 100/10 TAB,10 bottles,-,tablet,Micro Labs Limited
+R_007.m4a,1067,SITAPRIDE-DM 1000 TAB,50 packs,-,tablet,Micro Labs Limited
+R_008.m4a,1068,SITAPRIDE-DM 500 TAB,20 bottles,-,tablet,Micro Labs Limited
+R_009.m4a,1069,SITAPRIDE-M 100/1000 TAB,5 bottles,-,tablet,Micro Labs Limited
+R_010.m4a,1070,SITAPRIDE-M 100/500 TAB,10 boxes,-,tablet,Micro Labs Limited
+R_011.m4a,1071,SITAPRIDE-M-50/1000MG,20 bottles,1000mg,tablet,Micro Labs Limited
+R_012.m4a,1072,SITAPRIDE-M-50/500MG,50 strips,500mg,tablet,Micro Labs Limited
+R_013.m4a,1073,SPARMAX,10 packs,-,tablet,Micro Labs Limited
+R_014.m4a,1074,SPARMAX E/DROP,10 packs,-,syrup,Micro Labs Limited
+R_015.m4a,1075,SPASMOPRIV,20 bottles,-,tablet,Micro Labs Limited
+R_016.m4a,1076,SPASMOPRIV-200MG CAP,20 vials,200mg,tablet,Micro Labs Limited
+R_017.m4a,1077,STAFOBAN OINT,50 strips,-,tablet,Micro Labs Limited
+R_018.m4a,1078,STERIDERM CREAM,10 packs,-,tablet,Micro Labs Limited
+R_019.m4a,1079,STERIDERM-S LOTION,20 vials,-,syrup,Micro Labs Limited
+R_020.m4a,1080,STERISONE CREAM,5 boxes,-,tablet,Micro Labs Limited
+R_001.m4a,1081,STERISONE-G CREAM,10 packs,-,tablet,Micro Labs Limited
+R_002.m4a,1082,SYCLOP-100MG,20 packs,100mg,tablet,Micro Labs Limited
+R_003.m4a,1083,SYCLOP-25,10 vials,-,tablet,Micro Labs Limited
+R_004.m4a,1084,TAP-DUO-50,10 bottles,-,tablet,Micro Labs Limited
+R_005.m4a,1085,TELCARD-20,5 boxes,-,tablet,Micro Labs Limited
+R_006.m4a,1086,TELCARD-40,100 strips,-,tablet,Micro Labs Limited
+R_007.m4a,1087,TELCARD-AM,10 boxes,-,tablet,Micro Labs Limited
+R_008.m4a,1088,TELPLUS,100 strips,-,tablet,Micro Labs Limited
+R_009.m4a,1089,TELPLUS-TRIO,20 bottles,-,tablet,Micro Labs Limited
+R_010.m4a,1090,TELROSE TAB,20 bottles,-,tablet,Micro Labs Limited
+R_011.m4a,1091,TENDOPRO,5 boxes,-,tablet,Micro Labs Limited
+R_012.m4a,1092,TENEPRIDE-20MG,20 packs,20mg,tablet,Micro Labs Limited
+R_013.m4a,1093,TENEPRIDE-M-1000MG,20 vials,1000mg,tablet,Micro Labs Limited
+R_014.m4a,1094,TENEPRIDE-M-500MG,10 boxes,500mg,tablet,Micro Labs Limited
+R_015.m4a,1095,THYROTOP-100MG,20 packs,100mg,tablet,Micro Labs Limited
+R_016.m4a,1096,THYROTOP-25MG,20 bottles,25mg,tablet,Micro Labs Limited
+R_017.m4a,1097,THYROTOP-50MG,5 boxes,50mg,tablet,Micro Labs Limited
+R_018.m4a,1098,TNIB TAB,10 packs,-,tablet,Micro Labs Limited
+R_019.m4a,1099,TOBRADEX E/DROPS,10 strips,-,syrup,Micro Labs Limited
+R_020.m4a,1100,TOLFEN CAP,100 strips,-,tablet,Micro Labs Limited
+R_001.m4a,1101,TOLPA,20 vials,-,tablet,Micro Labs Limited
+R_002.m4a,1102,TOLPA-D,10 boxes,-,tablet,Micro Labs Limited
+R_003.m4a,1103,TOLPAZEN TAB,20 bottles,-,tablet,Micro Labs Limited
+R_004.m4a,1104,TOLSAFE TAB,20 strips,-,tablet,Micro Labs Limited
+R_005.m4a,1105,TOROLAC E/DROPS,20 strips,-,syrup,Micro Labs Limited
+R_006.m4a,1106,TOROLAC-DT,10 strips,-,tablet,Micro Labs Limited
+R_007.m4a,1107,TORSILONG-10 TAB,10 vials,-,tablet,Micro Labs Limited
+R_008.m4a,1108,TORSILONG-40MG,50 strips,40mg,tablet,Micro Labs Limited
+R_009.m4a,1109,TORSILONG-5MG,100 strips,5mg,tablet,Micro Labs Limited
+R_010.m4a,1110,TORSINEX FORTE-10,10 vials,-,tablet,Micro Labs Limited
+R_011.m4a,1111,TORSINEX FORTE-20MG,20 vials,20mg,tablet,Micro Labs Limited
+R_012.m4a,1112,TORSINEX FORTE-5MG,20 packs,5mg,tablet,Micro Labs Limited
+R_013.m4a,1113,TORSINEX INJ.,10 boxes,-,tablet,Micro Labs Limited
+R_014.m4a,1114,TORSINEX PLUS,20 bottles,-,tablet,Micro Labs Limited
+R_015.m4a,1115,TORSINEX-100,10 boxes,-,tablet,Micro Labs Limited
+R_016.m4a,1116,TORSINEX-10MG,20 packs,10mg,tablet,Micro Labs Limited
+R_017.m4a,1117,TORSINEX-20MG,5 bottles,20mg,tablet,Micro Labs Limited
+R_018.m4a,1118,TORSINEX-A,10 bottles,-,tablet,Micro Labs Limited
+R_019.m4a,1119,TRAVO E/DROPS,10 packs,-,syrup,Micro Labs Limited
+R_020.m4a,1120,TRAVOPROST E/D,20 strips,-,syrup,Micro Labs Limited
+R_001.m4a,1121,TRAVOTIM E/DROPS,20 bottles,-,syrup,Micro Labs Limited
+R_002.m4a,1122,TRAVO-Z E/DROPS,10 bottles,-,syrup,Micro Labs Limited
+R_003.m4a,1123,TREHALUBE E/DROPS,10 vials,-,tablet,Micro Labs Limited
+R_004.m4a,1124,TRIPRIDE-1,50 packs,-,tablet,Micro Labs Limited
+R_005.m4a,1125,TRIPRIDE-1 FORTE,20 vials,-,tablet,Micro Labs Limited
+R_006.m4a,1126,TRIPRIDE-1 LP,5 bottles,-,tablet,Micro Labs Limited
+R_007.m4a,1127,TRIPRIDE-1-HV,5 bottles,-,tablet,Micro Labs Limited
+R_008.m4a,1128,TRIPRIDE-1-LV,50 packs,-,tablet,Micro Labs Limited
+R_009.m4a,1129,TRIPRIDE-2,20 bottles,-,tablet,Micro Labs Limited
+R_010.m4a,1130,TRIPRIDE-2 FORTE,5 boxes,-,tablet,Micro Labs Limited
+R_011.m4a,1131,TRIPRIDE-2 LP,50 packs,-,tablet,Micro Labs Limited
+R_012.m4a,1132,TRIPRIDE-2-HV,20 packs,-,tablet,Micro Labs Limited
+R_013.m4a,1133,TRIPRIDE-2-LP FORTE,20 bottles,-,tablet,Micro Labs Limited
+R_014.m4a,1134,TRIPRIDE-2-LV,50 packs,-,tablet,Micro Labs Limited
+R_015.m4a,1135,TRIVATE-MF CREAM,5 bottles,-,tablet,Micro Labs Limited
+R_016.m4a,1136,TRIVATE-MX OINT,50 packs,-,tablet,Micro Labs Limited
+R_017.m4a,1137,TRIWHITE CREAM,50 packs,-,tablet,Micro Labs Limited
+R_018.m4a,1138,TRU SWEET-180,10 boxes,-,tablet,Micro Labs Limited
+R_019.m4a,1139,TRYROF-25,10 vials,-,tablet,Micro Labs Limited
+R_020.m4a,1140,TULSICOF SYP,10 boxes,-,syrup,Micro Labs Limited
+R_001.m4a,1141,TURBOVAS-10MG,10 packs,10mg,tablet,Micro Labs Limited
+R_002.m4a,1142,TURBOVAS-20MG,10 vials,20mg,tablet,Micro Labs Limited
+R_003.m4a,1143,TURBOVAS-40MG,10 boxes,40mg,tablet,Micro Labs Limited
+R_004.m4a,1144,TURBOVAS-5MG,20 bottles,5mg,tablet,Micro Labs Limited
+R_005.m4a,1145,TURBOVAS-ASP,10 strips,-,tablet,Micro Labs Limited
+R_006.m4a,1146,TURBOVAS-CV-10,10 boxes,-,tablet,Micro Labs Limited
+R_007.m4a,1147,TURBOVAS-CV-20,20 strips,-,tablet,Micro Labs Limited
+R_008.m4a,1148,TURBOVAS-EZ TAB,10 packs,-,tablet,Micro Labs Limited
+R_009.m4a,1149,TURBOVAS-F,5 bottles,-,tablet,Micro Labs Limited
+R_010.m4a,1150,TURBOVAS-GOLD-10,10 strips,-,tablet,Micro Labs Limited
+R_011.m4a,1151,TURBOVAS-GOLD-20,20 strips,-,tablet,Micro Labs Limited
+R_012.m4a,1152,UDIBON,10 bottles,-,tablet,Micro Labs Limited
+R_013.m4a,1153,UDOSIS-1000,50 packs,-,tablet,Micro Labs Limited
+R_014.m4a,1154,UDOSIS-500MG,20 bottles,500mg,tablet,Micro Labs Limited
+R_015.m4a,1155,ULTRAM,5 bottles,-,tablet,Micro Labs Limited
+R_016.m4a,1156,ULTRAM INJ,100 strips,-,tablet,Micro Labs Limited
+R_017.m4a,1157,URGISO,20 bottles,-,tablet,Micro Labs Limited
+R_018.m4a,1158,URONEX,10 vials,-,tablet,Micro Labs Limited
+R_019.m4a,1159,URONEX-D,20 packs,-,tablet,Micro Labs Limited
+R_020.m4a,1160,USIBON-150MG,20 vials,150mg,tablet,Micro Labs Limited
+R_001.m4a,1161,USIBON-300MG,10 bottles,300mg,tablet,Micro Labs Limited
+R_002.m4a,1162,V,10 packs,-,tablet,Micro Labs Limited
+R_003.m4a,1163,VALDIFLAM-20MG,20 bottles,20mg,tablet,Micro Labs Limited
+R_004.m4a,1164,VALDIFLAM-40,10 strips,-,tablet,Micro Labs Limited
+R_005.m4a,1165,VALPRID SYP,10 bottles,-,syrup,Micro Labs Limited
+R_006.m4a,1166,VALPRID-CR 200,10 packs,-,tablet,Micro Labs Limited
+R_007.m4a,1167,VALPRID-CR 300,50 strips,-,tablet,Micro Labs Limited
+R_008.m4a,1168,VALPRID-CR 500,10 packs,-,tablet,Micro Labs Limited
+R_009.m4a,1169,VENFAX-PR 37.5,10 bottles,-,tablet,Micro Labs Limited
+R_010.m4a,1170,VENFAX-PR 75,10 strips,-,tablet,Micro Labs Limited
+R_011.m4a,1171,VENFAX-PR-150,100 strips,-,tablet,Micro Labs Limited
+R_012.m4a,1172,VENTRYL 60ML SYP,50 packs,60ml,syrup,Micro Labs Limited
+R_013.m4a,1173,VENTRYL-100ML SYP,20 bottles,100ml,syrup,Micro Labs Limited
+R_014.m4a,1174,VENTRYL-D SYP,100 strips,-,syrup,Micro Labs Limited
+R_015.m4a,1175,VENTRYL-LS 100ML SYP,20 vials,100ml,syrup,Micro Labs Limited
+R_016.m4a,1176,VENTRYL-LS 60ML SYP,10 bottles,60ml,syrup,Micro Labs Limited
+R_017.m4a,1177,VERMACTIN-6,20 bottles,-,tablet,Micro Labs Limited
+R_018.m4a,1178,VERMECTIN-12,5 bottles,-,tablet,Micro Labs Limited
+R_019.m4a,1179,VERSIDEP TAB,10 bottles,-,tablet,Micro Labs Limited
+R_020.m4a,1180,VERSIDEP-NF,10 packs,-,tablet,Micro Labs Limited
+R_001.m4a,1181,VERSITOL RET. 200MG,20 bottles,200mg,tablet,Micro Labs Limited
+R_002.m4a,1182,VERSITOL RETARD-300,10 bottles,-,tablet,Micro Labs Limited
+R_003.m4a,1183,VERSITOL RETARD-400,10 bottles,-,tablet,Micro Labs Limited
+R_004.m4a,1184,VERSITOL-100MG,10 strips,100mg,tablet,Micro Labs Limited
+R_005.m4a,1185,VERSITOL-200MG,10 boxes,200mg,tablet,Micro Labs Limited
+R_006.m4a,1186,VESORET CAP,5 bottles,-,tablet,Micro Labs Limited
+R_007.m4a,1187,VILDAPRIDE-50,5 bottles,-,tablet,Micro Labs Limited
+R_008.m4a,1188,VILDAPRIDE-D 100/10 TAB,5 bottles,-,tablet,Micro Labs Limited
+R_009.m4a,1189,VILDAPRIDE-DM 1000 TAB,20 bottles,-,tablet,Micro Labs Limited
+R_010.m4a,1190,VILDAPRIDE-M-1000,20 strips,-,tablet,Micro Labs Limited
+R_011.m4a,1191,VILDAPRIDE-M-500,20 bottles,-,tablet,Micro Labs Limited
+R_012.m4a,1192,VILPOWER D100/10 TAB,5 bottles,-,tablet,Micro Labs Limited
+R_013.m4a,1193,VILPOWER-50MG,50 packs,50mg,tablet,Micro Labs Limited
+R_014.m4a,1194,VILPOWER-DM 1000 TAB,10 bottles,-,tablet,Micro Labs Limited
+R_015.m4a,1195,VILPOWER-DM 500 TAB,5 bottles,-,tablet,Micro Labs Limited
+R_016.m4a,1196,VILPOWER-M-1000,5 boxes,-,tablet,Micro Labs Limited
+R_017.m4a,1197,VILPOWER-M-500MG,10 strips,500mg,tablet,Micro Labs Limited
+R_018.m4a,1198,VILPOWER-OD-100,10 packs,-,tablet,Micro Labs Limited
+R_019.m4a,1199,VITAMER-EA,5 boxes,-,tablet,Micro Labs Limited
+R_020.m4a,1200,VOGLINORM-0.2,10 packs,-,tablet,Micro Labs Limited
+R_001.m4a,1201,VOGLINORM-0.3,50 packs,-,tablet,Micro Labs Limited
+R_002.m4a,1202,VOGLINORM-GM FORTE-2MG,50 packs,2mg,tablet,Micro Labs Limited
+R_003.m4a,1203,VOGLINORM-GM-1,50 packs,-,tablet,Micro Labs Limited
+R_004.m4a,1204,VOGLINORM-GM-1/0.3,5 bottles,-,tablet,Micro Labs Limited
+R_005.m4a,1205,VOGLINORM-GM-2,10 strips,-,tablet,Micro Labs Limited
+R_006.m4a,1206,VOGLINORM-GM-2/0.3,50 strips,-,tablet,Micro Labs Limited
+R_007.m4a,1207,VOGLINORM-M-0.2,20 strips,-,tablet,Micro Labs Limited
+R_008.m4a,1208,VOGLINORM-M-0.3,50 packs,-,tablet,Micro Labs Limited
+R_009.m4a,1209,VOGLINORM-R-0.5,10 strips,-,tablet,Micro Labs Limited
+R_010.m4a,1210,VOGLINORM-R-1,20 vials,-,tablet,Micro Labs Limited
+R_011.m4a,1211,VOLTADIN,10 bottles,-,tablet,Micro Labs Limited
+R_012.m4a,1212,VONACID-20,10 bottles,-,tablet,Micro Labs Limited
+R_013.m4a,1213,VORSERO-10 TAB,10 bottles,-,tablet,Micro Labs Limited
+R_014.m4a,1214,VORSERO-20 TAB,20 strips,-,tablet,Micro Labs Limited
+R_015.m4a,1215,VORSERO-5 TAB,5 bottles,-,tablet,Micro Labs Limited
+R_016.m4a,1216,VOXAMIN-100MG,10 boxes,100mg,tablet,Micro Labs Limited
+R_017.m4a,1217,VOXAMIN-50MG,10 vials,50mg,tablet,Micro Labs Limited
+R_018.m4a,1218,WINFLAM TAB,20 strips,-,tablet,Micro Labs Limited
+R_019.m4a,1219,XANURIX-40MG,20 strips,40mg,tablet,Micro Labs Limited
+R_020.m4a,1220,XANURIX-80MG,20 strips,80mg,tablet,Micro Labs Limited
+R_001.m4a,1221,XENDA PLUS SYP,20 strips,-,syrup,Micro Labs Limited
+R_002.m4a,1222,XENDA PLUS TAB,20 vials,-,tablet,Micro Labs Limited
+R_003.m4a,1223,XENDA SYP,10 vials,-,syrup,Micro Labs Limited
+R_004.m4a,1224,YOGAZAM-10MG,20 strips,10mg,tablet,Micro Labs Limited
+R_005.m4a,1225,YOGAZAM-5MG,20 vials,5mg,tablet,Micro Labs Limited
+R_006.m4a,1226,Z&B CAP,50 packs,-,tablet,Micro Labs Limited
+R_007.m4a,1227,ZIFOL CAP,10 bottles,-,tablet,Micro Labs Limited
+R_008.m4a,1228,ZIFOL SYP,20 vials,-,tablet,Micro Labs Limited
+R_009.m4a,1229,ZIFOL-XT DROPS,20 packs,-,syrup,Micro Labs Limited
+R_010.m4a,1230,ZIFOL-XT- SYP 100ML,50 strips,100ml,syrup,Micro Labs Limited
+R_011.m4a,1231,ZIFOL-XT SYP 200ML,100 strips,200ml,syrup,Micro Labs Limited
+R_012.m4a,1232,ZIFOL-XT TAB,10 vials,-,tablet,Micro Labs Limited
+R_013.m4a,1233,ZIFRA SYP 100ML,50 strips,100ml,syrup,Micro Labs Limited
+R_014.m4a,1234,ZILARTA-40MG,100 strips,40mg,tablet,Micro Labs Limited
+R_015.m4a,1235,ZILARTA-80MG,10 strips,80mg,tablet,Micro Labs Limited
+R_016.m4a,1236,ZILARTA-CT-40/12.5,10 bottles,-,tablet,Micro Labs Limited
+R_017.m4a,1237,ZILARTA-CT-40/6.25,10 packs,-,tablet,Micro Labs Limited
+R_018.m4a,1238,ZOLPID-10,5 boxes,-,tablet,Micro Labs Limited
+R_019.m4a,1239,ZORNICA PLUS TAB,20 bottles,-,tablet,Micro Labs Limited
+R_020.m4a,1240,ZORNICA-4MG,5 boxes,4mg,tablet,Micro Labs Limited
+R_001.m4a,1241,ZORNICA-8MG,10 packs,8mg,tablet,Micro Labs Limited
+R_002.m4a,1242,ZOTRAL-100,20 strips,-,tablet,Micro Labs Limited
+R_003.m4a,1243,ZOTRAL-50,10 strips,-,tablet,Micro Labs Limited
+R_004.m4a,1244,ZOVANE-20MG,5 boxes,20mg,tablet,Micro Labs Limited
+R_005.m4a,1245,ZOVANE-40MG,20 bottles,40mg,tablet,Micro Labs Limited
+R_006.m4a,1246,ZUCAPRIDE-10MG,10 bottles,10mg,tablet,Micro Labs Limited
+R_007.m4a,1247,ZUCAPRIDE-M-1000MG,10 vials,1000mg,tablet,Micro Labs Limited
+R_008.m4a,1248,ZUCAPRIDE-M-500MG,10 vials,500mg,tablet,Micro Labs Limited
+R_009.m4a,1249,ZUCAPRIDE-S 10/100 TAB,10 bottles,-,tablet,Micro Labs Limited

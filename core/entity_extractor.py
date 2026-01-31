@@ -118,6 +118,10 @@ class EntityExtractor:
         # Get all known medicines from DB for matching
         known_meds = self.db.medicines['medicine_name'].tolist()
         
+        # Also get medicines from PROMINENT_MAPPING for validation
+        prominent_meds = list(self.db.PROMINENT_MAPPING.keys())
+        all_valid_meds = list(set(known_meds + prominent_meds))
+        
         # Split by multiple delimiters for multi-item orders
         # Handles: "send", "order", "add", "also", "plus", "then", "and", comma
         delimiters = r'\b(?:send|add|want|need|order|also|plus|then)\b|,|\band\b'
@@ -136,10 +140,28 @@ class EntityExtractor:
             resolved_segment = ' '.join([self._resolve_alias(w) for w in words])
             
             # Fuzzy match against known medicines
-            match = process.extractOne(resolved_segment, known_meds, scorer=fuzz.partial_ratio)
+            match = process.extractOne(resolved_segment, all_valid_meds, scorer=fuzz.partial_ratio)
             
             if match and match[1] > 75:  # Confidence threshold
                 med_name = match[0]
+                
+                # Validate: medicine name should not be a common non-medicine word
+                invalid_words = {'kumar', 'singh', 'sharma', 'gupta', 'verma', 'mehta', 'joshi',
+                                 'hello', 'hi', 'please', 'thanks', 'thank', 'yes', 'no', 'ok',
+                                 'the', 'and', 'or', 'but', 'for', 'with', 'from', 'to', 'of',
+                                 'send', 'give', 'order', 'want', 'need', 'add', 'also'}
+                
+                if med_name.lower() in invalid_words:
+                    # Try to find the next best match
+                    matches = process.extract(resolved_segment, all_valid_meds, scorer=fuzz.partial_ratio, limit=5)
+                    for m in matches:
+                        if m[0].lower() not in invalid_words and m[1] > 60:
+                            med_name = m[0]
+                            match = m
+                            break
+                    else:
+                        # Skip this segment if no valid medicine found
+                        continue
                 
                 # Extract form, quantity, dosage
                 form = self._extract_form(segment)
@@ -149,8 +171,9 @@ class EntityExtractor:
                 dosage = self._extract_dosage(segment)
                 if dosage == "-":
                     # Lookup default dosage from DB
-                    med_row = self.db.medicines[self.db.medicines['medicine_name'] == med_name].iloc[0]
-                    dosage = med_row['dosage']
+                    med_row = self.db.medicines[self.db.medicines['medicine_name'] == med_name]
+                    if not med_row.empty:
+                        dosage = med_row.iloc[0].get('dosage', '-')
                 
                 found_orders.append({
                     "medicine": med_name,

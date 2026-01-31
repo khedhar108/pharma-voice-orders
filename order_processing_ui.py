@@ -162,8 +162,42 @@ def render_order_processing_interface(
         # Example Prompt Logic (Restored) => See below
         # For now, keeping the example prompt simple as in extracted code but preserving structure
         
-        # Example Prompt
-        example_prompt = "Send me 10 strips of Augmentin 625, 50 strips of Dolo 650, and 20 strips of Pan D."
+        # Example Prompt - dynamically show medicines for configured manufacturers
+        def get_example_medicines_for_manufacturers(db):
+            """Get representative medicines for each configured manufacturer."""
+            examples = []
+            mfr_list = db.get_all_manufacturers()
+            
+            # Map manufacturer names to medicines from PROMINENT_MAPPING
+            mfr_to_meds = {}
+            for med, mfr in db.PROMINENT_MAPPING.items():
+                if mfr not in mfr_to_meds:
+                    mfr_to_meds[mfr] = []
+                mfr_to_meds[mfr].append(med)
+            
+            # Also check the main manufacturers list
+            for mfr in mfr_list:
+                mfr_name = mfr['name']
+                # Find medicines for this manufacturer
+                meds = mfr_to_meds.get(mfr_name, [])
+                if not meds:
+                    # Try partial match
+                    for med_mfr, med_list in mfr_to_meds.items():
+                        if mfr_name.lower() in med_mfr.lower() or med_mfr.lower() in mfr_name.lower():
+                            meds.extend(med_list)
+                
+                if meds:
+                    # Pick first medicine and format with quantity
+                    med_name = meds[0].title()
+                    examples.append(f"10 strips of {med_name}")
+            
+            if not examples:
+                # Fallback to generic examples
+                return "Send me 10 strips of Augmentin 625, 50 strips of Dolo 650, and 20 strips of Pan D."
+            
+            return "Send me " + ", ".join(examples[:3]) + "."
+        
+        example_prompt = get_example_medicines_for_manufacturers(db)
         st.markdown(f'''
             <div style="background: rgba(79, 172, 254, 0.1); border: 1px dashed rgba(79, 172, 254, 0.4); border-radius: 8px; padding: 12px; margin-bottom: 16px;">
                 <span style="color: #4facfe; font-weight: 600; font-size: 0.75rem;">💡 TRY SAYING:</span>
@@ -343,6 +377,17 @@ def render_order_processing_interface(
                     # Route each entity
                     from datetime import datetime
                     for entity in entities:
+                        # Skip entities with invalid medicine names
+                        invalid_words = {'kumar', 'singh', 'sharma', 'gupta', 'verma', 'mehta', 'joshi',
+                                         'hello', 'hi', 'please', 'thanks', 'thank', 'yes', 'no', 'ok'}
+                        med_name = entity.get('medicine', '').lower().strip()
+                        
+                        # Check if medicine name is valid (not a common name/word)
+                        is_invalid = any(inv in med_name for inv in invalid_words) or len(med_name) < 2
+                        
+                        if is_invalid:
+                            continue  # Skip this invalid entity
+                        
                         # Lookup manufacturer
                         # Only lookup if manufacturer not already provided by AI (though verifier currently doesn't provide it)
                         mfr_info = db.get_manufacturer_by_medicine(entity.get('medicine', ''))
@@ -353,18 +398,33 @@ def render_order_processing_interface(
                             entity['manufacturer'] = 'Unknown'
                             entity['medicine_standardized'] = entity.get('medicine', '')
                         
-                        # Ensure Quantity is formatted
-                        if 'quantity' not in entity:
+                        # Ensure Quantity is formatted - ALWAYS show quantity
+                        if 'quantity' not in entity or not entity['quantity']:
                             entity['quantity'] = '1 units'
+                        elif isinstance(entity['quantity'], str) and not entity['quantity'].strip():
+                            entity['quantity'] = '1 units'
+                        
+                        # Ensure quantity has proper format (number + unit)
+                        qty_str = str(entity['quantity']).strip()
+                        if qty_str and not any(char.isdigit() for char in qty_str):
+                            # No digits in quantity, add default
+                            entity['quantity'] = f"1 {qty_str}" if qty_str else '1 units'
                             
                         # Add metadata
                         entity['status'] = '✓'
                         entity['priority'] = 'Normal'
                         entity['timestamp'] = datetime.now().strftime('%H:%M')
                     
-                    # Update Session State
-                    st.session_state.orders.extend(entities)
-                    st.toast(f"✅ Extracted {len(entities)} items", icon="💊")
+                    # Filter out any entities that were skipped
+                    valid_entities = [e for e in entities if e.get('medicine') and
+                                     not any(inv in e.get('medicine', '').lower() for inv in invalid_words)]
+                    
+                    if valid_entities:
+                        # Update Session State
+                        st.session_state.orders.extend(valid_entities)
+                        st.toast(f"✅ Extracted {len(valid_entities)} items", icon="💊")
+                    else:
+                        st.warning("No valid medicines detected in speech. Please try again with clearer pronunciation.")
                 else:
                     st.warning("No medicines detected in speech.")
                 
@@ -453,13 +513,16 @@ def render_order_processing_interface(
                 st.info("💡 The processed audio removes silence and background noise for faster, more accurate transcription.")
 
     # --- Manufacturer Routing Grid (Moved from app.py) ---
-    with col2:
+    # Use a container that persists across reruns to show routing
+    routing_container = st.container()
+    
+    with routing_container:
         st.markdown("### 🏭 Manufacturer Routing")
         
-        # Get grouped orders
+        # Get grouped orders - use session state orders directly
         from simulation.order_queue import OrderQueue
         queue = OrderQueue()
-        grouped_orders = queue.get_grouped_orders(db)
+        grouped_orders = db.get_orders_by_manufacturer(st.session_state.orders)
         all_manufacturers = db.get_all_manufacturers()
         
         # Grid Layout

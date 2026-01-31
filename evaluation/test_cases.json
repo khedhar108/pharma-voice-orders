@@ -1,104 +1,1397 @@
 [
-    {
-        "text": "Send me 50 strips of Paracetamol",
-        "expected": [
-            {
-                "medicine": "Paracetamol",
-                "quantity": "50 strips"
-            }
-        ]
-    },
-    {
-        "text": "I need 20 bottles of Ascoril syrup and 10 tubes of Betnovate",
-        "expected": [
-            {
-                "medicine": "Ascoril",
-                "quantity": "20 bottles"
-            },
-            {
-                "medicine": "Betnovate",
-                "quantity": "10 tubes"
-            }
-        ]
-    },
-    {
-        "text": "Add five hundred mg of Amoxicillin... make it 30 packs",
-        "expected": [
-            {
-                "medicine": "Amoxicillin",
-                "quantity": "30 packs"
-            }
-        ]
-    },
-    {
-        "text": "Give me Volini spray 15 pieces and Combiflam",
-        "expected": [
-            {
-                "medicine": "Volini",
-                "quantity": "15 pieces"
-            },
-            {
-                "medicine": "Combiflam",
-                "quantity": "1 units"
-            }
-        ]
-    },
-    {
-        "text": "Order zinetac... uh... one hundred fifty mg... 20 strips",
-        "expected": [
-            {
-                "medicine": "Zinetac",
-                "quantity": "20 strips"
-            }
-        ]
-    },
-    {
-        "text": "We need Azithromycin 500mg 5 boxes and Pantop 40mg 10 strips",
-        "expected": [
-            {
-                "medicine": "Azithromycin",
-                "quantity": "5 boxes"
-            },
-            {
-                "medicine": "Pantop",
-                "quantity": "10 strips"
-            }
-        ]
-    },
-    {
-        "text": "Send 10 vials of insulin and 5 packs of needles",
-        "expected": [
-            {
-                "medicine": "Insulin",
-                "quantity": "10 vials"
-            }
-        ]
-    },
-    {
-        "text": "Shelcal 500 ten bottles",
-        "expected": [
-            {
-                "medicine": "Shelcal",
-                "quantity": "10 bottles"
-            }
-        ]
-    },
-    {
-        "text": "Dolo 650... send 100 strips",
-        "expected": [
-            {
-                "medicine": "Dolo",
-                "quantity": "100 strips"
-            }
-        ]
-    },
-    {
-        "text": "One box of Vicks Vaporub",
-        "expected": [
-            {
-                "medicine": "Vicks Vaporub",
-                "quantity": "1 box"
-            }
-        ]
-    }
+  {
+    "text": "Order 20 packs ACETAMIDE-250",
+    "expected": [
+      {
+        "medicine": "ACETAMIDE-250",
+        "quantity": "20 packs",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "Send me 5 bottles of ACTAVIR-400MG",
+    "expected": [
+      {
+        "medicine": "ACTAVIR-400MG",
+        "quantity": "5 bottles",
+        "dosage": "400mg"
+      }
+    ]
+  },
+  {
+    "text": "Send me 10 bottles of ALCAFT EYE DROPS",
+    "expected": [
+      {
+        "medicine": "ALCAFT EYE DROPS",
+        "quantity": "10 bottles",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "Give me 10 bottles of ALLERCET",
+    "expected": [
+      {
+        "medicine": "ALLERCET",
+        "quantity": "10 bottles",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "Give me 10 vials of ALLERCET COLD",
+    "expected": [
+      {
+        "medicine": "ALLERCET COLD",
+        "quantity": "10 vials",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "I need 100 strips of ALLERCET COLD SYP",
+    "expected": [
+      {
+        "medicine": "ALLERCET COLD SYP",
+        "quantity": "100 strips",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "Send me 50 packs of ALLERCET SYP",
+    "expected": [
+      {
+        "medicine": "ALLERCET SYP",
+        "quantity": "50 packs",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "Add 10 boxes ALLERCET-AX SYP to the order",
+    "expected": [
+      {
+        "medicine": "ALLERCET-AX SYP",
+        "quantity": "10 boxes",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "Add 10 packs ALLERCET-AX TAB to the order",
+    "expected": [
+      {
+        "medicine": "ALLERCET-AX TAB",
+        "quantity": "10 packs",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "Order 20 packs ALLERCET-COLD DROPS 15 ML",
+    "expected": [
+      {
+        "medicine": "ALLERCET-COLD DROPS 15 ML",
+        "quantity": "20 packs",
+        "dosage": "15ml"
+      }
+    ]
+  },
+  {
+    "text": "Give me 10 strips of ALLERCET-DC",
+    "expected": [
+      {
+        "medicine": "ALLERCET-DC",
+        "quantity": "10 strips",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "I need 50 packs of ALLERCET-FX TAB",
+    "expected": [
+      {
+        "medicine": "ALLERCET-FX TAB",
+        "quantity": "50 packs",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "I need 10 bottles of ALLERCET-KID TAB",
+    "expected": [
+      {
+        "medicine": "ALLERCET-KID TAB",
+        "quantity": "10 bottles",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "I need 10 bottles of ALLERCET-L",
+    "expected": [
+      {
+        "medicine": "ALLERCET-L",
+        "quantity": "10 bottles",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "Send me 10 bottles of ALLERCET-L SYP 30ML",
+    "expected": [
+      {
+        "medicine": "ALLERCET-L SYP 30ML",
+        "quantity": "10 bottles",
+        "dosage": "30ml"
+      }
+    ]
+  },
+  {
+    "text": "Order 10 strips ALLERCET-L SYP 60 ML",
+    "expected": [
+      {
+        "medicine": "ALLERCET-L SYP 60 ML",
+        "quantity": "10 strips",
+        "dosage": "60ml"
+      }
+    ]
+  },
+  {
+    "text": "I need 10 bottles of ALLERCET-M KID TAB",
+    "expected": [
+      {
+        "medicine": "ALLERCET-M KID TAB",
+        "quantity": "10 bottles",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "Order 10 boxes ALLERCET-M SYP",
+    "expected": [
+      {
+        "medicine": "ALLERCET-M SYP",
+        "quantity": "10 boxes",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "Send me 100 strips of ALLERCET-M TAB",
+    "expected": [
+      {
+        "medicine": "ALLERCET-M TAB",
+        "quantity": "100 strips",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "Order 20 packs AMIODAR-100MG",
+    "expected": [
+      {
+        "medicine": "AMIODAR-100MG",
+        "quantity": "20 packs",
+        "dosage": "100mg"
+      }
+    ]
+  },
+  {
+    "text": "Add 20 packs AMIODAR-200MG to the order",
+    "expected": [
+      {
+        "medicine": "AMIODAR-200MG",
+        "quantity": "20 packs",
+        "dosage": "200mg"
+      }
+    ]
+  },
+  {
+    "text": "Send me 5 boxes of AMLONG-10",
+    "expected": [
+      {
+        "medicine": "AMLONG-10",
+        "quantity": "5 boxes",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "Give me 10 boxes of AMLONG-2.5",
+    "expected": [
+      {
+        "medicine": "AMLONG-2.5",
+        "quantity": "10 boxes",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "Give me 20 bottles of AMLONG-5",
+    "expected": [
+      {
+        "medicine": "AMLONG-5",
+        "quantity": "20 bottles",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "Order 50 packs AMLONG-A",
+    "expected": [
+      {
+        "medicine": "AMLONG-A",
+        "quantity": "50 packs",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "Order 50 strips AMLONG-A-25",
+    "expected": [
+      {
+        "medicine": "AMLONG-A-25",
+        "quantity": "50 strips",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "Send me 5 boxes of AMLONG-CT",
+    "expected": [
+      {
+        "medicine": "AMLONG-CT",
+        "quantity": "5 boxes",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "Add 20 strips AMLONG-H to the order",
+    "expected": [
+      {
+        "medicine": "AMLONG-H",
+        "quantity": "20 strips",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "Add 10 vials AMLONG-MT-25 to the order",
+    "expected": [
+      {
+        "medicine": "AMLONG-MT-25",
+        "quantity": "10 vials",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "Add 5 bottles AMLONG-MT-50 to the order",
+    "expected": [
+      {
+        "medicine": "AMLONG-MT-50",
+        "quantity": "5 bottles",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "I need 10 bottles of AMLONG-TL-40",
+    "expected": [
+      {
+        "medicine": "AMLONG-TL-40",
+        "quantity": "10 bottles",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "Send me 10 vials of AMLONG-TRIO",
+    "expected": [
+      {
+        "medicine": "AMLONG-TRIO",
+        "quantity": "10 vials",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "Add 20 strips AMLOZAAR to the order",
+    "expected": [
+      {
+        "medicine": "AMLOZAAR",
+        "quantity": "20 strips",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "Give me 10 strips of AMLOZAAR-H",
+    "expected": [
+      {
+        "medicine": "AMLOZAAR-H",
+        "quantity": "10 strips",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "Give me 10 vials of ANGIFREE-20MG",
+    "expected": [
+      {
+        "medicine": "ANGIFREE-20MG",
+        "quantity": "10 vials",
+        "dosage": "20mg"
+      }
+    ]
+  },
+  {
+    "text": "Add 10 vials ANGIFREE-SR-30MG to the order",
+    "expected": [
+      {
+        "medicine": "ANGIFREE-SR-30MG",
+        "quantity": "10 vials",
+        "dosage": "30mg"
+      }
+    ]
+  },
+  {
+    "text": "Order 10 vials ANGIPLAT-2.5",
+    "expected": [
+      {
+        "medicine": "ANGIPLAT-2.5",
+        "quantity": "10 vials",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "Give me 20 bottles of ANGIPLAT-6.5",
+    "expected": [
+      {
+        "medicine": "ANGIPLAT-6.5",
+        "quantity": "20 bottles",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "I need 10 vials of ANGIZAAR-25",
+    "expected": [
+      {
+        "medicine": "ANGIZAAR-25",
+        "quantity": "10 vials",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "Send me 20 packs of ANGIZAAR-50MG",
+    "expected": [
+      {
+        "medicine": "ANGIZAAR-50MG",
+        "quantity": "20 packs",
+        "dosage": "50mg"
+      }
+    ]
+  },
+  {
+    "text": "Order 50 packs ANGIZAAR-AT",
+    "expected": [
+      {
+        "medicine": "ANGIZAAR-AT",
+        "quantity": "50 packs",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "Order 5 boxes ANGIZAAR-H",
+    "expected": [
+      {
+        "medicine": "ANGIZAAR-H",
+        "quantity": "5 boxes",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "Send me 10 strips of ANORELIF",
+    "expected": [
+      {
+        "medicine": "ANORELIF",
+        "quantity": "10 strips",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "Order 10 vials ANXIT .25",
+    "expected": [
+      {
+        "medicine": "ANXIT .25",
+        "quantity": "10 vials",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "I need 50 packs of ANXIT .5",
+    "expected": [
+      {
+        "medicine": "ANXIT .5",
+        "quantity": "50 packs",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "Give me 50 packs of ANXIT FORTE",
+    "expected": [
+      {
+        "medicine": "ANXIT FORTE",
+        "quantity": "50 packs",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "I need 10 boxes of ANXIT PLUS",
+    "expected": [
+      {
+        "medicine": "ANXIT PLUS",
+        "quantity": "10 boxes",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "Order 20 strips ANXIT-0.5SR",
+    "expected": [
+      {
+        "medicine": "ANXIT-0.5SR",
+        "quantity": "20 strips",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "Order 5 bottles ANXIT-1MG",
+    "expected": [
+      {
+        "medicine": "ANXIT-1MG",
+        "quantity": "5 bottles",
+        "dosage": "1mg"
+      }
+    ]
+  },
+  {
+    "text": "Give me 10 packs of ANXIT-1SR",
+    "expected": [
+      {
+        "medicine": "ANXIT-1SR",
+        "quantity": "10 packs",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "Order 20 packs of MICROFLOX-DX SOL E/D, 20 strips of SITANORM-100 TAB plus 10 strips of PETRIL PLUS-LS TAB",
+    "expected": [
+      {
+        "medicine": "MICROFLOX-DX SOL E/D",
+        "quantity": "20 packs",
+        "dosage": "-"
+      },
+      {
+        "medicine": "SITANORM-100 TAB",
+        "quantity": "20 strips",
+        "dosage": "-"
+      },
+      {
+        "medicine": "PETRIL PLUS-LS TAB",
+        "quantity": "10 strips",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "I need 20 strips of BACTOCLAV-DT, 10 boxes of NORDYS-550MG also 10 vials of HOPACE-10",
+    "expected": [
+      {
+        "medicine": "BACTOCLAV-DT",
+        "quantity": "20 strips",
+        "dosage": "-"
+      },
+      {
+        "medicine": "NORDYS-550MG",
+        "quantity": "10 boxes",
+        "dosage": "550mg"
+      },
+      {
+        "medicine": "HOPACE-10",
+        "quantity": "10 vials",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "Send me 100 strips of TRIPRIDE-1-HV and 5 bottles of GCS TAB",
+    "expected": [
+      {
+        "medicine": "TRIPRIDE-1-HV",
+        "quantity": "100 strips",
+        "dosage": "-"
+      },
+      {
+        "medicine": "GCS TAB",
+        "quantity": "5 bottles",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "Send me 5 bottles of PULMOCEF-750MG INJ and 10 vials of RIVOLAS-10MG",
+    "expected": [
+      {
+        "medicine": "PULMOCEF-750MG INJ",
+        "quantity": "5 bottles",
+        "dosage": "750mg"
+      },
+      {
+        "medicine": "RIVOLAS-10MG",
+        "quantity": "10 vials",
+        "dosage": "10mg"
+      }
+    ]
+  },
+  {
+    "text": "I need 10 packs of DAJIO-GM 1 TAB, 20 strips of MICROCEF-50DT also 100 strips of TORSINEX FORTE-5MG",
+    "expected": [
+      {
+        "medicine": "DAJIO-GM 1 TAB",
+        "quantity": "10 packs",
+        "dosage": "-"
+      },
+      {
+        "medicine": "MICROCEF-50DT",
+        "quantity": "20 strips",
+        "dosage": "-"
+      },
+      {
+        "medicine": "TORSINEX FORTE-5MG",
+        "quantity": "100 strips",
+        "dosage": "5mg"
+      }
+    ]
+  },
+  {
+    "text": "Order 50 packs of COXIB-200 plus 10 packs of TORSINEX FORTE-20MG",
+    "expected": [
+      {
+        "medicine": "COXIB-200",
+        "quantity": "50 packs",
+        "dosage": "-"
+      },
+      {
+        "medicine": "TORSINEX FORTE-20MG",
+        "quantity": "10 packs",
+        "dosage": "20mg"
+      }
+    ]
+  },
+  {
+    "text": "I need 20 strips of TRIPRIDE-1 also 5 boxes of MISOPT E/DROP",
+    "expected": [
+      {
+        "medicine": "TRIPRIDE-1",
+        "quantity": "20 strips",
+        "dosage": "-"
+      },
+      {
+        "medicine": "MISOPT E/DROP",
+        "quantity": "5 boxes",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "Order 20 packs of HOPACE-5, 10 strips of BETAGEL-G plus 10 boxes of SITANORM-E-10",
+    "expected": [
+      {
+        "medicine": "HOPACE-5",
+        "quantity": "20 packs",
+        "dosage": "-"
+      },
+      {
+        "medicine": "BETAGEL-G",
+        "quantity": "10 strips",
+        "dosage": "-"
+      },
+      {
+        "medicine": "SITANORM-E-10",
+        "quantity": "10 boxes",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "Order 10 packs of MIRAZEP-30 plus 5 bottles of VENFAX-PR 37.5",
+    "expected": [
+      {
+        "medicine": "MIRAZEP-30",
+        "quantity": "10 packs",
+        "dosage": "-"
+      },
+      {
+        "medicine": "VENFAX-PR 37.5",
+        "quantity": "5 bottles",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "I need 50 strips of HOPACE-10 also 50 strips of EROFICA-60",
+    "expected": [
+      {
+        "medicine": "HOPACE-10",
+        "quantity": "50 strips",
+        "dosage": "-"
+      },
+      {
+        "medicine": "EROFICA-60",
+        "quantity": "50 strips",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "Order 10 vials of MICROCORT-6, 5 boxes of EXNA-K plus 100 strips of LICOTAR-100MG",
+    "expected": [
+      {
+        "medicine": "MICROCORT-6",
+        "quantity": "10 vials",
+        "dosage": "-"
+      },
+      {
+        "medicine": "EXNA-K",
+        "quantity": "5 boxes",
+        "dosage": "-"
+      },
+      {
+        "medicine": "LICOTAR-100MG",
+        "quantity": "100 strips",
+        "dosage": "100mg"
+      }
+    ]
+  },
+  {
+    "text": "I need 100 strips of AVAS-80, 20 packs of ARBITEL-H also 10 vials of CANDELONG-8",
+    "expected": [
+      {
+        "medicine": "AVAS-80",
+        "quantity": "100 strips",
+        "dosage": "-"
+      },
+      {
+        "medicine": "ARBITEL-H",
+        "quantity": "20 packs",
+        "dosage": "-"
+      },
+      {
+        "medicine": "CANDELONG-8",
+        "quantity": "10 vials",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "I need 10 strips of MICROFLOX-250 also 10 strips of CANDELONG-8",
+    "expected": [
+      {
+        "medicine": "MICROFLOX-250",
+        "quantity": "10 strips",
+        "dosage": "-"
+      },
+      {
+        "medicine": "CANDELONG-8",
+        "quantity": "10 strips",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "Order 50 packs of LINAPRIDE-5 TAB, 20 packs of VERSITOL RET. 200MG plus 5 bottles of ENCRIPT-2.5 MG",
+    "expected": [
+      {
+        "medicine": "LINAPRIDE-5 TAB",
+        "quantity": "50 packs",
+        "dosage": "-"
+      },
+      {
+        "medicine": "VERSITOL RET. 200MG",
+        "quantity": "20 packs",
+        "dosage": "200mg"
+      },
+      {
+        "medicine": "ENCRIPT-2.5 MG",
+        "quantity": "5 bottles",
+        "dosage": "5mg"
+      }
+    ]
+  },
+  {
+    "text": "I need 5 bottles of RITECEF-1GM INJ, 10 strips of ALLERCET-AX SYP also 50 packs of AVAS AM",
+    "expected": [
+      {
+        "medicine": "RITECEF-1GM INJ",
+        "quantity": "5 bottles",
+        "dosage": "1gm"
+      },
+      {
+        "medicine": "ALLERCET-AX SYP",
+        "quantity": "10 strips",
+        "dosage": "-"
+      },
+      {
+        "medicine": "AVAS AM",
+        "quantity": "50 packs",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "I need 10 vials of FUNGICON-150MG, 20 vials of HARVEST CAP also 5 boxes of HOPACE-5",
+    "expected": [
+      {
+        "medicine": "FUNGICON-150MG",
+        "quantity": "10 vials",
+        "dosage": "150mg"
+      },
+      {
+        "medicine": "HARVEST CAP",
+        "quantity": "20 vials",
+        "dosage": "-"
+      },
+      {
+        "medicine": "HOPACE-5",
+        "quantity": "5 boxes",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "I need 20 vials of DIAPRIDE-M1-HV also 10 packs of TOBRADEX E/DROPS",
+    "expected": [
+      {
+        "medicine": "DIAPRIDE-M1-HV",
+        "quantity": "20 vials",
+        "dosage": "-"
+      },
+      {
+        "medicine": "TOBRADEX E/DROPS",
+        "quantity": "10 packs",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "Order 100 strips of MICROMOM VANILA POWDER, 50 packs of BACTOCLAV-600MG INJ plus 10 packs of MICROCEF-CV DRY SYP",
+    "expected": [
+      {
+        "medicine": "MICROMOM VANILA POWDER",
+        "quantity": "100 strips",
+        "dosage": "-"
+      },
+      {
+        "medicine": "BACTOCLAV-600MG INJ",
+        "quantity": "50 packs",
+        "dosage": "600mg"
+      },
+      {
+        "medicine": "MICROCEF-CV DRY SYP",
+        "quantity": "10 packs",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "Order 10 boxes of ALLERCET, 20 packs of DOLO-650 plus 50 packs of NEUROCETAM PLUS",
+    "expected": [
+      {
+        "medicine": "ALLERCET",
+        "quantity": "10 boxes",
+        "dosage": "-"
+      },
+      {
+        "medicine": "DOLO-650",
+        "quantity": "20 packs",
+        "dosage": "-"
+      },
+      {
+        "medicine": "NEUROCETAM PLUS",
+        "quantity": "50 packs",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "I need 10 bottles of ARBITEL-MT-25MG, 20 bottles of NITROFIX-AS also 20 vials of FLUMACE",
+    "expected": [
+      {
+        "medicine": "ARBITEL-MT-25MG",
+        "quantity": "10 bottles",
+        "dosage": "25mg"
+      },
+      {
+        "medicine": "NITROFIX-AS",
+        "quantity": "20 bottles",
+        "dosage": "-"
+      },
+      {
+        "medicine": "FLUMACE",
+        "quantity": "20 vials",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "Send me 10 strips of GINKOBA-M CAP, 20 vials of CALOSOFT PLUS and 10 vials of FERISOME",
+    "expected": [
+      {
+        "medicine": "GINKOBA-M CAP",
+        "quantity": "10 strips",
+        "dosage": "-"
+      },
+      {
+        "medicine": "CALOSOFT PLUS",
+        "quantity": "20 vials",
+        "dosage": "-"
+      },
+      {
+        "medicine": "FERISOME",
+        "quantity": "10 vials",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "Send me 20 vials of GINKOBA-M CAP, 10 packs of OSMITOL and 100 strips of HERPEREX-800MG",
+    "expected": [
+      {
+        "medicine": "GINKOBA-M CAP",
+        "quantity": "20 vials",
+        "dosage": "-"
+      },
+      {
+        "medicine": "OSMITOL",
+        "quantity": "10 packs",
+        "dosage": "-"
+      },
+      {
+        "medicine": "HERPEREX-800MG",
+        "quantity": "100 strips",
+        "dosage": "800mg"
+      }
+    ]
+  },
+  {
+    "text": "Order 20 vials of OXPRIN-60MG, 100 strips of PARANIM TAB plus 10 bottles of AVOMIRA-50MG",
+    "expected": [
+      {
+        "medicine": "OXPRIN-60MG",
+        "quantity": "20 vials",
+        "dosage": "60mg"
+      },
+      {
+        "medicine": "PARANIM TAB",
+        "quantity": "100 strips",
+        "dosage": "-"
+      },
+      {
+        "medicine": "AVOMIRA-50MG",
+        "quantity": "10 bottles",
+        "dosage": "50mg"
+      }
+    ]
+  },
+  {
+    "text": "Order 10 bottles of LIMBIVAL FORTE plus 20 vials of PETRIL BETA-20MG",
+    "expected": [
+      {
+        "medicine": "LIMBIVAL FORTE",
+        "quantity": "10 bottles",
+        "dosage": "-"
+      },
+      {
+        "medicine": "PETRIL BETA-20MG",
+        "quantity": "20 vials",
+        "dosage": "20mg"
+      }
+    ]
+  },
+  {
+    "text": "Order 10 bottles of EROX-CV-625MG plus 50 packs of EDAVIT 1.5MG INJ",
+    "expected": [
+      {
+        "medicine": "EROX-CV-625MG",
+        "quantity": "10 bottles",
+        "dosage": "625mg"
+      },
+      {
+        "medicine": "EDAVIT 1.5MG INJ",
+        "quantity": "50 packs",
+        "dosage": "5mg"
+      }
+    ]
+  },
+  {
+    "text": "Order 20 packs of MICROBION CAP, 20 strips of TELROSE TAB plus 10 boxes of NEXTANE E/DROPS",
+    "expected": [
+      {
+        "medicine": "MICROBION CAP",
+        "quantity": "20 packs",
+        "dosage": "-"
+      },
+      {
+        "medicine": "TELROSE TAB",
+        "quantity": "20 strips",
+        "dosage": "-"
+      },
+      {
+        "medicine": "NEXTANE E/DROPS",
+        "quantity": "10 boxes",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "Order 20 vials of L-TRIX LOTION plus 20 packs of OXIDON PLUS CAP",
+    "expected": [
+      {
+        "medicine": "L-TRIX LOTION",
+        "quantity": "20 vials",
+        "dosage": "-"
+      },
+      {
+        "medicine": "OXIDON PLUS CAP",
+        "quantity": "20 packs",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "Order 10 packs of OXPRIN-40MG plus 50 packs of GASTRIDE CAP",
+    "expected": [
+      {
+        "medicine": "OXPRIN-40MG",
+        "quantity": "10 packs",
+        "dosage": "40mg"
+      },
+      {
+        "medicine": "GASTRIDE CAP",
+        "quantity": "50 packs",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "Order 20 bottles of AMLONG-TL-40 plus 20 strips of TRIPRIDE-2-LP FORTE",
+    "expected": [
+      {
+        "medicine": "AMLONG-TL-40",
+        "quantity": "20 bottles",
+        "dosage": "-"
+      },
+      {
+        "medicine": "TRIPRIDE-2-LP FORTE",
+        "quantity": "20 strips",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "Order 20 strips of DIABOSE-50 plus 20 vials of PRASULET-5",
+    "expected": [
+      {
+        "medicine": "DIABOSE-50",
+        "quantity": "20 strips",
+        "dosage": "-"
+      },
+      {
+        "medicine": "PRASULET-5",
+        "quantity": "20 vials",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "Order 10 strips of AVOPROST TAB, 10 packs of NULONG-20MG plus 100 strips of MOXIGRAM-P",
+    "expected": [
+      {
+        "medicine": "AVOPROST TAB",
+        "quantity": "10 strips",
+        "dosage": "-"
+      },
+      {
+        "medicine": "NULONG-20MG",
+        "quantity": "10 packs",
+        "dosage": "20mg"
+      },
+      {
+        "medicine": "MOXIGRAM-P",
+        "quantity": "100 strips",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "Send me 10 packs of CLARIWIN-250, 50 strips of ROSINORM- 2MG and 20 vials of NUTRI CHAMP",
+    "expected": [
+      {
+        "medicine": "CLARIWIN-250",
+        "quantity": "10 packs",
+        "dosage": "-"
+      },
+      {
+        "medicine": "ROSINORM- 2MG",
+        "quantity": "50 strips",
+        "dosage": "2mg"
+      },
+      {
+        "medicine": "NUTRI CHAMP",
+        "quantity": "20 vials",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "I need 5 boxes of SIMVAS-10 also 50 packs of BC-300",
+    "expected": [
+      {
+        "medicine": "SIMVAS-10",
+        "quantity": "5 boxes",
+        "dosage": "-"
+      },
+      {
+        "medicine": "BC-300",
+        "quantity": "50 packs",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "I need 5 boxes of MECONERV INJ, 20 bottles of MONTEEZ-10 also 10 vials of HOPACE-1.25",
+    "expected": [
+      {
+        "medicine": "MECONERV INJ",
+        "quantity": "5 boxes",
+        "dosage": "-"
+      },
+      {
+        "medicine": "MONTEEZ-10",
+        "quantity": "20 bottles",
+        "dosage": "-"
+      },
+      {
+        "medicine": "HOPACE-1.25",
+        "quantity": "10 vials",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "I need 20 strips of DIAPRIDE PLUS 1G also 10 bottles of PLAGERINE",
+    "expected": [
+      {
+        "medicine": "DIAPRIDE PLUS 1G",
+        "quantity": "20 strips",
+        "dosage": "-"
+      },
+      {
+        "medicine": "PLAGERINE",
+        "quantity": "10 bottles",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "I need 10 packs of EBAST-DT, 10 strips of GRAMOCEF-O-PLUS also 5 boxes of VOGLINORM-GM FORTE-2MG",
+    "expected": [
+      {
+        "medicine": "EBAST-DT",
+        "quantity": "10 packs",
+        "dosage": "-"
+      },
+      {
+        "medicine": "GRAMOCEF-O-PLUS",
+        "quantity": "10 strips",
+        "dosage": "-"
+      },
+      {
+        "medicine": "VOGLINORM-GM FORTE-2MG",
+        "quantity": "5 boxes",
+        "dosage": "2mg"
+      }
+    ]
+  },
+  {
+    "text": "Order 10 packs of PANTOTAB-DSR, 20 vials of ROFICA 12.5MG plus 10 bottles of PULMOCEF-750MG INJ",
+    "expected": [
+      {
+        "medicine": "PANTOTAB-DSR",
+        "quantity": "10 packs",
+        "dosage": "-"
+      },
+      {
+        "medicine": "ROFICA 12.5MG",
+        "quantity": "20 vials",
+        "dosage": "5mg"
+      },
+      {
+        "medicine": "PULMOCEF-750MG INJ",
+        "quantity": "10 bottles",
+        "dosage": "750mg"
+      }
+    ]
+  },
+  {
+    "text": "Order 10 strips of TENEPRIDE-M-1000MG, 20 strips of TOROLAC E/DROPS plus 50 packs of MAXPRIDE-100MG",
+    "expected": [
+      {
+        "medicine": "TENEPRIDE-M-1000MG",
+        "quantity": "10 strips",
+        "dosage": "1000mg"
+      },
+      {
+        "medicine": "TOROLAC E/DROPS",
+        "quantity": "20 strips",
+        "dosage": "-"
+      },
+      {
+        "medicine": "MAXPRIDE-100MG",
+        "quantity": "50 packs",
+        "dosage": "100mg"
+      }
+    ]
+  },
+  {
+    "text": "I need 10 vials of DOLO-MF TAB, 10 vials of DOLO-MF SYP also 20 vials of PRASULET-10",
+    "expected": [
+      {
+        "medicine": "DOLO-MF TAB",
+        "quantity": "10 vials",
+        "dosage": "-"
+      },
+      {
+        "medicine": "DOLO-MF SYP",
+        "quantity": "10 vials",
+        "dosage": "-"
+      },
+      {
+        "medicine": "PRASULET-10",
+        "quantity": "20 vials",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "I need 50 strips of DAJIO-M-500 also 20 packs of SITAPRIDE-DM 500 TAB",
+    "expected": [
+      {
+        "medicine": "DAJIO-M-500",
+        "quantity": "50 strips",
+        "dosage": "-"
+      },
+      {
+        "medicine": "SITAPRIDE-DM 500 TAB",
+        "quantity": "20 packs",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "I need 20 strips of DIBIZIDE-OD-10MG, 20 strips of MECONERV PLUS also 10 packs of NEBILONG",
+    "expected": [
+      {
+        "medicine": "DIBIZIDE-OD-10MG",
+        "quantity": "20 strips",
+        "dosage": "10mg"
+      },
+      {
+        "medicine": "MECONERV PLUS",
+        "quantity": "20 strips",
+        "dosage": "-"
+      },
+      {
+        "medicine": "NEBILONG",
+        "quantity": "10 packs",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "Send me 100 strips of OLMAT-AMH and 20 packs of BIOSTAR",
+    "expected": [
+      {
+        "medicine": "OLMAT-AMH",
+        "quantity": "100 strips",
+        "dosage": "-"
+      },
+      {
+        "medicine": "BIOSTAR",
+        "quantity": "20 packs",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "Order 5 bottles of PULMOCEF-250 INJ plus 5 bottles of AVAS-EZ",
+    "expected": [
+      {
+        "medicine": "PULMOCEF-250 INJ",
+        "quantity": "5 bottles",
+        "dosage": "-"
+      },
+      {
+        "medicine": "AVAS-EZ",
+        "quantity": "5 bottles",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "Order 5 bottles of MONOSOPT E/DROPS, 10 packs of SILYBON-140 plus 10 strips of DIAPRIDE-M2-LV",
+    "expected": [
+      {
+        "medicine": "MONOSOPT E/DROPS",
+        "quantity": "5 bottles",
+        "dosage": "-"
+      },
+      {
+        "medicine": "SILYBON-140",
+        "quantity": "10 packs",
+        "dosage": "-"
+      },
+      {
+        "medicine": "DIAPRIDE-M2-LV",
+        "quantity": "10 strips",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "Send me 10 boxes of TRIPRIDE-2-LP FORTE and 100 strips of ANXIT .5",
+    "expected": [
+      {
+        "medicine": "TRIPRIDE-2-LP FORTE",
+        "quantity": "10 boxes",
+        "dosage": "-"
+      },
+      {
+        "medicine": "ANXIT .5",
+        "quantity": "100 strips",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "I need 10 packs of NURATOR TAB, 20 strips of DOLO INJ also 10 boxes of MONOGUARD CREAM 10GM",
+    "expected": [
+      {
+        "medicine": "NURATOR TAB",
+        "quantity": "10 packs",
+        "dosage": "-"
+      },
+      {
+        "medicine": "DOLO INJ",
+        "quantity": "20 strips",
+        "dosage": "-"
+      },
+      {
+        "medicine": "MONOGUARD CREAM 10GM",
+        "quantity": "10 boxes",
+        "dosage": "10gm"
+      }
+    ]
+  },
+  {
+    "text": "Send me 20 vials of EPOSIS-4000, 10 bottles of BEROCIN-CZ 200ML SYP and 20 packs of SITAPRIDE-50MG",
+    "expected": [
+      {
+        "medicine": "EPOSIS-4000",
+        "quantity": "20 vials",
+        "dosage": "-"
+      },
+      {
+        "medicine": "BEROCIN-CZ 200ML SYP",
+        "quantity": "10 bottles",
+        "dosage": "200ml"
+      },
+      {
+        "medicine": "SITAPRIDE-50MG",
+        "quantity": "20 packs",
+        "dosage": "50mg"
+      }
+    ]
+  },
+  {
+    "text": "Send me 5 boxes of PRULIBACT TAB and 50 strips of PLAGERINE-A",
+    "expected": [
+      {
+        "medicine": "PRULIBACT TAB",
+        "quantity": "5 boxes",
+        "dosage": "-"
+      },
+      {
+        "medicine": "PLAGERINE-A",
+        "quantity": "50 strips",
+        "dosage": "-"
+      }
+    ]
+  },
+  {
+    "text": "I need 5 bottles of BILAST-M, 20 vials of GLYCO-A CREAM also 20 packs of PANEX-10MG",
+    "expected": [
+      {
+        "medicine": "BILAST-M",
+        "quantity": "5 bottles",
+        "dosage": "-"
+      },
+      {
+        "medicine": "GLYCO-A CREAM",
+        "quantity": "20 vials",
+        "dosage": "-"
+      },
+      {
+        "medicine": "PANEX-10MG",
+        "quantity": "20 packs",
+        "dosage": "10mg"
+      }
+    ]
+  },
+  {
+    "text": "Order 5 bottles of CEFGLOB-S-FORTE-3GM, 5 boxes of ALLERCET plus 20 packs of EPITOP-25MG",
+    "expected": [
+      {
+        "medicine": "CEFGLOB-S-FORTE-3GM",
+        "quantity": "5 bottles",
+        "dosage": "3gm"
+      },
+      {
+        "medicine": "ALLERCET",
+        "quantity": "5 boxes",
+        "dosage": "-"
+      },
+      {
+        "medicine": "EPITOP-25MG",
+        "quantity": "20 packs",
+        "dosage": "25mg"
+      }
+    ]
+  }
 ]
