@@ -279,12 +279,12 @@ def render_evaluation_tab(
         st.rerun()
     
     # Display Results
-    if st.session_state.eval_results:
+    if st.session_state.eval_results is not None:
         st.markdown("---")
         st.markdown("### 📈 Evaluation Results")
         
         # Metrics Cards (if report available)
-        if st.session_state.eval_report:
+        if st.session_state.eval_report is not None:
             report = st.session_state.eval_report
             metrics = report.to_dict()
             

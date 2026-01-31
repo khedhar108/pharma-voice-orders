@@ -305,8 +305,13 @@ def render_order_processing_interface(
                             # The Verifier returns 'entities' in the dict
                             # We need to ensure they align with what we expect
                             entities = verification_result.get('entities', [])
+                            
+                            # Fallback: If AI cleaned text but failed to extract entities
+                            if not entities:
+                                # st.warning("AI extracted 0 entities, valid text found. Using Manual Extractor on cleaned text.")
+                                entities = extractor.extract(final_transcription)
                         else:
-                            # Fallback if AI fails
+                            # Fallback if AI fails completely
                             st.warning("AI Verification returned empty result, using raw transcript.")
                             entities = extractor.extract(text)
                             
@@ -322,6 +327,7 @@ def render_order_processing_interface(
                 
                 # --- ORDER QUEUE LOGIC ---
                 with col2:
+
                      # Extraction Animation
                     extraction_status = st.empty()
                     extraction_status.markdown('''
