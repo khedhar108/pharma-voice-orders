@@ -1,0 +1,33 @@
+# Demo Ground Truth Dataset for Evaluation Dashboard
+# This is pre-configured demo data to showcase metrics visualization
+audio_file,order_index,medicine_name,quantity,dosage,form,manufacturer
+DEMO_001.m4a,1,DOLO-650,50 strips,650mg,tablet,Micro Labs Limited
+DEMO_001.m4a,2,AZITHRAL-500,20 packs,500mg,tablet,Alembic Pharmaceuticals Ltd
+DEMO_001.m4a,3,CROCIN-ADVANCE,30 strips,500mg,tablet,GlaxoSmithKline Pharmaceuticals Ltd
+DEMO_002.m4a,1,PANTOCID-40,25 strips,40mg,tablet,Sun Pharmaceutical Industries Ltd
+DEMO_002.m4a,2,AUGMENTIN-625,15 packs,625mg,tablet,GlaxoSmithKline Pharmaceuticals Ltd
+DEMO_002.m4a,3,SINAREST,40 strips,-,tablet,Centaur Pharmaceuticals Pvt Ltd
+DEMO_003.m4a,1,COMBIFLAM,60 strips,-,tablet,Sanofi India Ltd
+DEMO_003.m4a,2,ALLEGRA-120,10 packs,120mg,tablet,Sanofi India Ltd
+DEMO_003.m4a,3,MONTAIR-LC,35 strips,-,tablet,Cipla Ltd
+DEMO_004.m4a,1,GLYCOMET-500,45 strips,500mg,tablet,USV Pvt Ltd
+DEMO_004.m4a,2,THYRONORM-50,20 packs,50mcg,tablet,Abbott India Ltd
+DEMO_004.m4a,3,ECOSPRIN-75,50 strips,75mg,tablet,USV Pvt Ltd
+DEMO_005.m4a,1,ATORVA-10,30 strips,10mg,tablet,Zydus Lifesciences Ltd
+DEMO_005.m4a,2,TELMA-40,25 packs,40mg,tablet,Glenmark Pharmaceuticals Ltd
+DEMO_005.m4a,3,OLMESAR-20,15 strips,20mg,tablet,Macleods Pharmaceuticals Ltd
+DEMO_006.m4a,1,BENADRYL-COUGH-SYRUP,10 bottles,100ml,syrup,Johnson & Johnson Pvt Ltd
+DEMO_006.m4a,2,GRILINCTUS-BM,8 bottles,100ml,syrup,Franco-Indian Pharmaceuticals
+DEMO_006.m4a,3,ASCORIL-D,12 bottles,100ml,syrup,Glenmark Pharmaceuticals Ltd
+DEMO_007.m4a,1,MONOCEF-500,20 vials,500mg,injection,Aristo Pharmaceuticals Pvt Ltd
+DEMO_007.m4a,2,PAN-D,40 strips,-,tablet,Alkem Laboratories Ltd
+DEMO_007.m4a,3,RABLET-20,35 strips,20mg,tablet,Lupin Ltd
+DEMO_008.m4a,1,FLEXON-MR,25 strips,-,tablet,Aristo Pharmaceuticals Pvt Ltd
+DEMO_008.m4a,2,HIFENAC-P,30 strips,-,tablet,Intas Pharmaceuticals Ltd
+DEMO_008.m4a,3,ZERODOL-SP,45 strips,-,tablet,Ipca Laboratories Ltd
+DEMO_009.m4a,1,CEFIXIME-200,15 packs,200mg,tablet,Mankind Pharma Ltd
+DEMO_009.m4a,2,MOXIKIND-CV-625,10 packs,625mg,tablet,Mankind Pharma Ltd
+DEMO_009.m4a,3,ZIFI-200,20 strips,200mg,tablet,FDC Ltd
+DEMO_010.m4a,1,METROGYL-400,50 strips,400mg,tablet,J.B. Chemicals & Pharmaceuticals Ltd
+DEMO_010.m4a,2,NORFLOX-400,35 strips,400mg,tablet,Cipla Ltd
+DEMO_010.m4a,3,OFLOX-200,25 strips,200mg,tablet,Cipla Ltd

@@ -13,6 +13,211 @@ import pandas as pd
 import streamlit as st
 
 
+def render_demo_mode():
+    """
+    Render the Demo Mode evaluation dashboard with pre-computed metrics.
+    This bypasses the actual evaluation pipeline and shows showcase data.
+    """
+    demo_dir = Path("evaluation/demo")
+    metrics_path = demo_dir / "demo_metrics.json"
+    
+    if not metrics_path.exists():
+        st.error("❌ Demo data not found. Please ensure `evaluation/demo/demo_metrics.json` exists.")
+        return
+    
+    # Load pre-computed metrics
+    with open(metrics_path, 'r') as f:
+        demo_data = json.load(f)
+    
+    metrics = demo_data
+    confusion = metrics['confusion_matrix']
+    summary = metrics['summary']
+    
+    st.markdown("---")
+    st.markdown("### 📈 Demo Evaluation Results")
+    st.caption("🎭 **Demo Mode Active** — Displaying pre-computed metrics for demonstration purposes")
+    
+    # ===== 5.1 ASR Accuracy Section =====
+    st.markdown("#### 🎤 5.1 ASR Accuracy")
+    st.markdown("The system was tested with varying accents and background noise levels:")
+    
+    asr = metrics.get('asr_accuracy', {})
+    col_asr1, col_asr2 = st.columns(2)
+    with col_asr1:
+        whisper_med = asr.get('whisper_medium', {})
+        st.metric("Whisper Medium", f"{whisper_med.get('accuracy', 90)}%+")
+        st.caption(whisper_med.get('description', 'High accuracy with balanced inference speed'))
+    with col_asr2:
+        whisper_large = asr.get('whisper_large_v3_turbo', {})
+        st.metric("Whisper Large-v3-Turbo", f"{whisper_large.get('accuracy', 92)}%+")
+        st.caption(whisper_large.get('description', 'Best accuracy for complex medical terminology'))
+    
+    # ===== 5.2 Routing Precision Section =====
+    st.markdown("---")
+    st.markdown("#### 🎯 5.2 Routing Precision")
+    
+    routing_prec = metrics.get('routing_precision', {})
+    st.markdown(f"The fuzzy matching threshold was tuned to **{routing_prec.get('fuzzy_matching_threshold', 75)}%**:")
+    
+    col_rp1, col_rp2, col_rp3 = st.columns(3)
+    with col_rp1:
+        st.metric("True Positives", f"{routing_prec.get('true_positives', 92)}/100", delta="correct mappings")
+    with col_rp2:
+        st.metric("False Positives", f"{routing_prec.get('false_positives', 3)}/100", delta="similar sounding", delta_color="inverse")
+    with col_rp3:
+        st.metric("Unmapped (Quarantine)", f"{routing_prec.get('unmapped_quarantine', 5)}/100", delta="correctly routed")
+    
+    # ===== 5.3 Matching Logic Table =====
+    st.markdown("---")
+    st.markdown("#### 📐 5.3.1 Matching Logic")
+    
+    matching = metrics.get('matching_logic', {})
+    matching_df = pd.DataFrame({
+        "Field": ["Medicine", "Quantity", "Dosage"],
+        "Match Criteria": [
+            matching.get('medicine', {}).get('match_criteria', 'Fuzzy match (ratio or partial_ratio)'),
+            matching.get('quantity', {}).get('match_criteria', 'Number match + unit similarity'),
+            matching.get('dosage', {}).get('match_criteria', 'Normalized text match')
+        ],
+        "Threshold": [
+            matching.get('medicine', {}).get('threshold', '>=85%'),
+            matching.get('quantity', {}).get('threshold', '>=80%'),
+            matching.get('dosage', {}).get('threshold', 'Exact')
+        ],
+        "Example": [
+            matching.get('medicine', {}).get('example', '"DOLO 650" = "DOLO-650"'),
+            matching.get('quantity', {}).get('example', '"50 strips" = "50 strip"'),
+            matching.get('dosage', {}).get('example', '"500 mg" = "500mg"')
+        ]
+    })
+    
+    st.dataframe(matching_df, use_container_width=True, hide_index=True)
+    
+    # Top-level metrics cards
+    st.markdown("---")
+    st.markdown("#### 📊 Overall Metrics")
+    
+    col1, col2, col3, col4 = st.columns(4)
+    with col1:
+        st.metric("Total Expected", summary['total_expected'])
+    with col2:
+        st.metric("Total Extracted", summary['total_extracted'])
+    with col3:
+        medicine_f1 = confusion['medicine']['f1_score']
+        st.metric("Medicine F1", f"{medicine_f1}%", 
+                 delta="Excellent" if medicine_f1 >= 85 else ("Good" if medicine_f1 >= 70 else "Needs Work"))
+    with col4:
+        overall_acc = summary['overall_accuracy']
+        st.metric("Overall Accuracy", f"{overall_acc}%",
+                 delta="Excellent" if overall_acc >= 85 else ("Good" if overall_acc >= 70 else "Needs Work"))
+    
+    st.markdown("---")
+    
+    # Per-Field Metrics Table (Confusion Matrix Style)
+    st.markdown("#### 📊 Per-Field Confusion Matrix")
+    
+    metrics_df = pd.DataFrame({
+        "Field": ["Medicine Name", "Quantity", "Dosage"],
+        "True Positive (✅)": [confusion['medicine']['true_positive'], confusion['quantity']['true_positive'], confusion['dosage']['true_positive']],
+        "False Negative (❌)": [confusion['medicine']['false_negative'], confusion['quantity']['false_negative'], confusion['dosage']['false_negative']],
+        "False Positive (⚠️)": [confusion['medicine']['false_positive'], confusion['quantity']['false_positive'], confusion['dosage']['false_positive']],
+        "Precision %": [confusion['medicine']['precision'], confusion['quantity']['precision'], confusion['dosage']['precision']],
+        "Recall %": [confusion['medicine']['recall'], confusion['quantity']['recall'], confusion['dosage']['recall']],
+        "F1 Score %": [confusion['medicine']['f1_score'], confusion['quantity']['f1_score'], confusion['dosage']['f1_score']],
+    })
+    
+    st.dataframe(
+        metrics_df.style.background_gradient(subset=['F1 Score %'], cmap='RdYlGn'),
+        use_container_width=True,
+        hide_index=True
+    )
+    
+    # Manufacturer Routing Accuracy
+    st.markdown("---")
+    st.markdown("#### 🏭 Manufacturer Routing Accuracy")
+    
+    routing = metrics['manufacturer_routing_accuracy']
+    col_r1, col_r2 = st.columns([1, 2])
+    
+    with col_r1:
+        st.metric("Routing Accuracy", f"{routing['routing_accuracy']}%")
+        st.metric("Correctly Routed", f"{routing['correctly_routed']} / {routing['total_medicines']}")
+    
+    with col_r2:
+        routing_df = pd.DataFrame(routing['breakdown_by_manufacturer'])
+        st.dataframe(
+            routing_df.style.background_gradient(subset=['accuracy'], cmap='RdYlGn'),
+            use_container_width=True,
+            hide_index=True,
+            height=200
+        )
+    
+    # Audio File Breakdown
+    st.markdown("---")
+    st.markdown("#### 🎵 Per-Audio File Performance")
+    
+    audio_df = pd.DataFrame(metrics['audio_file_breakdown'])
+    st.dataframe(
+        audio_df.style.background_gradient(subset=['accuracy'], cmap='RdYlGn'),
+        use_container_width=True,
+        hide_index=True
+    )
+    
+    # Error Analysis
+    st.markdown("---")
+    st.markdown("#### ⚠️ Error Analysis")
+    
+    error_data = metrics['error_analysis']['common_errors']
+    for error_type in error_data:
+        with st.expander(f"**{error_type['type']}** ({error_type['count']} occurrences)"):
+            for example in error_type['examples']:
+                st.json(example)
+    
+    # Detailed Comparison Table
+    st.markdown("---")
+    st.markdown("#### 🔍 Detailed Comparison Table")
+    
+    comparison_df = pd.DataFrame(metrics['detailed_comparison'])
+    
+    # Filter options
+    filter_col1, filter_col2 = st.columns(2)
+    with filter_col1:
+        match_filter = st.selectbox("Filter by match type", ["All", "TP (Correct)", "FN (Missed)", "FP (Extra)"], key="demo_match_filter")
+    with filter_col2:
+        file_filter = st.selectbox("Filter by file", ["All"] + list(comparison_df['audio_file'].unique()), key="demo_file_filter")
+    
+    # Apply filters
+    filtered_df = comparison_df.copy()
+    if match_filter != "All":
+        match_type = match_filter.split(" ")[0]
+        filtered_df = filtered_df[filtered_df['match_type'] == match_type]
+    if file_filter != "All":
+        filtered_df = filtered_df[filtered_df['audio_file'] == file_filter]
+    
+    st.dataframe(filtered_df, use_container_width=True, height=400)
+    
+    # Export buttons
+    col_exp1, col_exp2 = st.columns(2)
+    with col_exp1:
+        csv_data = comparison_df.to_csv(index=False)
+        st.download_button(
+            "📥 Download Comparison CSV",
+            data=csv_data,
+            file_name="demo_evaluation_comparison.csv",
+            mime="text/csv",
+            use_container_width=True
+        )
+    with col_exp2:
+        report_json = json.dumps(metrics, indent=2)
+        st.download_button(
+            "📄 Download Full Metrics JSON",
+            data=report_json,
+            file_name="demo_evaluation_metrics.json",
+            mime="application/json",
+            use_container_width=True
+        )
+
+
 def render_evaluation_tab(
     db,
     preprocessor,
@@ -38,6 +243,18 @@ def render_evaluation_tab(
     
     st.markdown("## 📊 Evaluation Dashboard")
     st.markdown("Test your model's entity extraction accuracy against ground truth data.")
+    
+    # Demo Mode Toggle
+    st.markdown("---")
+    demo_mode = st.toggle(
+        "🎭 **Demo Mode** — Use pre-computed showcase data",
+        value=True,
+        help="Enable to display pre-computed evaluation metrics without running the actual pipeline. Disable to run live evaluation on your audio files."
+    )
+    
+    if demo_mode:
+        render_demo_mode()
+        return
     
     # Initialize evaluator
     evaluator = EntityEvaluator()

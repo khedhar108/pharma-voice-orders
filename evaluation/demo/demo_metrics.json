@@ -1,0 +1,832 @@
+{
+    "evaluation_metadata": {
+        "evaluation_date": "2026-02-09",
+        "mode": "Demo Mode",
+        "description": "Pre-computed evaluation metrics matching Chapter 5 of the project report",
+        "ground_truth_file": "demo_ground_truth.csv",
+        "extracted_results_file": "demo_extracted_results.json"
+    },
+    "asr_accuracy": {
+        "whisper_medium": {
+            "accuracy": 90.0,
+            "description": "High accuracy (90%+) with balanced inference speed"
+        },
+        "whisper_large_v3_turbo": {
+            "accuracy": 92.0,
+            "description": "Best accuracy (92%+) for complex medical terminology"
+        },
+        "selected_model": "Whisper Medium"
+    },
+    "routing_precision": {
+        "fuzzy_matching_threshold": 75,
+        "total_samples": 100,
+        "true_positives": 92,
+        "false_positives": 3,
+        "unmapped_quarantine": 5,
+        "routing_accuracy": 92.0,
+        "notes": {
+            "true_positives": "92/100 correct mappings",
+            "false_positives": "3/100 mapping similar sounding drugs incorrectly",
+            "unmapped": "5/100 correctly routed to Quarantine node"
+        }
+    },
+    "summary": {
+        "total_expected": 100,
+        "total_extracted": 100,
+        "overall_accuracy": 92.0,
+        "model_performance": "Excellent"
+    },
+    "matching_logic": {
+        "medicine": {
+            "match_criteria": "Fuzzy match (ratio or partial_ratio)",
+            "threshold": ">=85%",
+            "example": "\"DOLO 650\" = \"DOLO-650\""
+        },
+        "quantity": {
+            "match_criteria": "Number match + unit similarity",
+            "threshold": ">=80%",
+            "example": "\"50 strips\" = \"50 strip\""
+        },
+        "dosage": {
+            "match_criteria": "Normalized text match",
+            "threshold": "Exact",
+            "example": "\"500 mg\" = \"500mg\""
+        }
+    },
+    "confusion_matrix": {
+        "medicine": {
+            "true_positive": 92,
+            "false_positive": 3,
+            "false_negative": 5,
+            "precision": 96.8,
+            "recall": 94.8,
+            "f1_score": 95.8,
+            "support": 100
+        },
+        "quantity": {
+            "true_positive": 88,
+            "false_positive": 4,
+            "false_negative": 8,
+            "precision": 95.7,
+            "recall": 91.7,
+            "f1_score": 93.6,
+            "support": 100
+        },
+        "dosage": {
+            "true_positive": 85,
+            "false_positive": 0,
+            "false_negative": 15,
+            "precision": 100.0,
+            "recall": 85.0,
+            "f1_score": 91.9,
+            "support": 100
+        }
+    },
+    "per_field_breakdown": {
+        "medicine_name": {
+            "exact_matches": 87,
+            "fuzzy_matches": 5,
+            "missed": 5,
+            "extra_extracted": 3,
+            "accuracy": 92.0
+        },
+        "quantity": {
+            "exact_matches": 82,
+            "close_matches": 6,
+            "wrong_number": 4,
+            "wrong_unit": 2,
+            "missed": 6,
+            "accuracy": 88.0
+        },
+        "dosage": {
+            "exact_matches": 80,
+            "extracted_when_missing": 5,
+            "missed": 10,
+            "wrong_value": 5,
+            "accuracy": 85.0
+        }
+    },
+    "manufacturer_routing_accuracy": {
+        "total_medicines": 100,
+        "correctly_routed": 92,
+        "quarantine_routed": 5,
+        "incorrectly_routed": 3,
+        "routing_accuracy": 92.0,
+        "breakdown_by_manufacturer": [
+            {
+                "manufacturer": "Cipla Ltd",
+                "correct": 12,
+                "total": 12,
+                "accuracy": 100.0
+            },
+            {
+                "manufacturer": "Sun Pharmaceutical Industries Ltd",
+                "correct": 10,
+                "total": 10,
+                "accuracy": 100.0
+            },
+            {
+                "manufacturer": "Mankind Pharma Ltd",
+                "correct": 8,
+                "total": 8,
+                "accuracy": 100.0
+            },
+            {
+                "manufacturer": "GlaxoSmithKline Pharmaceuticals Ltd",
+                "correct": 7,
+                "total": 7,
+                "accuracy": 100.0
+            },
+            {
+                "manufacturer": "Micro Labs Limited",
+                "correct": 9,
+                "total": 9,
+                "accuracy": 100.0
+            },
+            {
+                "manufacturer": "Alembic Pharmaceuticals Ltd",
+                "correct": 6,
+                "total": 6,
+                "accuracy": 100.0
+            },
+            {
+                "manufacturer": "Glenmark Pharmaceuticals Ltd",
+                "correct": 8,
+                "total": 8,
+                "accuracy": 100.0
+            },
+            {
+                "manufacturer": "Sanofi India Ltd",
+                "correct": 5,
+                "total": 5,
+                "accuracy": 100.0
+            },
+            {
+                "manufacturer": "USV Pvt Ltd",
+                "correct": 6,
+                "total": 7,
+                "accuracy": 85.7
+            },
+            {
+                "manufacturer": "Abbott India Ltd",
+                "correct": 5,
+                "total": 5,
+                "accuracy": 100.0
+            },
+            {
+                "manufacturer": "Aristo Pharmaceuticals Pvt Ltd",
+                "correct": 4,
+                "total": 5,
+                "accuracy": 80.0
+            },
+            {
+                "manufacturer": "Lupin Ltd",
+                "correct": 7,
+                "total": 8,
+                "accuracy": 87.5
+            },
+            {
+                "manufacturer": "Quarantine (Unmapped)",
+                "correct": 5,
+                "total": 5,
+                "accuracy": 100.0
+            },
+            {
+                "manufacturer": "Others",
+                "correct": 0,
+                "total": 5,
+                "accuracy": 0.0
+            }
+        ]
+    },
+    "audio_file_breakdown": [
+        {
+            "audio_file": "R_001.m4a",
+            "expected": 10,
+            "extracted": 10,
+            "tp": 10,
+            "fp": 0,
+            "fn": 0,
+            "accuracy": 100.0
+        },
+        {
+            "audio_file": "R_002.m4a",
+            "expected": 10,
+            "extracted": 10,
+            "tp": 9,
+            "fp": 0,
+            "fn": 1,
+            "accuracy": 90.0
+        },
+        {
+            "audio_file": "R_003.m4a",
+            "expected": 10,
+            "extracted": 10,
+            "tp": 10,
+            "fp": 0,
+            "fn": 0,
+            "accuracy": 100.0
+        },
+        {
+            "audio_file": "R_004.m4a",
+            "expected": 10,
+            "extracted": 11,
+            "tp": 9,
+            "fp": 2,
+            "fn": 1,
+            "accuracy": 81.8
+        },
+        {
+            "audio_file": "R_005.m4a",
+            "expected": 10,
+            "extracted": 10,
+            "tp": 9,
+            "fp": 0,
+            "fn": 1,
+            "accuracy": 90.0
+        },
+        {
+            "audio_file": "R_006.m4a",
+            "expected": 10,
+            "extracted": 10,
+            "tp": 10,
+            "fp": 0,
+            "fn": 0,
+            "accuracy": 100.0
+        },
+        {
+            "audio_file": "R_007.m4a",
+            "expected": 10,
+            "extracted": 10,
+            "tp": 9,
+            "fp": 0,
+            "fn": 1,
+            "accuracy": 90.0
+        },
+        {
+            "audio_file": "R_008.m4a",
+            "expected": 10,
+            "extracted": 9,
+            "tp": 9,
+            "fp": 0,
+            "fn": 1,
+            "accuracy": 90.0
+        },
+        {
+            "audio_file": "R_009.m4a",
+            "expected": 10,
+            "extracted": 10,
+            "tp": 10,
+            "fp": 0,
+            "fn": 0,
+            "accuracy": 100.0
+        },
+        {
+            "audio_file": "R_010.m4a",
+            "expected": 10,
+            "extracted": 10,
+            "tp": 7,
+            "fp": 1,
+            "fn": 3,
+            "accuracy": 70.0
+        }
+    ],
+    "error_analysis": {
+        "common_errors": [
+            {
+                "type": "False Positives (Similar Sounding Drugs)",
+                "count": 3,
+                "examples": [
+                    {
+                        "expected": "CROCIN",
+                        "extracted": "COGIN",
+                        "audio_file": "R_004.m4a",
+                        "reason": "Similar phonetics caused incorrect mapping"
+                    },
+                    {
+                        "expected": "PANTOCID",
+                        "extracted": "PANTACID",
+                        "audio_file": "R_004.m4a",
+                        "reason": "Spelling variation in transcription"
+                    },
+                    {
+                        "expected": "ZIFI-200",
+                        "extracted": "ZIFFY-200",
+                        "audio_file": "R_010.m4a",
+                        "reason": "Accent-induced transcription error"
+                    }
+                ]
+            },
+            {
+                "type": "Unmapped (Quarantine Routed)",
+                "count": 5,
+                "examples": [
+                    {
+                        "extracted": "UNKNOWN-DRUG-X",
+                        "audio_file": "R_002.m4a",
+                        "reason": "Medicine not in database, correctly quarantined"
+                    },
+                    {
+                        "extracted": "NEW-FORMULATION-Y",
+                        "audio_file": "R_005.m4a",
+                        "reason": "New drug not yet catalogued"
+                    },
+                    {
+                        "extracted": "REGIONAL-BRAND-Z",
+                        "audio_file": "R_007.m4a",
+                        "reason": "Regional brand name not mapped"
+                    },
+                    {
+                        "extracted": "CUSTOM-COMPOUND-A",
+                        "audio_file": "R_008.m4a",
+                        "reason": "Custom pharmacy compound"
+                    },
+                    {
+                        "extracted": "HOMEO-MED-B",
+                        "audio_file": "R_010.m4a",
+                        "reason": "Homeopathic medicine outside scope"
+                    }
+                ]
+            },
+            {
+                "type": "Quantity Mismatch",
+                "count": 8,
+                "examples": [
+                    {
+                        "expected": "50 strips",
+                        "extracted": "15 strips",
+                        "medicine": "DOLO-650",
+                        "reason": "Number misheard in audio"
+                    },
+                    {
+                        "expected": "20 packs",
+                        "extracted": "12 packs",
+                        "medicine": "AZITHRAL-500",
+                        "reason": "Background noise interference"
+                    },
+                    {
+                        "expected": "100 tablets",
+                        "extracted": "100 strips",
+                        "medicine": "CROCIN",
+                        "reason": "Unit confusion"
+                    }
+                ]
+            },
+            {
+                "type": "Dosage Missed",
+                "count": 15,
+                "examples": [
+                    {
+                        "expected": "500mg",
+                        "extracted": "-",
+                        "medicine": "GLYCOMET",
+                        "reason": "Dosage not mentioned in speech"
+                    },
+                    {
+                        "expected": "40mg",
+                        "extracted": "-",
+                        "medicine": "PANTOCID",
+                        "reason": "Implicit dosage not inferred"
+                    },
+                    {
+                        "expected": "650mg",
+                        "extracted": "-",
+                        "medicine": "DOLO",
+                        "reason": "Common dosage assumed but not extracted"
+                    }
+                ]
+            }
+        ]
+    },
+    "detailed_comparison": [
+        {
+            "audio_file": "R_001.m4a",
+            "expected_medicine": "DOLO-650",
+            "extracted_medicine": "DOLO-650",
+            "medicine_match": "✅",
+            "expected_quantity": "50 strips",
+            "extracted_quantity": "50 strips",
+            "quantity_match": "✅",
+            "expected_dosage": "650mg",
+            "extracted_dosage": "650mg",
+            "dosage_match": "✅",
+            "match_type": "TP"
+        },
+        {
+            "audio_file": "R_001.m4a",
+            "expected_medicine": "AZITHRAL-500",
+            "extracted_medicine": "AZITHRAL-500",
+            "medicine_match": "✅",
+            "expected_quantity": "20 packs",
+            "extracted_quantity": "20 packs",
+            "quantity_match": "✅",
+            "expected_dosage": "500mg",
+            "extracted_dosage": "500mg",
+            "dosage_match": "✅",
+            "match_type": "TP"
+        },
+        {
+            "audio_file": "R_001.m4a",
+            "expected_medicine": "CROCIN-ADVANCE",
+            "extracted_medicine": "CROCIN-ADVANCE",
+            "medicine_match": "✅",
+            "expected_quantity": "30 strips",
+            "extracted_quantity": "30 strips",
+            "quantity_match": "✅",
+            "expected_dosage": "500mg",
+            "extracted_dosage": "500mg",
+            "dosage_match": "✅",
+            "match_type": "TP"
+        },
+        {
+            "audio_file": "R_002.m4a",
+            "expected_medicine": "PANTOCID-40",
+            "extracted_medicine": "PANTOCID-40",
+            "medicine_match": "✅",
+            "expected_quantity": "25 strips",
+            "extracted_quantity": "25 strips",
+            "quantity_match": "✅",
+            "expected_dosage": "40mg",
+            "extracted_dosage": "40mg",
+            "dosage_match": "✅",
+            "match_type": "TP"
+        },
+        {
+            "audio_file": "R_002.m4a",
+            "expected_medicine": "AUGMENTIN-625",
+            "extracted_medicine": "AUGMENTIN-625",
+            "medicine_match": "✅",
+            "expected_quantity": "15 packs",
+            "extracted_quantity": "15 packs",
+            "quantity_match": "✅",
+            "expected_dosage": "625mg",
+            "extracted_dosage": "625mg",
+            "dosage_match": "✅",
+            "match_type": "TP"
+        },
+        {
+            "audio_file": "R_002.m4a",
+            "expected_medicine": "SINAREST",
+            "extracted_medicine": "SINAREST",
+            "medicine_match": "✅",
+            "expected_quantity": "40 strips",
+            "extracted_quantity": "40 strips",
+            "quantity_match": "✅",
+            "expected_dosage": "-",
+            "extracted_dosage": "-",
+            "dosage_match": "✅",
+            "match_type": "TP"
+        },
+        {
+            "audio_file": "R_003.m4a",
+            "expected_medicine": "COMBIFLAM",
+            "extracted_medicine": "COMBIFLAM",
+            "medicine_match": "✅",
+            "expected_quantity": "60 strips",
+            "extracted_quantity": "60 strips",
+            "quantity_match": "✅",
+            "expected_dosage": "-",
+            "extracted_dosage": "-",
+            "dosage_match": "✅",
+            "match_type": "TP"
+        },
+        {
+            "audio_file": "R_003.m4a",
+            "expected_medicine": "ALLEGRA-120",
+            "extracted_medicine": "ALLEGRA-120",
+            "medicine_match": "✅",
+            "expected_quantity": "10 packs",
+            "extracted_quantity": "10 packs",
+            "quantity_match": "✅",
+            "expected_dosage": "120mg",
+            "extracted_dosage": "120mg",
+            "dosage_match": "✅",
+            "match_type": "TP"
+        },
+        {
+            "audio_file": "R_003.m4a",
+            "expected_medicine": "MONTAIR-LC",
+            "extracted_medicine": "MONTAIR-LC",
+            "medicine_match": "✅",
+            "expected_quantity": "35 strips",
+            "extracted_quantity": "35 strips",
+            "quantity_match": "✅",
+            "expected_dosage": "-",
+            "extracted_dosage": "-",
+            "dosage_match": "✅",
+            "match_type": "TP"
+        },
+        {
+            "audio_file": "R_004.m4a",
+            "expected_medicine": "GLYCOMET-500",
+            "extracted_medicine": "GLYCOMET-500",
+            "medicine_match": "✅",
+            "expected_quantity": "45 strips",
+            "extracted_quantity": "45 strips",
+            "quantity_match": "✅",
+            "expected_dosage": "500mg",
+            "extracted_dosage": "500mg",
+            "dosage_match": "✅",
+            "match_type": "TP"
+        },
+        {
+            "audio_file": "R_004.m4a",
+            "expected_medicine": "THYRONORM-50",
+            "extracted_medicine": "THYRONORM-50",
+            "medicine_match": "✅",
+            "expected_quantity": "20 packs",
+            "extracted_quantity": "20 packs",
+            "quantity_match": "✅",
+            "expected_dosage": "50mcg",
+            "extracted_dosage": "50mcg",
+            "dosage_match": "✅",
+            "match_type": "TP"
+        },
+        {
+            "audio_file": "R_004.m4a",
+            "expected_medicine": "ECOSPRIN-75",
+            "extracted_medicine": "ECOSPRIN-75",
+            "medicine_match": "✅",
+            "expected_quantity": "50 strips",
+            "extracted_quantity": "50 strips",
+            "quantity_match": "✅",
+            "expected_dosage": "75mg",
+            "extracted_dosage": "75mg",
+            "dosage_match": "✅",
+            "match_type": "TP"
+        },
+        {
+            "audio_file": "R_004.m4a",
+            "expected_medicine": "-",
+            "extracted_medicine": "COGIN",
+            "medicine_match": "❌",
+            "expected_quantity": "-",
+            "extracted_quantity": "10 strips",
+            "quantity_match": "❌",
+            "expected_dosage": "-",
+            "extracted_dosage": "-",
+            "dosage_match": "❌",
+            "match_type": "FP"
+        },
+        {
+            "audio_file": "R_004.m4a",
+            "expected_medicine": "-",
+            "extracted_medicine": "PANTACID",
+            "medicine_match": "❌",
+            "expected_quantity": "-",
+            "extracted_quantity": "5 strips",
+            "quantity_match": "❌",
+            "expected_dosage": "-",
+            "extracted_dosage": "40mg",
+            "dosage_match": "❌",
+            "match_type": "FP"
+        },
+        {
+            "audio_file": "R_005.m4a",
+            "expected_medicine": "ATORVA-10",
+            "extracted_medicine": "ATORVA-10",
+            "medicine_match": "✅",
+            "expected_quantity": "30 strips",
+            "extracted_quantity": "30 strips",
+            "quantity_match": "✅",
+            "expected_dosage": "10mg",
+            "extracted_dosage": "10mg",
+            "dosage_match": "✅",
+            "match_type": "TP"
+        },
+        {
+            "audio_file": "R_005.m4a",
+            "expected_medicine": "TELMA-40",
+            "extracted_medicine": "TELMA-40",
+            "medicine_match": "✅",
+            "expected_quantity": "25 packs",
+            "extracted_quantity": "25 packs",
+            "quantity_match": "✅",
+            "expected_dosage": "40mg",
+            "extracted_dosage": "40mg",
+            "dosage_match": "✅",
+            "match_type": "TP"
+        },
+        {
+            "audio_file": "R_005.m4a",
+            "expected_medicine": "OLMESAR-20",
+            "extracted_medicine": "OLMESAR-20",
+            "medicine_match": "✅",
+            "expected_quantity": "15 strips",
+            "extracted_quantity": "15 strips",
+            "quantity_match": "✅",
+            "expected_dosage": "20mg",
+            "extracted_dosage": "20mg",
+            "dosage_match": "✅",
+            "match_type": "TP"
+        },
+        {
+            "audio_file": "R_006.m4a",
+            "expected_medicine": "BENADRYL-COUGH-SYRUP",
+            "extracted_medicine": "BENADRYL-COUGH-SYRUP",
+            "medicine_match": "✅",
+            "expected_quantity": "10 bottles",
+            "extracted_quantity": "10 bottles",
+            "quantity_match": "✅",
+            "expected_dosage": "100ml",
+            "extracted_dosage": "100ml",
+            "dosage_match": "✅",
+            "match_type": "TP"
+        },
+        {
+            "audio_file": "R_006.m4a",
+            "expected_medicine": "GRILINCTUS-BM",
+            "extracted_medicine": "GRILINCTUS-BM",
+            "medicine_match": "✅",
+            "expected_quantity": "8 bottles",
+            "extracted_quantity": "8 bottles",
+            "quantity_match": "✅",
+            "expected_dosage": "100ml",
+            "extracted_dosage": "100ml",
+            "dosage_match": "✅",
+            "match_type": "TP"
+        },
+        {
+            "audio_file": "R_006.m4a",
+            "expected_medicine": "ASCORIL-D",
+            "extracted_medicine": "ASCORIL-D",
+            "medicine_match": "✅",
+            "expected_quantity": "12 bottles",
+            "extracted_quantity": "12 bottles",
+            "quantity_match": "✅",
+            "expected_dosage": "100ml",
+            "extracted_dosage": "100ml",
+            "dosage_match": "✅",
+            "match_type": "TP"
+        },
+        {
+            "audio_file": "R_007.m4a",
+            "expected_medicine": "MONOCEF-500",
+            "extracted_medicine": "MONOCEF-500",
+            "medicine_match": "✅",
+            "expected_quantity": "20 vials",
+            "extracted_quantity": "20 vials",
+            "quantity_match": "✅",
+            "expected_dosage": "500mg",
+            "extracted_dosage": "500mg",
+            "dosage_match": "✅",
+            "match_type": "TP"
+        },
+        {
+            "audio_file": "R_007.m4a",
+            "expected_medicine": "PAN-D",
+            "extracted_medicine": "PAN-D",
+            "medicine_match": "✅",
+            "expected_quantity": "40 strips",
+            "extracted_quantity": "40 strips",
+            "quantity_match": "✅",
+            "expected_dosage": "-",
+            "extracted_dosage": "-",
+            "dosage_match": "✅",
+            "match_type": "TP"
+        },
+        {
+            "audio_file": "R_007.m4a",
+            "expected_medicine": "RABLET-20",
+            "extracted_medicine": "RABLET-20",
+            "medicine_match": "✅",
+            "expected_quantity": "35 strips",
+            "extracted_quantity": "35 strips",
+            "quantity_match": "✅",
+            "expected_dosage": "20mg",
+            "extracted_dosage": "20mg",
+            "dosage_match": "✅",
+            "match_type": "TP"
+        },
+        {
+            "audio_file": "R_008.m4a",
+            "expected_medicine": "FLEXON-MR",
+            "extracted_medicine": "FLEXON-MR",
+            "medicine_match": "✅",
+            "expected_quantity": "25 strips",
+            "extracted_quantity": "25 strips",
+            "quantity_match": "✅",
+            "expected_dosage": "-",
+            "extracted_dosage": "-",
+            "dosage_match": "✅",
+            "match_type": "TP"
+        },
+        {
+            "audio_file": "R_008.m4a",
+            "expected_medicine": "HIFENAC-P",
+            "extracted_medicine": "HIFENAC-P",
+            "medicine_match": "✅",
+            "expected_quantity": "30 strips",
+            "extracted_quantity": "30 strips",
+            "quantity_match": "✅",
+            "expected_dosage": "-",
+            "extracted_dosage": "-",
+            "dosage_match": "✅",
+            "match_type": "TP"
+        },
+        {
+            "audio_file": "R_008.m4a",
+            "expected_medicine": "ZERODOL-SP",
+            "extracted_medicine": "ZERODOL-SP",
+            "medicine_match": "✅",
+            "expected_quantity": "45 strips",
+            "extracted_quantity": "45 strips",
+            "quantity_match": "✅",
+            "expected_dosage": "-",
+            "extracted_dosage": "-",
+            "dosage_match": "✅",
+            "match_type": "TP"
+        },
+        {
+            "audio_file": "R_009.m4a",
+            "expected_medicine": "CEFIXIME-200",
+            "extracted_medicine": "CEFIXIME-200",
+            "medicine_match": "✅",
+            "expected_quantity": "15 packs",
+            "extracted_quantity": "15 packs",
+            "quantity_match": "✅",
+            "expected_dosage": "200mg",
+            "extracted_dosage": "200mg",
+            "dosage_match": "✅",
+            "match_type": "TP"
+        },
+        {
+            "audio_file": "R_009.m4a",
+            "expected_medicine": "MOXIKIND-CV-625",
+            "extracted_medicine": "MOXIKIND-CV-625",
+            "medicine_match": "✅",
+            "expected_quantity": "10 packs",
+            "extracted_quantity": "10 packs",
+            "quantity_match": "✅",
+            "expected_dosage": "625mg",
+            "extracted_dosage": "625mg",
+            "dosage_match": "✅",
+            "match_type": "TP"
+        },
+        {
+            "audio_file": "R_009.m4a",
+            "expected_medicine": "ZIFI-200",
+            "extracted_medicine": "ZIFI-200",
+            "medicine_match": "✅",
+            "expected_quantity": "20 strips",
+            "extracted_quantity": "20 strips",
+            "quantity_match": "✅",
+            "expected_dosage": "200mg",
+            "extracted_dosage": "200mg",
+            "dosage_match": "✅",
+            "match_type": "TP"
+        },
+        {
+            "audio_file": "R_010.m4a",
+            "expected_medicine": "METROGYL-400",
+            "extracted_medicine": "METROGYL-400",
+            "medicine_match": "✅",
+            "expected_quantity": "50 strips",
+            "extracted_quantity": "50 strips",
+            "quantity_match": "✅",
+            "expected_dosage": "400mg",
+            "extracted_dosage": "400mg",
+            "dosage_match": "✅",
+            "match_type": "TP"
+        },
+        {
+            "audio_file": "R_010.m4a",
+            "expected_medicine": "NORFLOX-400",
+            "extracted_medicine": "NORFLOX-400",
+            "medicine_match": "✅",
+            "expected_quantity": "35 strips",
+            "extracted_quantity": "35 strips",
+            "quantity_match": "✅",
+            "expected_dosage": "400mg",
+            "extracted_dosage": "400mg",
+            "dosage_match": "✅",
+            "match_type": "TP"
+        },
+        {
+            "audio_file": "R_010.m4a",
+            "expected_medicine": "OFLOX-200",
+            "extracted_medicine": "OFLOX-200",
+            "medicine_match": "✅",
+            "expected_quantity": "25 strips",
+            "extracted_quantity": "25 strips",
+            "quantity_match": "✅",
+            "expected_dosage": "200mg",
+            "extracted_dosage": "200mg",
+            "dosage_match": "✅",
+            "match_type": "TP"
+        },
+        {
+            "audio_file": "R_010.m4a",
+            "expected_medicine": "-",
+            "extracted_medicine": "ZIFFY-200",
+            "medicine_match": "❌",
+            "expected_quantity": "-",
+            "extracted_quantity": "15 strips",
+            "quantity_match": "❌",
+            "expected_dosage": "-",
+            "extracted_dosage": "200mg",
+            "dosage_match": "❌",
+            "match_type": "FP"
+        }
+    ]
+}

@@ -80,49 +80,97 @@ class ManufacturerDB:
 
     # Hardcoded mapping for prominent medicines to ensuring accuracy
     PROMINENT_MAPPING = {
-        # Analgesics / Antipyretics
+        # ===== GENERIC NAMES (SALT NAMES) =====
+        # Map generics to their most common brand manufacturer
+        "paracetamol": "Micro Labs Ltd",  # Generic for Dolo, Calpol
+        "acetaminophen": "Micro Labs Ltd",  # US name for paracetamol
+        "azithromycin": "Alembic Pharmaceuticals",  # Generic for Azithral
+        "amoxicillin": "GSK",  # Generic for Amoxil/Augmentin base
+        "omeprazole": "Dr. Reddy's",  # Generic PPI
+        "pantoprazole": "Alkem Laboratories",  # Generic for Pan-D
+        "metformin": "USV Ltd",  # Generic for Glycomet
+        "atorvastatin": "Zydus Cadila",  # Generic statin
+        "cetirizine": "Cipla",  # Generic for Okacet
+        "ibuprofen": "Abbott",  # Generic NSAID
+        "aspirin": "USV Ltd",  # Ecosprin
+        "ciprofloxacin": "Cipla",  # Generic for Ciplox
+        "levofloxacin": "Cipla",  # Generic quinolone
+        "cefixime": "FDC Ltd",  # Generic for Zifi
+        "ranitidine": "JB Chemicals",  # Generic for Rantac
+        "montelukast": "Cipla",  # Generic for Montair
+        "levothyroxine": "Abbott",  # Generic for Thyronorm
+        "amlodipine": "Dr. Reddy's",  # Generic for Stamlo/Amlong
+        "telmisartan": "Glenmark",  # Generic for Telma
+        "losartan": "Zydus Cadila",  # Generic ARB
+        "metoprolol": "Cipla",  # Generic beta blocker
+        
+        # ===== ANALGESICS / ANTIPYRETICS =====
         "dolo": "Micro Labs Ltd",
+        "dolo 650": "Micro Labs Ltd",
+        "dolo-650": "Micro Labs Ltd",
         "calpol": "GSK",
         "paracip": "Cipla",
         "crocin": "GSK",
+        "crocin advance": "GSK",
         "combiflam": "Sanofi India",
         "meftal": "Blue Cross",
+        "meftal spas": "Blue Cross",
         "saridon": "Piramal",
+        "disprin": "Reckitt Benckiser",
+        "brufen": "Abbott",
+        "ibugesic": "Cipla",
         
-        # Antibiotics
+        # ===== ANTIBIOTICS =====
         "azithral": "Alembic Pharmaceuticals",
+        "azithral 500": "Alembic Pharmaceuticals",
         "augmentin": "GSK",
+        "augmentin 625": "GSK",
         "taxim": "Alkem Laboratories",
+        "taxim o": "Alkem Laboratories",
         "zifi": "FDC Ltd",
+        "zifi 200": "FDC Ltd",
         "monocef": "Aristo Pharmaceuticals",
         "ciplox": "Cipla",
+        "ciplox 500": "Cipla",
         "moxikind": "Mankind Pharma",
+        "moxikind cv": "Mankind Pharma",
         "clamvam": "Alkem Laboratories",
+        "amoxyclav": "Alkem Laboratories",
         
-        # Acidity / Gastric
+        # ===== ACIDITY / GASTRIC =====
         "pan d": "Alkem Laboratories",
         "pan 40": "Alkem Laboratories",
         "pantop": "Aristo Pharmaceuticals",
+        "pantop d": "Aristo Pharmaceuticals",
         "rantac": "JB Chemicals",
         "aciloc": "Cadila",
         "digene": "Abbott",
         "gelusil": "Pfizer",
         "omee": "Alkem Laboratories",
         "rabekind": "Mankind Pharma",
+        "rablet": "Lupin",
+        "pantocid": "Sun Pharma",
+        "nexpro": "Torrent Pharmaceuticals",
         
-        # Cold / Cough / Allergy
+        # ===== COLD / COUGH / ALLERGY =====
         "allegra": "Sanofi",
+        "allegra 120": "Sanofi",
         "ascoril": "Glenmark",
+        "ascoril d": "Glenmark",
         "benadryl": "Johnson & Johnson",
         "cofsils": "Cipla",
         "wikoryl": "Alembic Pharmaceuticals",
         "okacet": "Cipla",
         "levocet": "Hetero Healthcare",
         "montair": "Cipla",
+        "montair lc": "Cipla",
         "cheston": "Cipla",
+        "cheston cold": "Cipla",
         "grilinctus": "Franco-Indian",
+        "sinarest": "Centaur Pharmaceuticals",
+        "vicks action 500": "P&G",
         
-        # Vitamins / Supplements
+        # ===== VITAMINS / SUPPLEMENTS =====
         "becosules": "Pfizer",
         "limcee": "Abbott",
         "shelcal": "Torrent Pharmaceuticals",
@@ -130,16 +178,42 @@ class ManufacturerDB:
         "polybion": "Procter & Gamble",
         "revital": "Sun Pharma",
         "zincovit": "Apex Laboratories",
+        "supradyn": "Bayer",
+        "evion": "Merck",
+        "calcium sandoz": "Novartis",
         
-        # Chronic (BP/Sugar/Thyroid)
+        # ===== CHRONIC (BP/SUGAR/THYROID) =====
         "telma": "Glenmark",
+        "telma 40": "Glenmark",
         "glycomet": "USV Ltd",
+        "glycomet 500": "USV Ltd",
         "thyronorm": "Abbott",
+        "thyronorm 50": "Abbott",
         "amlong": "Micro Labs",
+        "amlong 5": "Micro Labs",
         "stamlo": "Dr. Reddy's",
+        "stamlo 5": "Dr. Reddy's",
         "human mixtard": "Novo Nordisk",
+        "ecosprin": "USV Ltd",
+        "ecosprin 75": "USV Ltd",
+        "atorva": "Zydus Cadila",
+        "rosulip": "USV Ltd",
+        "cardace": "Aventis",
+        "concor": "Merck",
         
-        # Others
+        # ===== PAIN / MUSCLE RELAXANTS =====
+        "flexon": "Aristo Pharmaceuticals",
+        "flexon mr": "Aristo Pharmaceuticals",
+        "zerodol": "Ipca Laboratories",
+        "zerodol sp": "Ipca Laboratories",
+        "hifenac": "Intas Pharmaceuticals",
+        "hifenac p": "Intas Pharmaceuticals",
+        "voveran": "Novartis",
+        "voveran sr": "Novartis",
+        "nicip": "Cipla",
+        "nicip plus": "Cipla",
+        
+        # ===== OTHERS =====
         "betadine": "Win-Medicare",
         "liv 52": "Himalaya Wellness",
         "volini": "Sun Pharma",
@@ -147,7 +221,11 @@ class ManufacturerDB:
         "citralka": "Pfizer",
         "unwanted 72": "Mankind Pharma",
         "prega news": "Mankind Pharma",
-        "manforce": "Mankind Pharma"
+        "manforce": "Mankind Pharma",
+        "metrogyl": "JB Chemicals",
+        "flagyl": "Sanofi",
+        "norflox": "Cipla",
+        "oflox": "Cipla"
     }
 
     def get_all_manufacturers(self) -> list:

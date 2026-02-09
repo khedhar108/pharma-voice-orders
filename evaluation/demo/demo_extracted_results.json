@@ -1,0 +1,54 @@
+{
+  "description": "Demo extracted results simulating entity extraction output for evaluation metrics showcase",
+  "extraction_date": "2026-02-09",
+  "model_used": "Demo Mode - Pre-computed Results",
+  "results": [
+    {"audio_file": "DEMO_001.m4a", "medicine": "DOLO-650", "quantity": "50 strips", "dosage": "650mg", "form": "tablet", "manufacturer": "Micro Labs Limited", "transcription": "Send me 50 strips of Dolo 650"},
+    {"audio_file": "DEMO_001.m4a", "medicine": "AZITHRAL-500", "quantity": "20 packs", "dosage": "500mg", "form": "tablet", "manufacturer": "Alembic Pharmaceuticals Ltd", "transcription": "Also need 20 packs Azithral 500"},
+    {"audio_file": "DEMO_001.m4a", "medicine": "CROCIN-ADVANCE", "quantity": "30 strips", "dosage": "500mg", "form": "tablet", "manufacturer": "GlaxoSmithKline Pharmaceuticals Ltd", "transcription": "And 30 strips Crocin Advance"},
+    
+    {"audio_file": "DEMO_002.m4a", "medicine": "PANTOCID-40", "quantity": "25 strips", "dosage": "40mg", "form": "tablet", "manufacturer": "Sun Pharmaceutical Industries Ltd", "transcription": "I need 25 strips of Pantocid 40"},
+    {"audio_file": "DEMO_002.m4a", "medicine": "AUGMENTIN-625", "quantity": "15 packs", "dosage": "625mg", "form": "tablet", "manufacturer": "GlaxoSmithKline Pharmaceuticals Ltd", "transcription": "15 packs Augmentin 625"},
+    {"audio_file": "DEMO_002.m4a", "medicine": "SINAREST", "quantity": "40 strips", "dosage": "-", "form": "tablet", "manufacturer": "Centaur Pharmaceuticals Pvt Ltd", "transcription": "40 strips Sinarest tablets"},
+    
+    {"audio_file": "DEMO_003.m4a", "medicine": "COMBIFLAM", "quantity": "60 strips", "dosage": "-", "form": "tablet", "manufacturer": "Sanofi India Ltd", "transcription": "Order 60 strips of Combiflam"},
+    {"audio_file": "DEMO_003.m4a", "medicine": "ALLEGRA-120", "quantity": "10 packs", "dosage": "120mg", "form": "tablet", "manufacturer": "Sanofi India Ltd", "transcription": "10 packs Allegra 120"},
+    {"audio_file": "DEMO_003.m4a", "medicine": "MONTAIR-LC", "quantity": "35 strips", "dosage": "-", "form": "tablet", "manufacturer": "Cipla Ltd", "transcription": "35 strips Montair LC"},
+    
+    {"audio_file": "DEMO_004.m4a", "medicine": "GLYCOMET-500", "quantity": "45 strips", "dosage": "500mg", "form": "tablet", "manufacturer": "USV Pvt Ltd", "transcription": "45 strips Glycomet 500"},
+    {"audio_file": "DEMO_004.m4a", "medicine": "THYRONORM-50", "quantity": "20 packs", "dosage": "50mcg", "form": "tablet", "manufacturer": "Abbott India Ltd", "transcription": "20 packs Thyronorm 50"},
+    {"audio_file": "DEMO_004.m4a", "medicine": "ECOSPRIN-75", "quantity": "50 strips", "dosage": "75mg", "form": "tablet", "manufacturer": "USV Pvt Ltd", "transcription": "50 strips Ecosprin 75"},
+    
+    {"audio_file": "DEMO_005.m4a", "medicine": "ATORVA-10", "quantity": "30 strips", "dosage": "10mg", "form": "tablet", "manufacturer": "Zydus Lifesciences Ltd", "transcription": "30 strips Atorva 10"},
+    {"audio_file": "DEMO_005.m4a", "medicine": "TELMA-40", "quantity": "25 packs", "dosage": "40mg", "form": "tablet", "manufacturer": "Glenmark Pharmaceuticals Ltd", "transcription": "25 packs Telma 40"},
+    {"audio_file": "DEMO_005.m4a", "medicine": "OLMESAR-20", "quantity": "18 strips", "dosage": "20mg", "form": "tablet", "manufacturer": "Macleods Pharmaceuticals Ltd", "transcription": "18 strips Olmesar 20"},
+    
+    {"audio_file": "DEMO_006.m4a", "medicine": "BENADRYL-COUGH-SYRUP", "quantity": "10 bottles", "dosage": "100ml", "form": "syrup", "manufacturer": "Johnson & Johnson Pvt Ltd", "transcription": "10 bottles Benadryl cough syrup"},
+    {"audio_file": "DEMO_006.m4a", "medicine": "GRILINCTUS-BM", "quantity": "8 bottles", "dosage": "100ml", "form": "syrup", "manufacturer": "Franco-Indian Pharmaceuticals", "transcription": "8 bottles Grilinctus BM"},
+    {"audio_file": "DEMO_006.m4a", "medicine": "ASCORIL-D", "quantity": "12 bottles", "dosage": "100ml", "form": "syrup", "manufacturer": "Glenmark Pharmaceuticals Ltd", "transcription": "12 bottles Ascoril D syrup"},
+    
+    {"audio_file": "DEMO_007.m4a", "medicine": "MONOCEF-500", "quantity": "20 vials", "dosage": "500mg", "form": "injection", "manufacturer": "Aristo Pharmaceuticals Pvt Ltd", "transcription": "20 vials Monocef 500"},
+    {"audio_file": "DEMO_007.m4a", "medicine": "PAN-D", "quantity": "40 strips", "dosage": "-", "form": "tablet", "manufacturer": "Alkem Laboratories Ltd", "transcription": "40 strips Pan D"},
+    {"audio_file": "DEMO_007.m4a", "medicine": "RABLET-20", "quantity": "35 strips", "dosage": "20mg", "form": "tablet", "manufacturer": "Lupin Ltd", "transcription": "35 strips Rablet 20"},
+    
+    {"audio_file": "DEMO_008.m4a", "medicine": "FLEXON-MR", "quantity": "25 strips", "dosage": "-", "form": "tablet", "manufacturer": "Aristo Pharmaceuticals Pvt Ltd", "transcription": "25 strips Flexon MR"},
+    {"audio_file": "DEMO_008.m4a", "medicine": "HIFENAC-P", "quantity": "30 strips", "dosage": "-", "form": "tablet", "manufacturer": "Intas Pharmaceuticals Ltd", "transcription": "30 strips Hifenac P"},
+    {"audio_file": "DEMO_008.m4a", "medicine": "ZERODOL-SP", "quantity": "42 strips", "dosage": "-", "form": "tablet", "manufacturer": "Ipca Laboratories Ltd", "transcription": "42 strips Zerodol SP"},
+    
+    {"audio_file": "DEMO_009.m4a", "medicine": "CEFIXIME-200", "quantity": "15 packs", "dosage": "200mg", "form": "tablet", "manufacturer": "Mankind Pharma Ltd", "transcription": "15 packs Cefixime 200"},
+    {"audio_file": "DEMO_009.m4a", "medicine": "MOXIKIND-CV-625", "quantity": "10 packs", "dosage": "625mg", "form": "tablet", "manufacturer": "Mankind Pharma Ltd", "transcription": "10 packs Moxikind CV 625"},
+    {"audio_file": "DEMO_009.m4a", "medicine": "ZIFI-200", "quantity": "20 strips", "dosage": "200mg", "form": "tablet", "manufacturer": "FDC Ltd", "transcription": "20 strips Zifi 200"},
+    
+    {"audio_file": "DEMO_010.m4a", "medicine": "METROGYL-400", "quantity": "48 strips", "dosage": "400mg", "form": "tablet", "manufacturer": "J.B. Chemicals & Pharmaceuticals Ltd", "transcription": "48 strips Metrogyl 400"},
+    {"audio_file": "DEMO_010.m4a", "medicine": "NORFLOX-400", "quantity": "35 strips", "dosage": "400mg", "form": "tablet", "manufacturer": "Cipla Ltd", "transcription": "35 strips Norflox 400"},
+    {"audio_file": "DEMO_010.m4a", "medicine": "OFLOX-200", "quantity": "25 strips", "dosage": "200mg", "form": "tablet", "manufacturer": "Cipla Ltd", "transcription": "25 strips Oflox 200"},
+    
+    {"audio_file": "DEMO_010.m4a", "medicine": "CIPROFLOXACIN-500", "quantity": "15 strips", "dosage": "500mg", "form": "tablet", "manufacturer": "Unknown", "transcription": "Also 15 strips Ciprofloxacin 500"}
+  ],
+  "summary": {
+    "total_extractions": 31,
+    "unique_medicines": 31,
+    "audio_files_processed": 10,
+    "notes": "Includes intentional variations to demonstrate TP, FP, FN metrics"
+  }
+}

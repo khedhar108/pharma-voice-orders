@@ -192,8 +192,8 @@ def render_order_processing_interface(
                     examples.append(f"10 strips of {med_name}")
             
             if not examples:
-                # Fallback to generic examples
-                return "Send me 10 strips of Augmentin 625, 50 strips of Dolo 650, and 20 strips of Pan D."
+                # Fallback to known medicines from PROMINENT_MAPPING
+                return "Send me 10 strips of Augmentin 625, 50 strips of Paracetamol, and 20 strips of Azithral 500."
             
             return "Send me " + ", ".join(examples[:3]) + "."
         
@@ -523,68 +523,90 @@ def render_order_processing_interface(
         from simulation.order_queue import OrderQueue
         queue = OrderQueue()
         grouped_orders = db.get_orders_by_manufacturer(st.session_state.orders)
-        all_manufacturers = db.get_all_manufacturers()
         
-        # Grid Layout
-        row1_cols = st.columns(2)
-        row2_cols = st.columns(2)
-        row3_cols = st.columns(2)
+        # Build dynamic manufacturer list from PROMINENT_MAPPING + any with orders
+        # This ensures we show ALL manufacturers that have received orders
+        active_manufacturers = set()
+        for mfr_name, orders in grouped_orders.items():
+            if orders and mfr_name not in ['Unknown', 'NewMed Technologies']:
+                active_manufacturers.add(mfr_name)
         
-        # 6 Manufacturers -> 3 Rows of 2
-        for idx, mfr in enumerate(all_manufacturers):
-            if idx < 2:
-                col = row1_cols[idx]
-            elif idx < 4:
-                col = row2_cols[idx - 2]
-            elif idx < 6:
-                col = row3_cols[idx - 4]
-            else:
-                continue
-                
-            with col:
-                mfr_name = mfr['name']
-                orders = grouped_orders.get(mfr_name, [])
-                order_count = len(orders)
-                
-                # Determine Visual State
-                is_active = order_count > 0
-                active_class = "active" if is_active else ""
-                badge_class = "active" if is_active else ""
-                
-                # Generate HTML
-                html_parts = []
-                html_parts.append(f'<div class="node-card {active_class}">')
-                html_parts.append('<div class="node-header">')
-                html_parts.append(f'<span class="node-title"><span style="opacity:0.7">🏭</span> {mfr_name}</span>')
-                html_parts.append(f'<span class="node-badge {badge_class}">{order_count} Items</span>')
-                html_parts.append('</div><div class="node-body">')
-                
-                if is_active:
-                    for order in orders:
-                        conf = order.get('confidence', 0)
-                        conf_class = "conf-low"
-                        if conf >= 90:
-                            conf_class = "conf-high"
-                        elif conf >= 75:
-                            conf_class = "conf-med"
-                        
-                        med_name = order.get('medicine_standardized', order['medicine'])
-                        dosage = order.get('dosage', '-')
-                        
-                        html_parts.append(f'<div class="order-chip {conf_class}">')
-                        html_parts.append('<div class="chip-main">')
-                        html_parts.append(f'<span class="chip-med">{med_name}</span>')
-                        html_parts.append(f'<span class="chip-meta">{dosage}</span>')
-                        html_parts.append('</div>')
-                        html_parts.append(f'<span class="chip-qty">{order["quantity"]}</span>')
-                        html_parts.append('</div>')
-                else:
-                    html_parts.append('<div class="text-muted">Waiting for data...</div>')
+        # Get base manufacturers from DB
+        all_mfr_from_db = [m['name'] for m in db.get_all_manufacturers()]
+        
+        # Combine: Active first, then up to 4 inactive from DB for context
+        display_manufacturers = []
+        
+        # 1. Add all ACTIVE manufacturers (those with orders) - UNLIMITED
+        for mfr_name in sorted(active_manufacturers):
+            display_manufacturers.append({'name': mfr_name, 'active': True})
+        
+        # 2. Add a few inactive manufacturers for visual context (max 4)
+        inactive_count = 0
+        for mfr_name in all_mfr_from_db:
+            if mfr_name not in active_manufacturers and mfr_name not in ['Unknown', 'NewMed Technologies']:
+                if inactive_count < 4:  # Limit inactive to 4 for cleaner UI
+                    display_manufacturers.append({'name': mfr_name, 'active': False})
+                    inactive_count += 1
+        
+        # Helper function to render a manufacturer card
+        def render_manufacturer_card(mfr_name, orders):
+            order_count = len(orders)
+            is_active = order_count > 0
+            active_class = "active" if is_active else ""
+            badge_class = "active" if is_active else ""
+            
+            html_parts = []
+            html_parts.append(f'<div class="node-card {active_class}">')
+            html_parts.append('<div class="node-header">')
+            html_parts.append(f'<span class="node-title"><span style="opacity:0.7">🏭</span> {mfr_name}</span>')
+            html_parts.append(f'<span class="node-badge {badge_class}">{order_count} Items</span>')
+            html_parts.append('</div><div class="node-body">')
+            
+            if is_active:
+                for order in orders:
+                    conf = order.get('confidence', 0)
+                    conf_class = "conf-low"
+                    if conf >= 90:
+                        conf_class = "conf-high"
+                    elif conf >= 75:
+                        conf_class = "conf-med"
                     
-                html_parts.append('</div></div>')
-                st.markdown("".join(html_parts), unsafe_allow_html=True)
+                    med_name = order.get('medicine_standardized', order['medicine'])
+                    dosage = order.get('dosage', '-')
+                    
+                    html_parts.append(f'<div class="order-chip {conf_class}">')
+                    html_parts.append('<div class="chip-main">')
+                    html_parts.append(f'<span class="chip-med">{med_name}</span>')
+                    html_parts.append(f'<span class="chip-meta">{dosage}</span>')
+                    html_parts.append('</div>')
+                    html_parts.append(f'<span class="chip-qty">{order["quantity"]}</span>')
+                    html_parts.append('</div>')
+            else:
+                html_parts.append('<div class="text-muted">Waiting for data...</div>')
+                
+            html_parts.append('</div></div>')
+            return "".join(html_parts)
         
-        # Unknown Orders (Quarantine Node)
+        # Dynamic Grid Rendering - 2 columns, unlimited rows
+        # Process manufacturers in pairs
+        for i in range(0, len(display_manufacturers), 2):
+            cols = st.columns(2)
+            
+            # First column
+            mfr1 = display_manufacturers[i]
+            with cols[0]:
+                orders1 = grouped_orders.get(mfr1['name'], [])
+                st.markdown(render_manufacturer_card(mfr1['name'], orders1), unsafe_allow_html=True)
+            
+            # Second column (if exists)
+            if i + 1 < len(display_manufacturers):
+                mfr2 = display_manufacturers[i + 1]
+                with cols[1]:
+                    orders2 = grouped_orders.get(mfr2['name'], [])
+                    st.markdown(render_manufacturer_card(mfr2['name'], orders2), unsafe_allow_html=True)
+        
+        # Unknown Orders (Quarantine Node) - Always show if there are unknown orders
         unknowns = grouped_orders.get('Unknown', [])
         if unknowns:
             html_parts = []
